@@ -11,7 +11,9 @@ class Admin_menu_attribute extends CI_Controller
                 $this->data['mattribute'] = $this->Menum->show_menu_attribute();
                 $this->data['te'] = '';
                 $this->data['resname']= $this->Menum->getres();
+                $this->data['show_item_type']=$this->Menum->show_item_type();
                 $this->load->view('menu_attribute', $this->data);
+
             } else {
                 $text = $this->input->post('search_menu_att');
                 $this->load->model('Menum');
@@ -101,16 +103,8 @@ class Admin_menu_attribute extends CI_Controller
             $this->load->model('Menum');
             $this->data['edit'] = $this->Menum->showedit($id);
             foreach ($this->data['edit'] as $e) {
-                echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Admin_menu_attribute/edit_res/$e->id\" >
-                                        <div class=\"form-group\">
-                                            <label>ID</label>      <?php echo $e->id;?>                                   
-                                            
-                                            <input class=\"form-control\" type=\"text\" name=\"id\" value=\" $e->id \" readonly>
-                                        </div>
-                                        <div class=\"form-group\">
-                                            <label>Res_id</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"res_id\" value=\" $e->res_id \" readonly>
-                                        </div>
+                echo "<form role=\"form\" method=\"post\" action=\"http://localhost/raks_kitchen/Admin_menu_attribute/edit_res/$e->id\" >
+                   
                                         <div class=\"form-group\">
                                             <label>Item Name</label>
                                             <input class=\"form-control\" type=\"text\" name=\"Item_name\" value=\" $e->item_name \">
