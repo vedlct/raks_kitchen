@@ -12,11 +12,11 @@
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/modal.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/modal.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
@@ -25,10 +25,10 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <script src="js/jquery.js"></script>
+    <script src="<?php echo base_url()?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>js/bootstrap.min.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                       Menu Page Contents
+                        Menu  Contents
                     </h1>
                 </div>
             </div>
@@ -85,103 +85,38 @@
                         <div class="panel-body">
 
 
-                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
+                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_type1"  enctype="multipart/form-data">
 
-                                <div class="form-group" id="dropdown-style">
-                                    <label>Restuarant</label>
-                                    <?php foreach ($this->data['show_res_content'] as $s){?>
-                                    <input class="form-control"type="text" id="name" name="name" value="<?php echo $s->name ?>" readonly>
-
-                                    <?php }?>
-                                </div>
-
-
-                                <div class="form-group" id="dropdown-style">
-                                    <label>Menu Type</label>
-
-                                    <select class="form-control" name="type" id="type" onchange="selectid10(this)" >
-                                        <option selected  >Item Type</option>
-                                        <?php
-
-                                        foreach ($this->data['menutype'] as $e)
-                                        {
-                                            echo "<option value='" . $e->type . "'>" . $e->type . "</option>";
-                                        }
-
-                                        ?>
-                                    </select>
-                                    <input type="hidden" id="type_id" name="type_id" >
-                                </div>
-                                <div class="form-group">
-                                    <label>Item name</label>
-                                    <input class="form-control"type="text" id="Item_name" name="Item_name">
-                                </div>
-                                <div class="form-group">
-                                    <label>Item description</label>
-                                    <textarea class="form-control"  name="Item_description"></textarea><br/>
-                                    <label>If you want to add some item click </label>
-<!--                                    <button data-panel-id="" onclick="selectid2()">Edit</button>-->
-                                    <input class="btn btn-success" type="button" name = 'add' value='Add'onclick="selectid2()">
-
-                                </div>
-                                <div id="showattr" class="form-group" style="display: none">
-                                <div id='TextBoxesGroup' class="form-group">
-                                    <div id="TextBoxDiv1" class="form-group">
-                                        <label>Size/Extra #1 : </label><input class="form-control" type='textbox' id='textbox1' name="textbox[]" >
-                                        <label>Price #1 : </label><input class="form-control" type='textbox' id='textimage1' name="textimage[]">
-                                        <label>Serial #1 : </label><input class="form-control" type='textbox' id='textserial1' name="textserial[]">
+                                <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <input class="form-control" type="text" name="type" value="">
                                     </div>
                                 </div>
-                                    <input type='button' value='Add Button' id='addButton'>
-                                    <input type='button' value='Remove Button' id='removeButton'>
+                                <div class="col-md-12 col-sm-12" >
+                                    <div class="form-group">
+                                        <label>Details</label>
+                                        <input class="form-control"type="text" name="details" value="">
+
+
+
+                                    </div>
                                 </div>
-                                <div id = "Item_price" class="form-group">
-                                    <label>Item Price</label>
-                                    <input class="form-control"type="text" name="Item_price" >
+
+                                <div class="col-md-6 col-sm-6" >
+
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input class="form-control" type="file" name="menu_type_image" value="menu_type_image" >
+                                    </div>
                                 </div>
-                                <input class="btn btn-success" type="submit">
+                                <div class="col-md-12 col-sm-12" >
+                                    <input class="btn btn-success" type="submit">
+                                </div>
+
                             </form>
 
-                            <div id="myModal5" class="modal">
 
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Edit Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>/Admin_menu/insert_menu_type" >
-                                        <div class="form-group" id="dropdown-style">
-                                            <label>Restuarant</label>
-                                                <select class="form-control"  name="name" id="name" onchange="selectid7()" >
-
-                                                <option value="" selected disabled>Res Name</option>
-
-                                                    <?php
-
-                                                    foreach ($show_res_content as $s)
-                                                    {
-                                                        echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
-                                                    }
-
-                                                    ?>
-                                            </select>
-
-                                        </div>
-                                        <input type="hidden" id="res_id2" name="res_id">
-
-                                        <div class="form-group">
-                                            <label>Item type</label>
-                                            <input class="form-control" type="text" id="itype" name="itype">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
-                                    <div id="txtHint"></div>
-
-                                </div>
-
-
-                            </div>
 
                         </div>
 
@@ -200,18 +135,18 @@
                                     1. You can select any restaurant name from the "Restaurant" drop-down menu.<br/>
                                     2. You can choose any item type from the item type drop-down menu.<br/>
                                     3. If there is no item type then select the '+' button.<br/>
-                                        3.1. A pop up window will appear.<br/>
-                                        3.2. Select the restaurant name again from the drop-down menu.<br/>
-                                        3.4. Then type the menu you want to add.<br/>
-                                        3.5. Then press the submit button on order to add the item type.<br/>
+                                    3.1. A pop up window will appear.<br/>
+                                    3.2. Select the restaurant name again from the drop-down menu.<br/>
+                                    3.4. Then type the menu you want to add.<br/>
+                                    3.5. Then press the submit button on order to add the item type.<br/>
                                     4. Add the item name in the item name field.<br/>
                                     5. Add some description of the item in the description field.<br/>
                                     6. If you want to add some extra attribute to the item press "Add" button.<br/>
-                                        6.1. Add the size of the item.<br/>
-                                        6.2. Add the price of the item for the size.<br/>
-                                        6.3. Add the serial number.<br/>
-                                        6.4. If you want another attribute to add press "Add Button" in below.<br/>
-                                        6.5. If you want to remove attribute press the "Remove Button".<br/>
+                                    6.1. Add the size of the item.<br/>
+                                    6.2. Add the price of the item for the size.<br/>
+                                    6.3. Add the serial number.<br/>
+                                    6.4. If you want another attribute to add press "Add Button" in below.<br/>
+                                    6.5. If you want to remove attribute press the "Remove Button".<br/>
                                     7. If you complete the form, then press the "submit" button to add the item in your menu.<br/>
                                 </p>
                             </div>
@@ -278,13 +213,13 @@
 
     function selectid(x) {
         //modal3.style.display = "block";
-         btn = document.getElementById('dst').value;
+        btn = document.getElementById('dst').value;
         //alert(btn);
         //btn = $(x).data('panel-id');
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url()?>/Admin_menu/insert_menu_type'+btn,
+            url:'<?php echo base_url("Admin_menu/getres_id/")?>'+btn,
             data:{'rname':btn},
             cache: false,
             success:function(data)
@@ -333,30 +268,6 @@
             }
 
         });
-
-    }
-
-    function selectid10(x) {
-
-        btn = document.getElementById('type').value;
-       // alert(btn);
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_menu/get_menu_type/")?>'+btn,
-            data:{'id':btn},
-            cache: false,
-            success:function(data)
-            {
-                $('#type_id').val(data)
-                //$('#itemtype').html(data)
-
-                //alert(data);
-                //$('#txtHint').html(data);
-            }
-
-        });
-
-
 
     }
 
