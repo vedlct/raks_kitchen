@@ -72,9 +72,7 @@
                 <li>
                     <a href="<?php echo base_url()?>Admin_Res_Details">Add Restaurant Details</a>
                 </li>
-                <li>
-                    <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
-                </li>
+
             </ul>
 
         </li>
@@ -93,6 +91,9 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url()?>Admin_menu_attribute">Admin Menu Attribute</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url()?>Admin_menu/insert_menu_type">Add Menu Type</a>
                 </li>
             </ul>
             <!--<a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>-->

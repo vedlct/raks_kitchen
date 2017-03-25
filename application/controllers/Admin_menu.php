@@ -6,13 +6,23 @@ class Admin_menu extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->load->model('Restaurantm');
+            /*$this->load->model('Restaurantm');
             $this->load->model('Menum');
             $data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
             $data['mattribute'] = $this->Menum->show_menu_attribute();
             $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
 
+            $this->load->view('admin_menu', $this->data);*/
+            $this->load->model('Restaurantm');
+            $this->load->model('Menum');
+
+            $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
+            $this->data['menutype'] = $this->Menum->show_menu_type();
+
+
             $this->load->view('admin_menu', $this->data);
+
+
         }
         else{
             $this->load->model('viewall');
@@ -124,11 +134,82 @@ class Admin_menu extends CI_Controller
     {
 
         if ($this->session->userdata('type') == "Admin") {
-            $this->load->model('Menum');
+            /*$this->load->model('Menum');
             $this->Menum->insert_menu_type();
             //$this->load->view('admin_faq');
 
-            redirect(Admin_menu);
+            redirect(Admin_menu);*/
+            $this->load->view('admin_add_menu_type');
+
+
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+
+    }
+
+    function get_menu_type()
+    {
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $id=$this->input->post('id');
+            $this->load->model('Menum');
+            $this->data['menu_type']=$this->Menum->get_menu_type($id);
+            foreach ($this->data['menu_type'] as $m){
+
+                $m_id=$m->id;
+                echo $m_id;
+            }
+
+
+
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+
+    }
+
+
+    function insert_menu_type1()
+    {
+
+        if ($this->session->userdata('type') == "Admin") {
+            /*$this->load->model('Menum');
+            $this->Menum->insert_menu_type();
+            //$this->load->view('admin_faq');
+
+            redirect(Admin_menu);*/
+            //$this->load->view('admin_add_menu_type');
+
+            $this->load->model('Menum');
+            $this->Menum->insert_menu_type();
+            redirect(base_url("Admin_menu/insert_menu_type/"));
+
+
+
         }
         else{
             $this->load->model('viewall');
