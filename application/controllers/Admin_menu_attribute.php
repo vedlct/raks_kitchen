@@ -8,7 +8,7 @@ class Admin_menu_attribute extends CI_Controller
         if ($this->session->userdata('type') == "Admin") {
             if (!$this->input->post('btn_search_menu_attr')) {
                 $this->load->model('Menum');
-                $this->data['mattribute'] = $this->Menum->show_menu_attribute();
+                //$this->data['mattribute'] = $this->Menum->show_menu_attribute();
                 $this->data['te'] = '';
                 $this->data['resname']= $this->Menum->getres();
                 $this->data['show_item_type']=$this->Menum->show_item_type();

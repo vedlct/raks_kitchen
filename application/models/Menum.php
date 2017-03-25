@@ -173,8 +173,8 @@ class Menum extends CI_Model
 
     }
 
-    public function show_menu($res_id){
-        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id'");
+    public function show_menu($type_id){
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$type_id'");
         return $query->result();
     }
     public function get_id($tname)
@@ -208,13 +208,13 @@ class Menum extends CI_Model
         $this->db->insert('menu_type',$data);
     }
 
-    public function show_type($res_id){
-        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id' GROUP by item_type");
+    public function show_type($type_id){
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$type_id' GROUP by item_type");
         return $query->result();
     }
-    public function show_menu_attr($res_id){
+    public function show_menu_attr($type_id){
 
-        $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `res_id`= '$res_id' ");
+        $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `type_id`= '$type_id' ");
         return $query->result();
     }
     public function get_pro_cart($id){

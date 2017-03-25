@@ -88,9 +88,9 @@
                             <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
 
                                 <div class="form-group" id="dropdown-style">
-                                    <label>Restuarant</label>
+                                    <!--<label>Restuarant</label>-->
                                     <?php foreach ($this->data['show_res_content'] as $s){?>
-                                    <input class="form-control"type="text" id="name" name="name" value="<?php echo $s->name ?>" readonly>
+                                    <input class="form-control"type="hidden" id="name" name="name" value="<?php echo $s->name ?>" readonly>
 
                                     <?php }?>
                                 </div>
