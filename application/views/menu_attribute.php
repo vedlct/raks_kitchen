@@ -94,8 +94,8 @@
                     <div class="theiaStickySidebar">
                         <div class="box_style_1" id="faq_box">
                             <ul id="cat_nav">
-                                <?php foreach ($resname as $r ) { ?>
-                                    <li><a href="#<?php echo $r->res_id ?>" class="active"><?php echo $r->name ?></a>
+                                <?php foreach ($show_item_type as $r ) { ?>
+                                    <li><a href="#<?php echo $r->id ?>" class="active"><?php echo $r->type ?></a>
                                     </li>
                                     <?php
                                 }
@@ -124,13 +124,13 @@
 
 
                     <?php
-                    foreach ($resname as $r) {
-                        $res_id = $r->res_id;
-                        $query = $this->db->query("SELECT * FROM `menu_attribute` WHERE `res_id`= '$res_id'") ?>
+                    foreach ($show_item_type as $e) {
+                        $type_id = $e->id;
+                        $query = $this->db->query("SELECT * FROM `menu_attribute` WHERE `type_id`= '$type_id'") ?>
 
-                        <h3 class="nomargin_top"><?php echo $r->name ?></h3>
+                        <h3 class="nomargin_top"><?php echo $e->type ?></h3>
 
-                        <div class="panel-group" id="<?php echo $res_id ?>">
+                        <div class="panel-group" id="<?php echo $type_id ?>">
 
                             <div>
                                 <table class=" table table-responsive" border="1">
@@ -143,16 +143,16 @@
 
                                         <th colspan="2">Action</th>
                                     </tr>
-                                    <?php foreach ($query->result() as $e) { ?>
+                                    <?php foreach ($query->result() as $q) { ?>
                                         <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
                                     -->
                                         <tr>
-                                            <td><?php echo $e->item_name ?></td>
-                                            <td><?php echo $e->item_attribute ?></td>
-                                            <td><?php echo $e->price ?></td>
-                                            <td><?php echo $e->serial ?></td>
+                                            <td><?php echo $q->item_name ?></td>
+                                            <td><?php echo $q->item_attribute ?></td>
+                                            <td><?php echo $q->price ?></td>
+                                            <td><?php echo $q->serial ?></td>
                                             <td>
-                                                <button data-panel-id="<?= $e->id ?>" onclick="selectid4(this)">Edit
+                                                <button data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit
                                                 </button>
                                             </td>
 
@@ -206,10 +206,10 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
+<script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
+<script src="<?php echo base_url()?>js/functions.js"></script>
+<script src="<?php echo base_url()?>assets/validate.js"></script>
 
 <script>
 

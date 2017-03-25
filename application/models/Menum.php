@@ -4,9 +4,14 @@
 class Menum extends CI_Model
 {
 
-    public function show_menu_attribute()
+    public function show_menu_type()
     {
-        $query = $this->db->query("SELECT * FROM `menu_attribute`");
+        $query = $this->db->query("SELECT * FROM `menu_type`");
+        return $query->result();
+    }
+    public function get_menu_type($id)
+    {
+        $query = $this->db->query("SELECT * FROM `menu_type` WHERE `type`= '$id'");
         return $query->result();
     }
     public function showadd($id){
@@ -37,7 +42,7 @@ class Menum extends CI_Model
     public function insert_menu_attr(){
         //extract($_POST);
 
-        $res_id = $this->input->post('res_id');
+        $type_id = $this->input->post('type_id');
         $iname = $this->input->post('Item_name');
         $res_name = $this->input->post('name');
         $itype = $this->input->post('type');
@@ -51,7 +56,7 @@ class Menum extends CI_Model
 
         if(array_filter($textbox)==null && array_filter($textimage) ==null) {
             $menudata = array(
-                'res_id' => $res_id,
+                'type_id' => $type_id,
                 'res_name' => $res_name,
                 'item_type' => $itype,
                 'item_name' => $iname,
@@ -63,7 +68,7 @@ class Menum extends CI_Model
         else{
             for($i = 0; $i<count($textbox);$i++) {
                 $data = array(
-                    'res_id' => $res_id,
+                    'type_id' => $type_id,
                     'item_name' => $iname,
                     'item_attribute	' => $textbox[$i],
                     'price' => $textimage[$i],
@@ -80,7 +85,7 @@ class Menum extends CI_Model
                 $this->db->insert('menu_attribute', $data);
             }
             $menudata = array(
-                'res_id' => $res_id,
+                'type_id' => $type_id,
                 'res_name' => $res_name,
                 'item_type' => $itype,
                 'item_name' => $iname,
@@ -168,8 +173,8 @@ class Menum extends CI_Model
 
     }
 
-    public function show_menu($res_id){
-        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id'");
+    public function show_menu($type_id){
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$type_id'");
         return $query->result();
     }
     public function get_id($tname)
@@ -187,26 +192,29 @@ class Menum extends CI_Model
     }
     public function insert_menu_type(){
 
-        $resid= $this->input->post('res_id');
-        $name = $this->input->post('name');
-        $type  = $this->input->post('itype');
+        $type= $this->input->post('type');
+        $details = $this->input->post('details');
+
+        $fileName = $_FILES["menu_type_image"]["name"];
+        move_uploaded_file($_FILES["menu_type_image"]["tmp_name"], "img/" . $fileName);
 
         $data = array(
-            'res_id' => $resid,
-            'type' => $type
+            'type' => $type,
+            'details' => $details,
+            'image' => $fileName,
 
         );
 
         $this->db->insert('menu_type',$data);
     }
 
-    public function show_type($res_id){
-        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id' GROUP by item_type");
+    public function show_type($type_id){
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$type_id' GROUP by item_type");
         return $query->result();
     }
-    public function show_menu_attr($res_id){
+    public function show_menu_attr($type_id){
 
-        $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `res_id`= '$res_id' ");
+        $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `type_id`= '$type_id' ");
         return $query->result();
     }
     public function get_pro_cart($id){
@@ -275,4 +283,5 @@ class Menum extends CI_Model
         return $query->result();
 
     }
+
 }
