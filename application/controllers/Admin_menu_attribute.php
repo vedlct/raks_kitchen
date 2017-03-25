@@ -17,7 +17,7 @@ class Admin_menu_attribute extends CI_Controller
             } else {
                 $text = $this->input->post('search_menu_att');
                 $this->load->model('Menum');
-                $this->data['mattribute'] = $this->Menum->show_menu_attribute();
+               // $this->data['mattribute'] = $this->Menum->show_menu_attribute();
                 $this->data['te'] = $this->Menum->showsearch_menu_attribute($text);
                 $this->load->view('menu_attribute', $this->data);
 
