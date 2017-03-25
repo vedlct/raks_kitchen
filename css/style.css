@@ -882,10 +882,10 @@ a#filters_col_bt .icon_set_1_icon-65 {
     -moz-border-radius: 5px;
     border-radius: 5px;
     padding: 20px;
+    margin-bottom: 30px;
     position: relative;
     border: 1px solid #ededed;
     min-height: 152px;
-    margin-bottom: 30px;
     line-height: 1.3;
     display: block
 }
@@ -896,6 +896,19 @@ a#filters_col_bt .icon_set_1_icon-65 {
 
 a.strip_list:hover h3 {
     color: #ec008c
+}
+
+.dish_type .strip_list {
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    border: 1px solid #ededed;
+    height: 300px;
+    line-height: 1.3;
+    display: block
 }
 
 .desc {

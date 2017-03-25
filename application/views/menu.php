@@ -20,11 +20,11 @@
                     	<a href="<?php echo base_url()?>Home">Home</a>
                     </li>
                     <li>
-                    	<a href="<?php echo base_url()?>Restaurants">Restaurants</a>
+                    	<a href="<?php echo base_url()?>Restaurants">RAK's Dishes</a>
                     </li>
-                    <li><a href="<?php echo base_url()?>About">About us</a></li>
-                    <li><a href="<?php echo base_url()?>Faq">Faq</a></li>
-                    <li><a href="<?php echo base_url()?>Contact">Contacts</a></li>
+                    <li><a href="<?php echo base_url()?>About">About Us</a></li>
+                    <li><a href="<?php echo base_url()?>Faq">FAQ</a></li>
+                    <li><a href="<?php echo base_url()?>Contact">Contact Us</a></li>
                     <!--<?php  $username=$this->session->userdata('username');
                     if ($username == "") {
                         ?>

@@ -61,7 +61,7 @@
                             <li><a href="#0"><i class="icon-vimeo"></i></a></li>
                             <li><a href="#0"><i class="icon-youtube-play"></i></a></li>
                         </ul>
-                        <p>© <b>R A K</b> - 2017</p>
+                        <p>© <b>RAK's KITCHEN</b> - 2017</p>
                     </div>
                 </div>
             </div><!-- End row -->

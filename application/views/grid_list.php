@@ -32,8 +32,8 @@
 <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
     <div id="subheader">
         <div id="sub_content">
-            <h1>24 results in your zone</h1>
-            <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB</div>
+            <h1>Choose Your Desired Food Type</h1>
+            <div><i class="icon_zoom-in_alt"></i> &nbsp;We have over 125 food items of different categories for you</div>
         </div><!-- End sub_content -->
     </div><!-- End subheader -->
 </section><!-- End section -->
@@ -77,28 +77,7 @@
 <div class="container margin_60_35">
     <div class="row">
 
-        <div class="col-md-3">
-            <div id="filters_col">
-                <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters <i class="icon-plus-1 pull-right"></i></a>
-                <div class="collapse" id="collapseFilters">
-                    <div class="filter_type">
-                        <h6>Type:</h6>
-                        <ul>
-                            <?php foreach ($show_res_type as $e) { ?>
-
-                            <li>
-                                <a href="<?php echo base_url() ?>Restaurants/show_restuarant_by_type/<?php echo $e->res_id ?>"><?php echo $e->type ?></a>
-                            <li>
-                                <?php
-                                }
-                                ?>
-                        </ul>
-                    </div>
-                </div><!--End collapse -->
-            </div><!--End filters col-->
-        </div><!--End col-md -->
-
-        <div class="col-md-9">
+        <div class="col-md-12">
 
             <div id="tools">
                 <div class="row">
@@ -112,13 +91,13 @@
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 hidden-xs">
-                        <a href="list_page.php" class="bt_filters"><i class="icon-list"></i></a>
+                        <a href="#" class="bt_filters"><i class="icon-list"></i></a>
                     </div>
                 </div>
             </div><!--End tools -->
             <div class="row">
                 <?php foreach ($show_item_type as $s) { ?>
-                    <div class="col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.1s" style="height: 360px">
+                    <div class="col-md-4 col-sm-4 wow zoomIn dish_type" data-wow-delay="0.1s" style="height: 360px">
                         <a class="strip_list grid" href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $s->id?>#<?php echo $s->id?>">
                             <!--                        <div class="ribbon_1">Popular</div>-->
                             <div class="desc">

@@ -65,59 +65,7 @@
     <!-- End SubHeader ============================================ -->
     
    <!-- Content ================================================== -->
-         <div class="container margin_60">
-             <?php
-             foreach($head_how_itworks as $hiw ){?>
-        
-         <div class="main_title">
 
-            <h2 class="nomargin_top" style="padding-top:0"><?php echo $hiw['big']; ?></h2>
-            <p>
-                <?php echo $hiw['small']; ?>
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="box_home" id="one">
-                    <span>1</span>
-                    <h3><?php echo $hiw['one_big']; ?></h3>
-                    <p>
-                        <?php echo $hiw['one_small']; ?>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="box_home" id="two">
-                    <span>2</span>
-                    <h3><?php echo $hiw['two_big']; ?></h3>
-                    <p>
-                        <?php echo $hiw['two_small']; ?>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="box_home" id="three">
-                    <span>3</span>
-                    <h3><?php echo $hiw['three_big']; ?></h3>
-                    <p>
-                        <?php echo $hiw['three_small']; ?>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="box_home" id="four">
-                    <span>4</span>
-                    <h3><?php echo $hiw['four_big']; ?></h3>
-                    <p>
-                        <?php echo $hiw['three_small']; ?>
-                    </p>
-                </div>
-            </div>
-        </div><!-- End row -->
-        
-
-             <?php } ?>
-        </div><!-- End container -->
             
     <div class="white_bg">
     <div class="container margin_60">
@@ -194,7 +142,7 @@
 
       		<h3><?php echo $h_s_4['big']; ?></h3>
             <p><?php echo $h_s_4['small']; ?></p>
-            <a href="<?php echo base_url()?>Restaurants">View all Restaurants</a>
+            <a href="<?php echo base_url()?>Restaurants">View all Food Items</a>
             <?php }?>
         </div><!-- End container -->
       </div><!-- End hight_light -->
@@ -216,37 +164,7 @@
     </div><!-- End subheader -->
     </section><!-- End section -->
     <!-- End Content =============================================== -->
-    
-    <div class="container margin_60">
-        <?php
-        foreach($head_section_6 as $h_s_6 ){?>
 
-      <div class="main_title margin_mobile">
-            <h2 class="nomargin_top"><?php echo $h_s_6['big']; ?></h2>
-            <p>
-                <?php echo $h_s_6['small']; ?>
-            </p>
-        </div>
-      	<div class="row">
-            <div class="col-md-4 col-md-offset-2">
-            	<a class="box_work" href="<?php echo base_url()?>Submit_Restaurant_Request">
-                <img src="img/<?php echo $h_s_6['image']; ?>" width="848" height="480" alt="" class="img-responsive">
-                <h3><?php echo $h_s_6['submit_big']; ?><span><?php echo $h_s_6['submit_small']; ?></span></h3>
-                <p><?php echo $h_s_6['submit_details']; ?>
-                    <div class="btn_1">Read more</div>
-                </a>
-            </div>
-            <div class="col-md-4">
-            	<a class="box_work" href="<?php echo base_url()?>Submit_Resturant_Request">
-                <img src="img/delivery.jpg" width="848" height="480" alt="" class="img-responsive">
-				<h3>We are looking for a Driver<span>Start to earn money</span></h3>
-                <p>Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.</p>
-                <div class="btn_1">Read more</div>
-                </a>
-            </div>
-      </div><!-- End row -->
-        <?php }?>
-      </div><!-- End container -->
     
     <!-- Footer ================================================== -->
     <?php include ('footer.php') ?>
