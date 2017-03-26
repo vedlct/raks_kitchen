@@ -123,11 +123,12 @@
                     $query1=$this->db->query("SELECT * FROM `menu` WHERE `item_type` ='$item_type'");
                      foreach ($query1->result() as $q) {
                          $item_name=$q->item_name;
+                         $string = preg_replace('/[^a-zA-Z0-9-]/', '', $item_name);
                          ?>
                          <tr>
                              <td>
-<!--                                 <figure class="thumb_menu_list"><img src="--><?php //echo base_url() ?><!--img/menu-thumb-1.jpg"-->
-<!--                                                                      alt="thumb"></figure>-->
+                                 <figure class="thumb_menu_list"><img src="<?php echo base_url() ?>img/menu-thumb-1.jpg"
+                                                                      alt="thumb"></figure>
                                  <h5><?php echo $q->item_name?></h5>
                                  <p>
                                      <?php echo $q->item_description?>
@@ -136,8 +137,16 @@
                              <td>
                                  <strong><?php
                                      if ($q->item_price == null){
-                                         $query3=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `item_name` = '$item_name' LIMIT 1");
-                                     foreach ($query3->result() as $s) { echo $s->price;}
+
+                                         //$item_name = addslashes(addslashes($item_name));
+
+
+
+                                         $query3=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `item_name` = '$string' LIMIT 1");
+                                        // $this->db->where('item_name', $item_name);
+                                         //$query3 = $this->db->get('menu_attribute');
+
+                                         foreach ($query3->result() as $s) { echo $s->price;}
                                      }
                                      echo $q->item_price?></strong>
                              </td>
@@ -150,7 +159,7 @@
                                      $item_name=$q->item_name;
 
                                      $id=$q->id;
-                                     $query2=$this->db->query("SELECT * FROM `menu_attribute` WHERE  item_name = '$item_name'");
+                                     $query2=$this->db->query("SELECT * FROM `menu_attribute` WHERE  item_name = '$string'");
 
                                      if ($query2->num_rows() < 1){ ?>
                                          <a href="#0"> <i class="icon_plus_alt2"  data-panel-id="<?= $id ?>" onclick="addcart(this)"></i></a>

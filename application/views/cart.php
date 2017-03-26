@@ -232,32 +232,45 @@
                     <div id="cart_box" >
                         <h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
 
-                        <table class="table table_summary">
+                        <table id="cart_table" class="table table_summary">
 
                             <tbody>
-                            <?php foreach ($this->cart->contents() as $c) {    ?>
+                            <?php
+                            $total = 0;
+                            foreach ($this->cart->contents() as $c) {
+
+                                ?>
+
 
                                 <tr>
 
-                                    <!--  <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='--><?php //echo $c['id']?><!--' />-->
-                                    <!--  <input type='text' name='--><?php //echo $c['id']?><!--' value="--><?php //echo $c['qty']?><!--" class='qty' style="width: 20px" />-->
-                                    <!--  <input type='button' onclick="plus()" value='+' class='qtyplus' field='--><?php //echo $c['id']?><!--' /> --><?php //echo $c['name'];?>
-                                    <div>
-                                        <td>
-                                            <input type="button"  class="btn btn-success" style="width: 20px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-">
-                                            <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="width: 45px; height:auto; float: left" value="<?php echo $c['qty']?>">
-                                            <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['coupon']?>"/>
-                                            <input type="hidden" name="attr_id" class="form-control"  value="<?php echo $c['id']?>"/>
-                                            <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
-                                            <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
-                                            <input type="button" class="btn btn-success" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="width: 20px; float: left" value="+"> <?php echo $c['name']?>
-                                        </td>
-                                    </div>
+                                    <!--                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='--><?php //echo $c['id']?><!--' />-->
+                                    <!--                                    <input type='text' name='--><?php //echo $c['id']?><!--' value="--><?php //echo $c['qty']?><!--" class='qty' style="width: 20px" />-->
+                                    <!--                                    <input type='button' onclick="plus()" value='+' class='qtyplus' field='--><?php //echo $c['id']?><!--' /> --><?php //echo $c['name'];?>
+
                                     <td>
-                                        <strong class="pull-right"><?php echo $c['price']*$c['qty'];?></strong>
+                                        <input type="button"  class="btn btn-default" style="background:#ec008c; text-align: center; width:19px; color: #fff; font-weight: bold; padding:6px 0px;  border-radius:0px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-"/>
+                                        <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="text-align: center; border-right:none; border-left:none; border-radius:0px; width: 20px; padding:6px 2px; height:auto; float: left" value="<?php echo $c['qty']?>"/>
+                                        <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['id']?>"/>
+                                        <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
+                                        <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
+                                        <input type="button" class="btn btn-default" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="background:#ec008c; font-weight: bold; color: #fff; text-align: center; border-radius:0px; width: 19px; padding: 6px 0px; float: left" value="+">
+                                    </td>
+
+                                    <td>
+                                        <?php echo $c['name']?>
+                                    </td>
+
+                                    <td>
+                                        <?php echo $c['options']['Size']?>
+                                    </td>
+                                    <td>
+                                        <strong class="pull-right"><span id="update_price"><?php echo $c['subtotal'];?></span></strong>
                                     </td>
                                 </tr>
                                 <?php
+                                $total = $total+$c['subtotal'];
+
                             }
                             ?>
                             </tbody>
@@ -274,21 +287,22 @@
                         </div><!-- Edn options 2 -->
 
                         <hr>
-                        <table class="table table_summary">
+                        <table class="table table_summary" id="total_table">
                             <tbody>
                             <tr>
                                 <td>
-                                    Subtotal <span class="pull-right">$56</span>
+
+                                    Subtotal <span class="pull-right"><?php echo $total ?></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Delivery fee <span class="pull-right">$10</span>
+                                    Delivery fee <span class="pull-right"><?php echo $del_free=2?></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="total">
-                                    TOTAL <span class="pull-right">$66</span>
+                                    TOTAL <span class="pull-right"><?php echo $total+$del_free?></span>
                                 </td>
                             </tr>
                             </tbody>
@@ -381,6 +395,72 @@
 </script>
 
     <script>
+
+        function addcart(x) {
+
+            btn = $(x).data('panel-id');
+
+            // alert(btn);
+
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Item_Menu/insert_cart_withoutattr/")?>'+btn,
+                data:{'id':btn},
+                cache: false,
+                success:function(data)
+                {
+                    //alert(data);
+                }
+
+            });
+
+            $('#cart_table').load(document.URL +  ' #cart_table');
+            $('#total_table').load(document.URL +  ' #total_table');
+
+        }
+    </script>
+
+
+    <script>
+
+        function myfunc() {
+            var chkArray = [];
+            var i;
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".chk:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+            for (i = 0; i < chkArray.length; i++) {
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url("Item_Menu/inser_cart/")?>' + chkArray[i],
+                    data: {'id': chkArray[i]},
+                    cache: false,
+                    success: function (data) {
+                        // $('#txt').html(data);
+                        //alert(data);
+
+                    }
+
+                });
+                //alert(chkArray[i]);
+                // $("#cart_box").load(location.href + " #cart_box");
+                //$("#cart_boxt").load('detail_page.php');
+                $('#cart_table').load(document.URL +  ' #cart_table');
+                $('#reload').load(document.URL +  ' #reload');
+                $('#total_table').load(document.URL +  ' #total_table');
+
+
+            }
+            $("input:checkbox").attr('checked', false);
+
+
+        }
+
+
+    </script>
+
+    <script>
         function plus(x) {
 
             var btn = $(x).data('panel-id');
@@ -395,12 +475,14 @@
                 cache: false,
                 success: function (data) {
                     // $('#txt').html(data);
-                    //  alert(data);
+
 
                 }
 
             });
 
+            $('#cart_table').load(document.URL +  ' #cart_table');
+            $('#total_table').load(document.URL +  ' #total_table');
         }
 
         function minus(x) {
@@ -423,6 +505,8 @@
                 }
 
             });
+            $('#cart_table').load(document.URL +  ' #cart_table');
+            $('#total_table').load(document.URL +  ' #total_table');
         }
 
     </script>
