@@ -173,7 +173,7 @@
                                                             ?>
                                                             <tr>
 
-                                                                <td colspan="4" align="right" style="color: red">total + Delivery fee $2 :</td>
+                                                                <td colspan="4" align="right" style="color: red">Total (Including $2 delivery fee): &nbsp;</td>
                                                                 <td style="color: red"><?php echo $total+2 ?></td>
                                                             </tr>
                                                         </table>

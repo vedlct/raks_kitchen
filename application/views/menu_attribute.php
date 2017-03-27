@@ -128,52 +128,53 @@
                         $type_id = $e->id;
                         $query = $this->db->query("SELECT * FROM `menu_attribute` WHERE `type_id`= '$type_id'") ?>
 
-                        <h3 class="nomargin_top"><?php echo $e->type ?></h3>
 
-                        <div class="panel-group" id="<?php echo $type_id ?>">
 
-                            <div>
-                                <table class=" table table-responsive" border="1">
-                                    <tr>
+                        <div class="panel panel-success" >
+                            <div  class="panel-heading"><h3><?php echo $e->type ?></h3></div>
 
-                                        <th>Item Name</th>
-                                        <th>Item attribute</th>
-                                        <th>Price</th>
-                                        <th>Serial</th>
-
-                                        <th colspan="2">Action</th>
-                                    </tr>
-                                    <?php foreach ($query->result() as $q) { ?>
-                                        <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
-                                    -->
+                            <div class="panel-body" id="<?php echo $type_id ?>">
+                                <div table-responsive>
+                                    <table class=" table table-bordered" >
+                                        <thead>
                                         <tr>
-                                            <td><?php echo $q->item_name ?></td>
-                                            <td><?php echo $q->item_attribute ?></td>
-                                            <td><?php echo $q->price ?></td>
-                                            <td><?php echo $q->serial ?></td>
-                                            <td>
-                                                <button data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit
-                                                </button>
-                                            </td>
 
+                                            <th>Item Name</th>
+                                            <th>Item attribute</th>
+                                            <th>Price</th>
+                                            <th>Serial</th>
+
+                                            <th colspan="2">Action</th>
                                         </tr>
-                                        <!--</form>-->
-                                    <?php } ?>
-                                </table>
+                                        </thead>
+
+                                        <?php foreach ($query->result() as $q) { ?>
+                                            <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
+                                    -->
+                                            <tbody>
+                                            <tr>
+                                                <td><?php echo $q->item_name ?></td>
+                                                <td><?php echo $q->item_attribute ?></td>
+                                                <td><?php echo $q->price ?></td>
+                                                <td><?php echo $q->serial ?></td>
+                                                <td>
+                                                    <button class="btn btn-warning" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>
+                                                </td>
+
+                                            </tr>
+                                            </tbody>
+
+                                            <!--</form>-->
+                                        <?php } ?>
+                                    </table>
+                                </div>
                             </div>
+
                         </div>
 
                         <?php
                     }
                     ?>
-
-
-
-
-
-
-
-
 
                             <div id="myModal3" class="modal">
                                 <br/><br/><br/>
@@ -188,9 +189,6 @@
 
 
                             </div>
-
-
-
 
                 </div>
             </div>
