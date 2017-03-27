@@ -557,7 +557,6 @@
         $('#summernote').summernote();
     });
 
-
 </script>
 <script>
     $(function() {

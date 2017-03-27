@@ -52,7 +52,7 @@ class Orderm extends CI_Model
     public function get_all_order(){
 
 
-        $query=$this->db->query("SELECT * FROM `order_cart` GROUP BY `res_id`, `date` ORDER by `username` ASC ");
+        $query=$this->db->query("SELECT * FROM `order_cart` GROUP BY  `date` ORDER by `username` ASC ");
         return $query->result();
 
     }

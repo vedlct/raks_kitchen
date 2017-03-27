@@ -148,22 +148,8 @@ class Restaurantm extends CI_Model
         $this->db->insert('restaurant',$data);
     }
 
-    public function edit_res($id){
-        $rname = $this->input->post('name');
-        $rtype = $this->input->post('type');
-        $raddress = $this->input->post('address');
-        $rcity = $this->input->post('city');
-        $rstate = $this->input->post('state');
-        $rpostal_code = $this->input->post('postal_code');
-        $rcountry = $this->input->post('country');
-        $rtime = $this->input->post('time');
-        $rusername = $this->input->post('username');
-        $rpassword = $this->input->post('password');
-        $rvat = $this->input->post('vat');
-        $rstatus = $this->input->post('status');
-        $rimage = $this->input->post('res_image');
-        $website = $this->input->post('website');
-        $email = $this->input->post('email');
+    public function edit_res($id,$rname,$rtype,$raddress,$rcity,$rstate,$rpostal_code,$rcountry,$rtime,$rusername,$rpassword,$rvat,$rstatus,$rimage,$website,$email){
+
 
         $data = array(
             'name' => $rname,
@@ -182,7 +168,7 @@ class Restaurantm extends CI_Model
             'status' => $rstatus,
             'Image' => $rimage,
         );
-        $this->db->where('res_id', $id);
+        $this->db->where('id', $id);
         $this->db->update('restaurant', $data);
 
     }
@@ -230,7 +216,7 @@ class Restaurantm extends CI_Model
         /*$query = $this->db->get_where('restaurant_details', array('res_id' => $id));
         return $query->result();*/
 
-        $query=$this->db->query("SELECT * FROM`restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id`");
+        $query=$this->db->query("SELECT * FROM`restaurant`,`restaurant_details` WHERE `restaurant`.`id`=`restaurant_details`.`id`");
         return $query->result();
 
     }
