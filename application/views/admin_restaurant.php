@@ -129,7 +129,7 @@
                                                 <td><?php echo $s->password ?></td>
                                                 <td><?php echo $s->vat ?></td>
                                                 <td><?php echo $s->status ?></td>
-                                                <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->Image ?>" height="100" width="100"/></td>
+                                                <td><img src = "<?php echo base_url()?>/img/<?php echo $s->Image ?>" height="100" width="100"/></td>
 
                                                 <td><button class="btn btn-warning" data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
                                             </tr>

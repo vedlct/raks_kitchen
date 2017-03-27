@@ -34,7 +34,7 @@ class Item_Menu extends CI_Controller
             $cid=$cr->id;
             $citem_name=$cr->item_name;
             $price= $cr->price;
-            $res_id=$cr->res_id;
+            $type_id=$cr->type_id;
             $menu_attr=$cr->item_attribute;
 
             $data = array(
@@ -42,7 +42,7 @@ class Item_Menu extends CI_Controller
                 'qty' => 1,
                 'price' => $price,
                 'name' => $citem_name,
-                'coupon' => $res_id,
+                'coupon' => $type_id,
                 'options' => array('Size' => $menu_attr)
             );
 
@@ -68,14 +68,14 @@ class Item_Menu extends CI_Controller
             $cid = $cr->id;
             $citem_name = $cr->item_name;
             $price = $cr->item_price;
-            $res_id = $cr->res_id;
+            $type_id=$cr->type_id;
 
             $data = array(
                 'id' => $cid,
                 'qty' => 1,
                 'price' => $price,
                 'name' => $citem_name,
-                'coupon' => $res_id,
+                'coupon' => $type_id,
                 'options' => array('Size' => "")
             );
 
@@ -176,11 +176,12 @@ class Item_Menu extends CI_Controller
             $item_name = $c['name'];
             $price=$c['price'];
             $qty = $c['qty'];
+            $type_id = $c['coupon'];
             $size=  $c['options']['Size'];
 
             //print_r($item_attr);
             $this->load->model('Orderm');
-            $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$id,$price,$qty,$size,$price,$quantity,$item_name);
+            $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$qty,$size,$price,$type_id,$item_name);
         }
         redirect(Home);
         //print_r($res_id);
