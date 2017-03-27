@@ -233,6 +233,12 @@ class Menum extends CI_Model
         return $query->result();
 
     }
+    public function showedit_for_menu($id){
+
+        $query=$this->db->query("SELECT *  FROM  `menu` WHERE `id`= '$id'");
+        return $query->result();
+
+    }
 
     public function edit_res($id){
         $iname = $this->input->post('Item_name');
@@ -249,6 +255,24 @@ class Menum extends CI_Model
         );
         $this->db->where('id', $id);
         $this->db->update('menu_attribute', $data);
+
+    }
+
+    public function edit_res_menu($id){
+        $iname = $this->input->post('Item_name');
+        $idescription = $this->input->post('textbox');
+        $price  = $this->input->post('Item_price');
+        $itype = $this->input->post('Item_type');
+
+        $data = array(
+            'item_name' => $iname,
+            'item_description' => $idescription,
+            'item_price' => $price,
+            'item_type' => $itype,
+
+        );
+        $this->db->where('id', $id);
+        $this->db->update('menu', $data);
 
     }
 
@@ -280,6 +304,11 @@ class Menum extends CI_Model
 
     public function show_item_type(){
         $query=$this->db->query("SELECT * FROM `menu_type` GROUP by `type`");
+        return $query->result();
+
+    }
+    public function show_item_type_from_menu(){
+        $query=$this->db->query("SELECT * FROM `menu` GROUP by `item_type`");
         return $query->result();
 
     }

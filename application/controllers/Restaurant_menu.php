@@ -13,7 +13,7 @@ class Restaurant_menu extends CI_Controller
         $this->load->view('admin_menu',$this->data);*/
 
 
-        if ($this->session->userdata('type') == "Admin") {
+        /*if ($this->session->userdata('type') == "Admin") {
             if (!$this->input->post('btnsearch')) {
 
                 $this->data['te'] = '';
@@ -40,7 +40,19 @@ class Restaurant_menu extends CI_Controller
             $data['head_section_6']=$this->viewall->show_sectionsix_content();
             $this->load->view('index',$data);
 
+        }*/
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->load->model('Menum');
+            //$this->data['mattribute'] = $this->Menum->show_menu_attribute();
+            $this->data['te'] = '';
+            //$this->data['resname']= $this->Menum->getres();
+            $this->data['show_item_type_from_menu']=$this->Menum->show_item_type_from_menu();
+            $this->load->view('restaurant_menu', $this->data);
+
         }
+
+
     }
 
     public function editmenu($id)
@@ -133,6 +145,84 @@ class Restaurant_menu extends CI_Controller
             }
 
 
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+    }
+
+    public function showedit()
+    {
+
+
+        if ($this->session->userdata('type') == "Admin") {
+            $id = $this->input->post('id');
+            $this->load->model('Menum');
+            $this->data['edit'] = $this->Menum->showedit_for_menu($id);
+            foreach ($this->data['edit'] as $e) {
+                echo "<form role=\"form\" method=\"post\" action=\"http://localhost/raks_kitchen/Restaurant_menu/edit_res_menu/$e->id\" >
+                                         
+                                         <div class=\"form - group\">
+                                            <label>Item Type</label>
+                                            <input class=\"form - control\" type=\"text\" name=\"Item_type\" value=\" $e->item_type \">
+                                        </div>  
+                                        <div class=\"form-group\">
+                                            <label>Item Name</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"Item_name\" value=\" $e->item_name \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Item Description</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"textbox\" value=\" $e->item_description \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Price</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"Item_price\" value=\" $e->item_price \">
+                                        </div>
+                                                                       
+                                        <input class=\"btn btn-success\" type=\"submit\">
+                                    </form>
+                                    ";
+            }
+            //echo $id;
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+    }
+
+    public function edit_res_menu($id)
+    {
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->load->model('Menum');
+            $this->Menum->edit_res_menu($id);
+            redirect(Restaurant_menu);
+            /*
+            $this->load->model('Menum');
+            $this->Menum->menuedit($id);
+            redirect(Restaurant_menu);
+            */
         }
         else{
             $this->load->model('viewall');

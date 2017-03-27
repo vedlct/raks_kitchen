@@ -10,18 +10,17 @@ class Admin_Restaurant extends CI_Controller
             $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
             $this->load->view('admin_restaurant', $this->data);
 
-        }
-        else{
+        } else {
             $this->load->model('viewall');
-            $data['head']=$this->viewall->show_main_content();
+            $data['head'] = $this->viewall->show_main_content();
             // print_r($data);
-            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            $data['head_res_ad_more'] = $this->viewall->home_resturant_andmore_content();
             //print_r($data['head_res_ad_more']);
-            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
-            $data['head_section_4']=$this->viewall->show_sectionfour_content();
-            $data['head_section_5']=$this->viewall->show_sectionfive_content();
-            $data['head_section_6']=$this->viewall->show_sectionsix_content();
-            $this->load->view('index',$data);
+            $data['head_how_itworks'] = $this->viewall->show_howitwork_content();
+            $data['head_section_4'] = $this->viewall->show_sectionfour_content();
+            $data['head_section_5'] = $this->viewall->show_sectionfive_content();
+            $data['head_section_6'] = $this->viewall->show_sectionsix_content();
+            $this->load->view('index', $data);
 
         }
     }
@@ -32,18 +31,17 @@ class Admin_Restaurant extends CI_Controller
             $this->load->model('Restaurantm');
             $this->Restaurantm->insert_restuarant_content();
             redirect(Admin_Restaurant);
-        }
-        else{
+        } else {
             $this->load->model('viewall');
-            $data['head']=$this->viewall->show_main_content();
+            $data['head'] = $this->viewall->show_main_content();
             // print_r($data);
-            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            $data['head_res_ad_more'] = $this->viewall->home_resturant_andmore_content();
             //print_r($data['head_res_ad_more']);
-            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
-            $data['head_section_4']=$this->viewall->show_sectionfour_content();
-            $data['head_section_5']=$this->viewall->show_sectionfive_content();
-            $data['head_section_6']=$this->viewall->show_sectionsix_content();
-            $this->load->view('index',$data);
+            $data['head_how_itworks'] = $this->viewall->show_howitwork_content();
+            $data['head_section_4'] = $this->viewall->show_sectionfour_content();
+            $data['head_section_5'] = $this->viewall->show_sectionfive_content();
+            $data['head_section_6'] = $this->viewall->show_sectionsix_content();
+            $this->load->view('index', $data);
 
         }
     }
@@ -54,28 +52,28 @@ class Admin_Restaurant extends CI_Controller
             $this->load->model('Restaurantm');
             $this->Restaurantm->edit_res($id);
             redirect(Admin_Restaurant);
+
             /*
             $this->load->model('Menum');
             $this->Menum->menuedit($id);
             redirect(Restaurant_menu);
             */
-        }
-        else{
+        } else {
             $this->load->model('viewall');
-            $data['head']=$this->viewall->show_main_content();
+            $data['head'] = $this->viewall->show_main_content();
             // print_r($data);
-            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            $data['head_res_ad_more'] = $this->viewall->home_resturant_andmore_content();
             //print_r($data['head_res_ad_more']);
-            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
-            $data['head_section_4']=$this->viewall->show_sectionfour_content();
-            $data['head_section_5']=$this->viewall->show_sectionfive_content();
-            $data['head_section_6']=$this->viewall->show_sectionsix_content();
-            $this->load->view('index',$data);
+            $data['head_how_itworks'] = $this->viewall->show_howitwork_content();
+            $data['head_section_4'] = $this->viewall->show_sectionfour_content();
+            $data['head_section_5'] = $this->viewall->show_sectionfive_content();
+            $data['head_section_6'] = $this->viewall->show_sectionsix_content();
+            $this->load->view('index', $data);
 
         }
     }
 
-    public function showedit()
+    /*public function showedit()
     {
         if ($this->session->userdata('type') == "Admin") {
             $id = $this->input->post('id');
@@ -155,6 +153,40 @@ class Admin_Restaurant extends CI_Controller
             $this->load->view('index',$data);
 
         }
+    }*/
+
+    public function showedit()
+    {
+        if ($this->session->userdata('type') == "Admin") {
+            $id = $this->input->post('id');
+            $rname = $this->input->post('name');
+            $rtype = $this->input->post('type');
+            $raddress = $this->input->post('address');
+            $rcity = $this->input->post('city');
+            $rstate = $this->input->post('state');
+            $rpostal_code = $this->input->post('postal_code');
+            $rcountry = $this->input->post('country');
+            $rtime = $this->input->post('time');
+            $rusername = $this->input->post('username');
+            $rpassword = $this->input->post('password');
+            $rvat = $this->input->post('vat');
+            $rstatus = $this->input->post('status');
+            $rimage=  $_FILES["Photo"]["name"];
+            $website = $this->input->post('website');
+            $email = $this->input->post('email');
+            //print_r($rimage);
+
+            move_uploaded_file($_FILES["Photo"]["tmp_name"], "img" . $rimage);
+
+            $this->load->model('Restaurantm');
+            $this->Restaurantm->edit_res($id,$rname,$rtype,$raddress,$rcity,$rstate,$rpostal_code,$rcountry,$rtime,$rusername,$rpassword,$rvat,$rstatus,$rimage,$website,$email);
+
+            redirect(Admin_Restaurant);
+        }
     }
+
+
+
+
 
 }
