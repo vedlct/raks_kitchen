@@ -2,7 +2,7 @@
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
 <head>
-    
+
     <?php include ('head.php') ?>
     <title>RAK - Quality Delivery or Take Away Food</title>
 
@@ -13,7 +13,7 @@
     <!--[if lte IE 8]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
     <![endif]-->
-    
+
     <div id="preloader">
         <div class="sk-spinner sk-spinner-wave" id="status">
             <div class="sk-rect1"></div>
@@ -23,7 +23,7 @@
             <div class="sk-rect5"></div>
         </div>
     </div><!-- End Preload -->
-    
+
     <!-- Header ================================================== -->
     <?php include ('menu.php') ?>
 	<!-- End Header =============================================== -->
@@ -71,27 +71,23 @@
 <!-- Content ================================================== -->
 <div class="container margin_60_35">
 	<div class="row">
-    
+
     <div class="col-md-3" id="sidebar">
     <div class="theiaStickySidebar">
         <div class="box_style_1" id="faq_box">
-			<ul id="cat_nav">
-				<li><a href="#payment" class="active">Payments</a></li>
-				<li><a href="#works">How it works</a></li>
-				<li><a href="#delay">Delivery delay</a></li>
-				<li><a href="#takeaway">Takeaway</a></li>
-				<li><a href="#preorder">Preorder</a></li>
-                <li><a href="#register_2">Register</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#privacy">Privacy</a></li>
+
+            <ul id="cat_nav">
+                <?php foreach ($show_faq as $s){?>
+					<li><a href="#<?php echo $s->id ?>" class="active"><?php echo $s->header ?></a></li>
+                <?php } ?>
 			</ul>
 		</div><!-- End box_style_1 -->
         </div><!-- End theiaStickySidebar -->
      </div><!-- End col-md-3 -->
-        
+
         <div class="col-md-9">
         <h3 class="nomargin_top">Payments</h3>
-       	 
+
          <div class="panel-group" id="payment">
                   <div class="panel panel-default" style="box-shadow: none">
                     <div class="panel-heading">
@@ -130,9 +126,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                
+
                 <h3>How it works</h3>
-       	 
+
          <div class="panel-group" id="works">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -171,9 +167,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                
+
                  <h3>Delivery delay</h3>
-       	 
+
          		<div class="panel-group" id="delay">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -212,9 +208,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                                
+
                 <h3>Takeaway</h3>
-       	 
+
          		<div class="panel-group" id="takeaway">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -253,9 +249,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                
+
                 <h3>Preorder</h3>
-       	 
+
          		<div class="panel-group" id="preorder">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -294,9 +290,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                
+
                 <h3>Register</h3>
-       	 
+
          		<div class="panel-group" id="register_2">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -335,9 +331,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                
+
                 <h3>Pricing</h3>
-       	 
+
          		<div class="panel-group" id="pricing">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -376,9 +372,9 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-                
+
                 <h3>Privacy</h3>
-       	 
+
          		<div class="panel-group" id="privacy">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -417,7 +413,7 @@
                     </div>
                   </div>
                 </div><!-- End panel-group -->
-         
+
         </div><!-- End col-md-9 -->
     </div><!-- End row -->
 </div><!-- End container -->
@@ -429,7 +425,7 @@
 
 <div class="layer"></div><!-- Mobile menu overlay mask -->
 
-<!-- Login modal -->   
+<!-- Login modal -->
 <div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
@@ -445,9 +441,9 @@
 				</form>
 			</div>
 		</div>
-	</div><!-- End modal -->   
-    
-<!-- Register modal -->   
+	</div><!-- End modal -->
+
+<!-- Register modal -->
 <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
@@ -471,7 +467,7 @@
 			</div>
 		</div>
 	</div><!-- End Register modal -->
-    
+
      <!-- Search Menu -->
 	<div class="search-overlay-menu">
 		<span class="search-overlay-close"><i class="icon_close"></i></span>
@@ -482,7 +478,7 @@
 		</form>
 	</div>
 	<!-- End Search Menu -->
-    
+
 <!-- COMMON SCRIPTS -->
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/common_scripts_min.js"></script>
