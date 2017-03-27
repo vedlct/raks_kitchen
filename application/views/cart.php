@@ -69,9 +69,10 @@
     </div><!-- Position -->
 
 <!-- Content ================================================== -->
-<div class="container margin_60_35">
+<div class="container-fluid margin_60_35">
 		<div class="row">
-			<div class="col-md-3">
+            <div class="col-md-1"></div>
+			<div class="col-md-2">
             
 				<div class="box_style_2 hidden-xs info">
 					<h4 class="nomargin_top">Delivery time <i class="icon_clock_alt pull-right"></i></h4>
@@ -94,7 +95,7 @@
                 
 			</div><!-- End col-md-3 -->
             
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<div class="box_style_2" id="order_process">
 					<h2 class="inner">Your order details</h2>
 
@@ -103,7 +104,7 @@
                     <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
 					<div class="form-group">
 						<label>Name</label>
-						<input type="text" class="form-control"  name="name_order" placeholder="name" value="<?php echo $e->name?>">
+						<input type="text" class="form-control"  name="name_order" placeholder="Name" value="<?php echo $e->name?>">
 					</div>
 
 					<div class="form-group">

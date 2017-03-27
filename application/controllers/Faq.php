@@ -6,7 +6,9 @@ class Faq extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('faq');
+        $this->load->model('Faqm');
+        $this->data['show_faq'] = $this->Faqm->show_faq();
+        $this->load->view('faq' , $this->data);
 
     }
 }

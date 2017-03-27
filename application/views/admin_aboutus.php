@@ -465,11 +465,6 @@
 
 
 
-
-                </div>
-
-
-
                 <div class="col-md-4">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>About Feature Visual Instruction</h3></div>
