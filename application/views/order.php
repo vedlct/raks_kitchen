@@ -102,7 +102,7 @@
                                             <th>Contact</th>
                                             <th>Address</th>
                                             <th>Oder</th>
-                                            <th>Order Time</th>
+                                            <th >Order Time</th>
                                             <th>Date</th>
                                             <th colspan="2">Action</th>
                                         </tr>

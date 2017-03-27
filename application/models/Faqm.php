@@ -52,4 +52,10 @@ class Faqm extends CI_Model
 
     }
 
+    public function show_faq()
+    {
+        $query=$this->db->query("SELECT * FROM `faq` GROUP by `header`");
+        return $query->result();
+    }
+
 }
