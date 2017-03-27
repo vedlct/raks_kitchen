@@ -84,7 +84,7 @@
                 foreach ($most_popular as $mp) {
 
                     $res_id=$mp->res_id;
-                    $query=$this->db->query("SELECT * FROM `restaurant` WHERE res_id = '$res_id'");
+                    $query=$this->db->query("SELECT * FROM `menu` WHERE id = '$res_id'");
                     if ($query->result() == null) { } else {
                     foreach ($query->result() as $s){}
                     ?>
@@ -111,17 +111,12 @@
                             }
                             ?>
                         </div>
-                        <h3><?php echo $s->name ?></h3>
+                        <h3><?php echo $s->item_name ?></h3>
                         <div class="type">
-                            <?php echo $s->type ?>
+                            <?php echo $s->item_type ?>
                         </div>
-                        <div class="location">
-                            <?php echo $s->address ?> <span class="opening"><?php echo $s->time?></span>
-                        </div>
-                        <ul>
-                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
-                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>
-                        </ul>
+
+
                     </div><!-- End desc-->
                 </a>
             </div><!-- End strip_list-->

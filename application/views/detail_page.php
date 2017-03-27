@@ -133,7 +133,16 @@
                                  <p>
                                      <?php echo $q->item_description?>
                                  </p>
+
+                                 
+                                 <i class="icon_star voted"></i>
+                                 <i class="icon_star voted"></i>
+                                 <i class="icon_star voted"></i>
+                                 <i class="icon_star voted"></i>
+                                 <i class="icon_star"></i>
+
                              </td>
+
                              <td>
                                  <strong><?php
                                      if ($q->item_price == null){
@@ -184,7 +193,9 @@
                                  </div>
 
                              </td>
+
                          </tr>
+
                          <?php
                      } }
                     ?>
