@@ -128,39 +128,44 @@
                         $type_id = $e->type_id;
                         $query = $this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$type_id'") ?>
 
-                        <h3 class="nomargin_top"><?php echo $e->item_type ?></h3>
-
-                        <div class="panel-group" id="<?php echo $type_id ?>">
-
-                            <div>
-                                <table class=" table table-responsive" border="1">
-                                    <tr>
-                                        <th>Item Type</th>
-                                        <th>Item Name</th>
-                                        <th>Item Description</th>
-                                        <th>Price</th>
-
-
-                                        <th colspan="2">Action</th>
-                                    </tr>
-                                    <?php foreach ($query->result() as $q) { ?>
-                                        <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
-                                    -->
+                        <div class="panel panel-success" >
+                            <div class="panel-heading"><h3><?php echo $e->item_type ?></h3></div>
+                            <div class="panel-body" id="<?php echo $type_id ?>">
+                                <div class="table-responsive">
+                                    <table class=" table table-bordered">
+                                        <thead>
                                         <tr>
-                                            <td><?php echo $q->item_type ?></td>
-                                            <td><?php echo $q->item_name ?></td>
-                                            <td><?php echo $q->item_description ?></td>
-                                            <td><?php echo $q->item_price ?></td>
+                                            <th>Item Type</th>
+                                            <th>Item Name</th>
+                                            <th>Item Description</th>
+                                            <th>Price</th>
 
-                                            <td>
-                                                <button data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit
-                                                </button>
-                                            </td>
 
+                                            <th colspan="2">Action</th>
                                         </tr>
-                                        <!--</form>-->
-                                    <?php } ?>
-                                </table>
+                                        </thead>
+
+                                        <?php foreach ($query->result() as $q) { ?>
+                                            <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
+                                    -->
+                                            <tbody>
+                                            <tr>
+                                                <td><?php echo $q->item_type ?></td>
+                                                <td><?php echo $q->item_name ?></td>
+                                                <td><?php echo $q->item_description ?></td>
+                                                <td><?php echo $q->item_price ?></td>
+
+                                                <td>
+                                                    <button class="btn btn-warning" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>
+                                                </td>
+
+                                            </tr>
+                                            </tbody>
+
+                                            <!--</form>-->
+                                        <?php } ?>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
