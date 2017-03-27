@@ -85,59 +85,42 @@
                         <div class="panel-heading"><h3>Restaurant Details Content</h3></div>
                         <div class="panel-body">
 
+                            <form method="post" action="<?php echo base_url()?>Admin_Res_Details/edit_res_details" >
+                            <?php foreach ($res_details as $s){?>
+                                <div class="col-md-12 col-sm-12" >
+                            <div class="form-group">
+                                <label> Resturant Name</label>
+                                <input class="form-control" type="text" name="name" value="<?php echo $s->name ?>" readonly >
+                            </div>
+                        </div>
 
 
+                        <div class="col-md-6 col-sm-6" >
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input class="form-control"type="text" name="description" value="<?php echo $s->description ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6" >
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input class="form-control"type="text" name="time" value="<?php echo $s->time ?>">
+                            </div>
+                        </div>
 
-
-                            <table class=" table table-responsive" border="1">
-                                <tr>
-                                    <td>Restaurant Name</td>
-
-                                    <td>Description</td>
-                                    <td>Time</td>
-                                    <td colspan="2">Action</td>
-
-
-
-                                </tr>
-                                <?php foreach ($res_details as $s){?>
-
-                                    <tr>
-
-
-                                        <td><?php echo $s->name ?></td>
-
-                                        <td><?php echo $s->description ?></td>
-                                        <td><?php echo $s->time ?></td>
-                                        <td><button  data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
-
-
-
-
-                                    </tr>
-                                    <?php
-
-                                }
-                                ?>
-
-
-                            </table>
-                            <div id="myModal3" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Edit Content</h2>
-
-
-
-                                    <div id="txtHint"></div>
-
+                                <div class="col-md-12 col-sm-12" >
+                                    <div class="form-group">
+                                        <input class="btn btn-success" type="submit">
+                                    </div>
                                 </div>
 
+                            <?php }?>
+                            </form>
 
-                            </div>
+
+
+
+
 
 
 
@@ -161,80 +144,8 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
 
 
-    // Get the modal
-    // var modal = document.getElementById('myModal');
-    var modal3 = document.getElementById('myModal3');
-
-
-    // Get the button that opens the modal
-    //var btn = document.getElementById("myBtn");
-
-    var span = document.getElementsByClassName("close")[0];
-    var span2 = document.getElementsByClassName("close")[1];
-
-
-    // When the user clicks the button, open the modal
-    // btn = $(x).data('panel-name');
-
-    function selectid(x) {
-        modal3.style.display = "block";
-
-        btn = $(x).data('panel-id');
-        //alert(btn);
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Res_Details/editresdetails/")?>'+btn,
-            data:{'id':btn},
-            cache: false,
-            success:function(data)
-            {
-                //alert(data);
-                $('#txtHint').html(data);
-            }
-
-        });
-
-
-
-
-    }
-
-
-    span.onclick = function() {
-        modal2.style.display = "none";
-    }
-    span2.onclick = function() {
-        modal3.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-    }
-
-
-    window.onclick = function(event) {
-        if (event.target == modal3) {
-            modal3.style.display = "none";
-        }
-    }
-
-
-</script>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
 
 
 </body>
