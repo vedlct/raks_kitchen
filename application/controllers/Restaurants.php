@@ -42,7 +42,7 @@ class Restaurants extends CI_Controller {
         $this->load->model('Commentm');
         $this->load->model('Userm');
 
-        $res_id = $id;
+        $type_id = $id;
         $this->data['details']= $this->Restaurantm->restaurant_details_description($id);
         $this->data['res_details']= $this->Restaurantm->showedit($res_id);
         $this->data['details_head']= $this->Restaurantm->restaurant_details_head($id);
@@ -61,7 +61,7 @@ class Restaurants extends CI_Controller {
             $user = $comm->username;
             $this->data['user']= $this->Userm->get_user($user);
         }
-        //$this->data['user']= $this->Commentm->get_comment($res_id);
+        $this->data['user']= $this->Commentm->get_comment($res_id);
         //print_r($this->data);
         $this->load->view('admin_res_datails',$this->data);
     }

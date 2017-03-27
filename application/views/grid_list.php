@@ -29,12 +29,14 @@
 <!-- End Header =============================================== -->
 
 <!-- SubHeader =============================================== -->
-<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
+
     <div id="subheader">
         <div id="sub_content">
             <h1>Choose Your Desired Food Type</h1>
             <div><i class="icon_zoom-in_alt"></i> &nbsp;We have over 125 food items of different categories for you</div>
         </div><!-- End sub_content -->
+
     </div><!-- End subheader -->
 </section><!-- End section -->
 <!-- End SubHeader ============================================ -->
@@ -224,6 +226,7 @@
 <script src="<?php echo base_url()?>js/infobox.js"></script>
 <script src="<?php echo base_url()?>js/ion.rangeSlider.js"></script>
 <script>
+
     $(function () {
         'use strict';
         $("#range").ionRangeSlider({
