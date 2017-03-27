@@ -77,6 +77,34 @@
             </div>
             <!-- /.row -->
 
+            <div class="">
+                <div class="panel panel-success">
+                    <div class="panel-heading"><h3>Texual instruction for "FAQ" page</h3></div>
+                    <div class="panel-body">
+
+                        <div>
+                            <p>
+                                1. By clicking the "Add New" Button at the top of the Main Content You can add a new section in the FAQ page. <br/><br/>
+                                2. IF you want to add a new section click the add new button.<br/>
+                                    2.1. A pop up window will appear.<br/>
+                                    2.2. In the Label "Header" add the head of the section you want.<br/>
+                                    2.3. In the Label "Sub Header" add the sub head of the section you want.<br/>
+                                    2.4. In the Label "Details" add the details of the section you want.<br/>
+                                    2.5. Finally click the submit button to add your desired section.<br/><br/>
+                                3. IF you want to edit on a existing section click the add Edit button on that section table.<br/>
+                                    3.1. A pop up window will appear.<br/>
+                                    3.2. In the Label "Header" your existing header will appear on the text field. Edit the desired part of the head of the section you want.<br/>
+                                    3.3. In the Label "Sub Header" your existing sub header will appear on the text field. Edit the desired part of the sub header of the section you want.<br/>
+                                    3.4. In the Label "Details" your existing details will appear on the text field. Edit the desired part of the details of the section you want.<br/>
+                                    3.5. If you don't want to edit, simply close the pop up window.<br/>
+                                    3.6. Finally click the submit button to change your desired section.<br/>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-lg-12">
 
