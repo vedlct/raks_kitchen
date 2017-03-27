@@ -29,9 +29,10 @@
 <!-- End Header =============================================== -->
 
 <!-- SubHeader =============================================== -->
-<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
     <div id="subheader">
         <div id="sub_content">
+            <div id="thumb"><img src="<?php echo base_url()?>img/thumb_restaurant.jpg" alt=""></div>
             <h1>Choose Your Desired Food Type</h1>
             <div><i class="icon_zoom-in_alt"></i> &nbsp;We have over 125 food items of different categories for you</div>
         </div><!-- End sub_content -->
@@ -223,6 +224,7 @@
 <script src="<?php echo base_url()?>js/map.js"></script>
 <script src="<?php echo base_url()?>js/infobox.js"></script>
 <script src="<?php echo base_url()?>js/ion.rangeSlider.js"></script>
+
 <script>
     $(function () {
         'use strict';

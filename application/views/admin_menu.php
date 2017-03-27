@@ -206,7 +206,8 @@
                                         4.3. Add the serial number.<br/>
                                         4.4. If you want another attribute to add press "Add Button" in below.<br/>
                                         4.5. If you want to remove attribute press the "Remove Button".<br/>
-                                    5. If you complete the form, then press the "submit" button to add the item in your menu.<br/>
+                                    5. If you don't want to add extra attribute simply skip it and insert item price in the "Item Price" field.<br/>
+                                    6. If you complete the form, then press the "submit" button to add the item in your menu.<br/>
                                 </p>
                             </div>
 
