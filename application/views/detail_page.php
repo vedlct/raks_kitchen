@@ -46,9 +46,15 @@
                     <i class="icon_star"></i></i>
                     <?php
                 }
+
                 ?>
-                <!--(<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)--></div>
-            <h1>Mexican TacoMex</h1>
+
+
+
+                <!--(<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)-->
+                </div>
+            <h1>Rak's Kitchen</h1>
+
             <div><em>Mexican / American</em></div>
             <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB - <strong>Delivery charge:</strong> $10, free over $15.</div>
         </div><!-- End sub_content -->

@@ -100,7 +100,7 @@
                                     <label>Menu Type</label>
 
                                     <select class="form-control" name="type" id="type" onchange="selectid10(this)" >
-                                        <option selected  >Item Type</option>
+                                        <option selected  >Menu Type</option>
                                         <?php
 
                                         foreach ($this->data['menutype'] as $e)
@@ -197,22 +197,17 @@
                             </div>
                             <div>
                                 <p>
-                                    1. You can select any restaurant name from the "Restaurant" drop-down menu.<br/>
-                                    2. You can choose any item type from the item type drop-down menu.<br/>
-                                    3. If there is no item type then select the '+' button.<br/>
-                                        3.1. A pop up window will appear.<br/>
-                                        3.2. Select the restaurant name again from the drop-down menu.<br/>
-                                        3.4. Then type the menu you want to add.<br/>
-                                        3.5. Then press the submit button on order to add the item type.<br/>
-                                    4. Add the item name in the item name field.<br/>
-                                    5. Add some description of the item in the description field.<br/>
-                                    6. If you want to add some extra attribute to the item press "Add" button.<br/>
-                                        6.1. Add the size of the item.<br/>
-                                        6.2. Add the price of the item for the size.<br/>
-                                        6.3. Add the serial number.<br/>
-                                        6.4. If you want another attribute to add press "Add Button" in below.<br/>
-                                        6.5. If you want to remove attribute press the "Remove Button".<br/>
-                                    7. If you complete the form, then press the "submit" button to add the item in your menu.<br/>
+                                    1. You can select any menu name from the "Menu Type" drop-down menu.<br/>
+                                    2. Add the item name in the "Item Name" field.<br/>
+                                    3. Add some description of the item in the description field.<br/>
+                                    4. If you want to add some extra attribute to the item press "Add" button.<br/>
+                                        4.1. Add the size of the item.<br/>
+                                        4.2. Add the price of the item for the size.<br/>
+                                        4.3. Add the serial number.<br/>
+                                        4.4. If you want another attribute to add press "Add Button" in below.<br/>
+                                        4.5. If you want to remove attribute press the "Remove Button".<br/>
+                                    5. If you don't want to add extra attribute simply skip it and insert item price in the "Item Price" field.<br/>
+                                    6. If you complete the form, then press the "submit" button to add the item in your menu.<br/>
                                 </p>
                             </div>
 
