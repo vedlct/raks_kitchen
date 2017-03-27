@@ -128,4 +128,18 @@ class Admin_Res_Details extends CI_Controller {
 
     }
 
+    public function edit_res_details()
+    {
+        $name=$this->input->post('name');
+        $description=$this->input->post('description');
+        $time=$this->input->post('time');
+
+
+        $this->load->model('Restaurantm');
+        $this->Restaurantm->edit_res_details($name,$description,$time);
+        redirect(Admin_Res_Details);
+
+
+    }
+
 }

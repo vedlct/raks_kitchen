@@ -109,9 +109,7 @@
             <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>Order</a>
         </li>
 
-        <li>
-            <a href="<?php echo base_url()?>Admin_Restaurant_Req"><i class="fa fa-fw fa-dashboard"></i> Restaurant Request</a>
-         </li>
+
 
 
     <?php }elseif ($usertype=="Res"){?>

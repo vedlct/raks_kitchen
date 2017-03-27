@@ -141,7 +141,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>Section two Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_resturant_content">
 
@@ -187,13 +187,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section two Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
                                 <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home1.2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home1.2.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -201,219 +201,13 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
-                        <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_Home/insert_how_it_work">
 
-                                <?php if ($show_howitwork_content == Null){ ?>
 
-                                    <div class="form-group">
-                                        <label>How it works big</label>
-                                        <input class="form-control" type="text" name="hiw_big">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>How it works small</label>
-                                        <input class="form-control" type="text" name="hiw_small">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step one Big</label>
-                                        <input class="form-control" type="text" name="hiw_one_big">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step one small</label>
-                                        <input class="form-control" type="text" name="hiw_one_big">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step two Big</label>
-                                        <input class="form-control" type="text" name="hiw_two_big">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step two Small</label>
-                                        <input class="form-control" type="text" name="hiw_two_small">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step three Big</label>
-                                        <input class="form-control" type="text" name="hiw_three_big">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step three Small</label>
-                                        <input class="form-control" type="text" name="hiw_three_small">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step four Big</label>
-                                        <input class="form-control" type="text" name="hiw_four_big">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Step four Small</label>
-                                        <input class="form-control" type="text" name="hiw_four_small">
-                                    </div>
-
-                                    <input class="btn btn-success" type="submit">
-                                <?php }else{
-
-                                    foreach ($show_howitwork_content as $s){
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>How it works big</label>
-                                            <input class="form-control" type="text" name="hiw_big" value="<?php echo $s->big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>How it works small</label>
-                                            <input class="form-control" type="text" name="hiw_small" value="<?php echo $s->small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step one Big</label>
-                                            <input class="form-control" type="text" name="hiw_one_big" value="<?php echo $s->one_big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step one small</label>
-                                            <input class="form-control" type="text" name="hiw_one_big" value="<?php echo $s->one_small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step two Big</label>
-                                            <input class="form-control" type="text" name="hiw_two_big" value="<?php echo $s->two_big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step two Small</label>
-                                            <input class="form-control" type="text" name="hiw_two_small" value="<?php echo $s->two_small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step three Big</label>
-                                            <input class="form-control" type="text" name="hiw_three_big" value="<?php echo $s->three_big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step three Small</label>
-                                            <input class="form-control" type="text" name="hiw_three_small" value="<?php echo $s->three_small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step four Big</label>
-                                            <input class="form-control" type="text" name="hiw_four_big" value="<?php echo $s->four_big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Step four Small</label>
-                                            <input class="form-control" type="text" name="hiw_four_small" value="<?php echo $s->four_small?>">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-                                    }}
-                                ?>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Section two Content And More Visual Instruction</h3></div>
-                        <div class="panel-body">
-                            <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"></a>
-                            </div>
-                            <div>
-                                <p>This is some textual instructions...</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
-                        <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_Home/insert_resturant_content">
-
-                                <?php if ($show_resturant_content == Null){ ?>
-
-                                    <div class="form-group">
-                                        <label>Resturant Content</label>
-                                        <input class="form-control" type="text" name="resturant1">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>People Served</label>
-                                        <input class="form-control" type="text" name="resturant2">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Register User</label>
-                                        <input class="form-control" type="text" name="resturant3">
-                                    </div>
-
-                                    <input class="btn btn-success" type="submit">
-                                <?php }else{
-
-                                    foreach ($show_resturant_content as $s){
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>Resturant Content</label>
-                                            <input class="form-control" type="text" name="resturant1" value="<?php echo $s->resturant?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>People Served</label>
-                                            <input class="form-control" type="text" name="resturant2" value="<?php echo $s->people_served?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Register User</label>
-                                            <input class="form-control" type="text" name="resturant3" value="<?php echo $s->registered_user?>">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-                                    }}
-                                ?>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
-                        <div class="panel-body">
-                            <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
-                            </div>
-                            <div>
-                                <p>This is some textual instructions...</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>Sextion four Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_section_four">
 
@@ -540,108 +334,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h3>Resturant Content And More</h3>
-                        </div>
 
-                        <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_Home/insert_section_six" enctype="multipart/form-data">
-
-                                <?php if ($show_sectionsix_content == Null){ ?>
-
-                                    <div class="form-group">
-                                        <label>Section six Big</label>
-                                        <input class="form-control" type="text" name="ssixbig">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Small</label>
-                                        <input class="form-control" type="text" name="ssixsmall">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six box Image</label>
-                                        <input class="form-control" type="file" name="ssiximage" >
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Inside box Big</label>
-                                        <input class="form-control" type="text" name="sboxbig">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Inside Box Small</label>
-                                        <input class="form-control" type="text" name="sboxsmall">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Inside Box details</label>
-                                        <input class="form-control" type="text" name="sboxdetails">
-                                    </div>
-
-                                    <input class="btn btn-success" type="submit">
-                                <?php }else{
-
-                                    foreach ($show_sectionsix_content as $s){
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>Section six Big</label>
-                                            <input class="form-control" type="text" name="ssixbig" value="<?php echo $s->big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Small</label>
-                                            <input class="form-control" type="text" name="ssixsmall" value="<?php echo $s->small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Image</label>
-                                            <input class="form-control" type="file" name="ssiximage" value="<?php echo $s->image?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Inside box Big</label>
-                                            <input class="form-control" type="text" name="sboxbig" value="<?php echo $s->submit_big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Inside Box Small</label>
-                                            <input class="form-control" type="text" name="sboxsmall" value="<?php echo $s->submit_small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Inside Box details</label>
-                                            <input class="form-control" type="text" name="sboxdetails" value="<?php echo $s->submit_details?>">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-                                    }}
-                                ?>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Section six Content And More Visual Instruction</h3></div>
-                        <div class="panel-body">
-                            <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home6.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home6.JPG"></a>
-                            </div>
-                            <div>
-                                <p></p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
         <!-- /.container-fluid -->

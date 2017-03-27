@@ -56,15 +56,23 @@ class Orderm extends CI_Model
         return $query->result();
 
     }
-    public function delete_order($id){
+
+    public function showfulladdress($username){
+
+
+        $query=$this->db->query("SELECT * FROM `user` WHERE `username`=$username ");
+        return $query->result();
+
+    }
+    public function delete_order($username){
 
         /*$query = $this->db->get('order_cart');
         return $query->result();*/
-        $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");
+        $this->db->query("DELETE FROM `order_cart` WHERE `username`= '$username'");
 
 
     }
-    public function accept_order($id)
+    public function accept_order($name)
     {
 
         /*$query = $this->db->get('order_cart');
@@ -72,7 +80,7 @@ class Orderm extends CI_Model
         /* $this->db->query("INSERT INTO `order` SELECT * FROM `order_cart` WHERE `id`= '$id'");
          $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");*/
 
-        $query = $this->db->get_where('order_cart', array('id' => $id));
+        $query = $this->db->get_where('order_cart', array('username' => $name));
 
         foreach ($query->result() as $e) {
 
@@ -86,8 +94,8 @@ class Orderm extends CI_Model
                 'postcode' => $e->postcode,
                 'country' => $e->country,
                 'phone' => $e->phone,
-                'res_id' => $e->res_id,
-                'res_name' => $e->res_name,
+                'type_id' => $e->type_id,
+
                 'item_name' => $e->item_name,
                 'item_attr' => $e->item_attr,
                 'price' => $e->price,
@@ -101,7 +109,7 @@ class Orderm extends CI_Model
             $this->db->insert('order', $data);
 
         }
-        $this->db->delete('order_cart', array('id' => $id));
+        $this->db->delete('order_cart', array('username' => $name));
     }
 
 

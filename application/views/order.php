@@ -122,6 +122,7 @@
                                                         <?php echo $e->email?>
                                                     </td>
                                                     <td><?php echo $e->address ?></td>
+                                                        <!--<button type="button" data-panel-id="<?= $e->username ?>" onclick="selectid4(this)">See full address</button>-->
                                                     <td>
                                                         <table class="table-bordered table-responsive">
                                                             <tr>
@@ -181,9 +182,9 @@
                                                     <td><?php echo $e->order_time ?></td>
                                                     <td><?php echo  date("Y-m-d", strtotime($e->date)) ?></td>
                                                     <!--<td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Accept</button></td>-->
-                                                    <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
+                                                    <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->username ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
 
-                                                    <td><button class="btn btn-danger" type="submit"  formaction="<?php echo base_url()?>Order/delete_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to delete this Order?')" >Delete</button></td>
+                                                    <td><button class="btn btn-danger" type="submit"  formaction="<?php echo base_url()?>Order/delete_order/<?php echo $e->username ?>" onclick="return confirm('Are you confirm to delete this Order?')" >Delete</button></td>
 
                                                 </tr>
                                             </tbody>
@@ -194,6 +195,20 @@
                                     </form>
 
                                 </table>
+                            </div>
+
+                            <div id="myModal3" class="modal">
+                                <br/><br/><br/>
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">×</span>
+
+                                    <h2>Edit Content</h2>
+                                    <div id="txtHint"></div>
+
+                                </div>
+
+
                             </div>
 
                         </div>
@@ -214,10 +229,10 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+<script src="<?php base_url()?>js/jquery-2.2.4.min.js"></script>
+<script src="<?php base_url()?>js/common_scripts_min.js"></script>
+<script src="<?php base_url()?>js/functions.js"></script>
+<script src="<?php base_url()?>assets/validate.js"></script>
 
 
 
@@ -247,6 +262,32 @@
     $(document).ready(function() {
         $('#summernote').summernote();
     });
+</script>
+<script>
+
+    var modal3 = document.getElementById('myModal3');
+    var span = document.getElementsByClassName("close")[0];
+
+    function selectid4(x) {
+        modal3.style.display = "block";
+        btn = $(x).data('panel-id');
+        alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Order/showadd/")?>'+btn,
+            data:{'username':btn},
+            cache: false,
+            success:function(data)
+            {
+                $('#txtHint').html(data);
+            }
+
+        });
+
+
+    }
+
 </script>
 
 

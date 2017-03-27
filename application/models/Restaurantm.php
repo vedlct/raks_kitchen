@@ -241,6 +241,22 @@ class Restaurantm extends CI_Model
 
     }
 
+    public function edit_res_details($name,$description,$time){
+
+
+
+        $data = array(
+
+
+            'description' => $description,
+            'time'=>$time,
+        );
+
+        $this->db->update('restaurant_details', $data);
+
+
+    }
+
 
     public function get_rating(){
 
@@ -265,13 +281,13 @@ class Restaurantm extends CI_Model
         return $query->result();
 
     }
-    public function edit_res_details($id){
+   /* public function edit_res_details($id){
 
         //$res_id=$this->uri->segment(3);
-        $query=$this->db->query("SELECT * FROM `restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id` and `restaurant`.`res_id`='$id' ");
+        $query=$this->db->query("SELECT * FROM `restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id` and `restaurant_details`.`res_id`='$id' ");
         return $query->result();
 
-    }
+    }*/
     public function accept_res($id){
 
 

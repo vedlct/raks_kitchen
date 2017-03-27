@@ -72,6 +72,11 @@ class Viewall extends CI_Model
         return $query->result();
 
     }
+    /*public function most_popular()
+    {
+        $query=$this->db->query("SELECT * FROM `menu` GROUP by `item_type` ORDER BY `item_type` DESC LIMIT 6");
+        return $query->result();
 
+    }*/
 
 }
