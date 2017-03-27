@@ -3,7 +3,7 @@
 
 class Orderm extends CI_Model
 {
-    public function order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$id,$res_name,$item_attr,$price,$quantity,$item_name){
+    public function order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$id,$price,$qty,$size,$price,$quantity,$item_name){
 
         /*$query=$this->db->query("SELECT * FROM `restaurant`");
         return $query->result();*/
@@ -13,9 +13,7 @@ class Orderm extends CI_Model
             'name'=>$name,
             'username'=>$username,
             'email' => $email ,
-
             'phone'=>$phone,
-
             'address'=>$address,
             'city'=>$city,
             'state'=>$state,
@@ -24,11 +22,9 @@ class Orderm extends CI_Model
             'order_day'=>$order_day,
             'order_time'=>$order_time,
             'date'=>$date,
-            'res_id'=>$id,
-            'res_name'=>$res_name,
-            'item_attr'=>$item_attr,
+            'item_attr'=>$size,
             'price'=>$price,
-            'quantity'=>$quantity,
+            'quantity'=>$qty,
             'item_name'=>$item_name
 
 

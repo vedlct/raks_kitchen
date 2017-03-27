@@ -139,12 +139,12 @@
                                      if ($q->item_price == null){
 
                                          //$item_name = addslashes(addslashes($item_name));
-
-
-
-                                         $query3=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `item_name` = '$string' LIMIT 1");
+                                        // echo $string;
+                                         $query3=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `item_name` = '$string'  LIMIT 1");
                                         // $this->db->where('item_name', $item_name);
                                          //$query3 = $this->db->get('menu_attribute');
+                                        // print_r($query3);
+
 
                                          foreach ($query3->result() as $s) { echo $s->price;}
                                      }
