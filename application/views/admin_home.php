@@ -141,7 +141,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>Section two Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_resturant_content">
 
@@ -187,13 +187,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section two Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
                                 <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home1.2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home1.2.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -204,7 +204,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>How it work Section Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_how_it_work">
 
@@ -327,13 +327,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Section two Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>How it work Section Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
                                 <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -344,7 +344,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>Section Three Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_resturant_content">
 
@@ -396,10 +396,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section Three Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img//rak-screen-short-desing/home1.2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img//rak-screen-short-desing/home1.2.JPG"></a>
                             </div>
                             <div>
                                 <p>This is some textual instructions...</p>
@@ -413,7 +413,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>Sextion four Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_section_four">
 
@@ -540,108 +540,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h3>Resturant Content And More</h3>
-                        </div>
 
-                        <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_Home/insert_section_six" enctype="multipart/form-data">
-
-                                <?php if ($show_sectionsix_content == Null){ ?>
-
-                                    <div class="form-group">
-                                        <label>Section six Big</label>
-                                        <input class="form-control" type="text" name="ssixbig">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Small</label>
-                                        <input class="form-control" type="text" name="ssixsmall">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six box Image</label>
-                                        <input class="form-control" type="file" name="ssiximage" >
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Inside box Big</label>
-                                        <input class="form-control" type="text" name="sboxbig">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Inside Box Small</label>
-                                        <input class="form-control" type="text" name="sboxsmall">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Section six Inside Box details</label>
-                                        <input class="form-control" type="text" name="sboxdetails">
-                                    </div>
-
-                                    <input class="btn btn-success" type="submit">
-                                <?php }else{
-
-                                    foreach ($show_sectionsix_content as $s){
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>Section six Big</label>
-                                            <input class="form-control" type="text" name="ssixbig" value="<?php echo $s->big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Small</label>
-                                            <input class="form-control" type="text" name="ssixsmall" value="<?php echo $s->small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Image</label>
-                                            <input class="form-control" type="file" name="ssiximage" value="<?php echo $s->image?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Inside box Big</label>
-                                            <input class="form-control" type="text" name="sboxbig" value="<?php echo $s->submit_big?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Inside Box Small</label>
-                                            <input class="form-control" type="text" name="sboxsmall" value="<?php echo $s->submit_small?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Section six Inside Box details</label>
-                                            <input class="form-control" type="text" name="sboxdetails" value="<?php echo $s->submit_details?>">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-                                    }}
-                                ?>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Section six Content And More Visual Instruction</h3></div>
-                        <div class="panel-body">
-                            <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home6.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home6.JPG"></a>
-                            </div>
-                            <div>
-                                <p></p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
         <!-- /.container-fluid -->
