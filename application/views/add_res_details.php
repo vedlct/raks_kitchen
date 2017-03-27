@@ -87,12 +87,7 @@
 
                             <form method="post" action="<?php echo base_url()?>Admin_Res_Details/edit_res_details" >
                             <?php foreach ($res_details as $s){?>
-                                <div class="col-md-12 col-sm-12" >
-                            <div class="form-group">
-                                <label> Resturant Name</label>
-                                <input class="form-control" type="text" name="name" value="<?php echo $s->name ?>" readonly >
-                            </div>
-                        </div>
+
 
 
                         <div class="col-md-6 col-sm-6" >
