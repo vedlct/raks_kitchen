@@ -99,13 +99,10 @@
                                         <tr>
                                             <th>SL</th>
                                             <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
+                                            <th>Contact</th>
                                             <th>Address</th>
-                                            <th>Restaurant Name</th>
                                             <th>Oder</th>
                                             <th>Order Time</th>
-                                            <th>Order Day</th>
                                             <th>Date</th>
                                             <th colspan="2">Action</th>
                                         </tr>
@@ -120,65 +117,69 @@
                                                 <tr>
                                                     <td><?php echo $count ?> </td>
                                                     <td><?php echo $e->name ?></td>
-                                                    <td><?php echo $e->phone ?></td>
-                                                    <td><?php echo $e->email?></td>
+                                                    <td><?php echo $e->phone ?>
+                                                    <hr>
+                                                        <?php echo $e->email?>
+                                                    </td>
                                                     <td><?php echo $e->address ?></td>
-                                                    <td><?php echo $e->res_name ?></td>
                                                     <td>
                                                         <table class="table-bordered table-responsive">
                                                             <tr>
-                                                            <th>
+                                                            <th width="50%">
                                                                 Item Name
                                                             </th>
-                                                            <th>
+                                                            <th width="10%">
                                                                 Size
                                                             </th>
-                                                            <th>
+                                                            <th width="10%">
                                                                 Quantity
                                                             </th>
-                                                            <th>
+                                                            <th width="20%">
+                                                                rate
+                                                            </th>
+                                                            <th width="20%">
                                                                 price
                                                             </th>
                                                             </tr>
                                                             <?php
-                                                            $res_id=$e->res_id;
                                                             $date=$e->date;
-                                                            $query=$this->db->query("SELECT * FROM `order_cart` WHERE `res_id` = '$res_id' and `date`='$date'" );
-                                                            $total=1;
+                                                            $query=$this->db->query("SELECT * FROM `order_cart` WHERE  `date`='$date'" );
+                                                            $total=0;
                                                             foreach ( $query->result() as $s ) {
 
                                                                 ?>
                                                                 <tr>
-                                                                    <td>
+                                                                    <td style="color:#00aba9">
                                                                         <?php echo $s->item_name ?>
                                                                     </td>
-                                                                    <td>
+                                                                    <td style="color:#00aba9">
                                                                         <?php echo $s->item_attr ?>
                                                                     </td>
-                                                                    <td>
+                                                                    <td style="color:#00aba9">
                                                                         <?php echo $s->quantity ?>
                                                                     </td>
-                                                                    <td>
-                                                                        <?php echo $s->price ?>
+                                                                    <td style="color:#00aba9">
+                                                                        <?php echo $rate=($s->quantity*$s->price)/$s->quantity ?>
+                                                                    </td>
+                                                                    <td style="color:#00aba9">
+                                                                        <?php echo $price=$s->quantity*$s->price ?>
                                                                     </td>
                                                                 </tr>
 
                                                                 <?php
-                                                            
+                                                            $total=$total+$price;
                                                             }
 
                                                             ?>
                                                             <tr>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td>total</td>
+
+                                                                <td colspan="4" align="right" style="color: red">total + Delivery fee $2 :</td>
+                                                                <td style="color: red"><?php echo $total+2 ?></td>
                                                             </tr>
                                                         </table>
                                                     </td>
                                                     <td><?php echo $e->order_time ?></td>
-                                                    <td><?php echo $e->order_day ?></td>
-                                                    <td><?php echo $e->date ?></td>
+                                                    <td><?php echo  date("Y-m-d", strtotime($e->date)) ?></td>
                                                     <!--<td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Accept</button></td>-->
                                                     <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
 
