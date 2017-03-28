@@ -60,7 +60,7 @@ class Restaurant_menu extends CI_Controller
         if ($this->session->userdata('type') == "Admin") {
             $this->load->model('Menum');
             $this->Menum->menuedit($id);
-            redirect(Restaurant_menu);
+            redirect('Restaurant_menu');
 
 
         }
@@ -85,7 +85,7 @@ class Restaurant_menu extends CI_Controller
         if ($this->session->userdata('type') == "Admin") {
             $this->load->model('Menum');
             $this->Menum->deletemenu($id);
-            redirect(Restaurant_menu);
+            redirect('Restaurant_menu');
 
         }
         else{
@@ -217,7 +217,7 @@ class Restaurant_menu extends CI_Controller
 
             $this->load->model('Menum');
             $this->Menum->edit_res_menu($id);
-            redirect(Restaurant_menu);
+            redirect('Restaurant_menu');
             /*
             $this->load->model('Menum');
             $this->Menum->menuedit($id);

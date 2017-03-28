@@ -183,7 +183,7 @@ class Item_Menu extends CI_Controller
             $this->load->model('Orderm');
             $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$qty,$size,$price,$type_id,$item_name);
         }
-        redirect(Home);
+        redirect('Home');
         //print_r($res_id);
 
 

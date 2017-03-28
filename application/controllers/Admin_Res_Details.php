@@ -70,7 +70,7 @@ class Admin_Res_Details extends CI_Controller {
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->add_new_res_details($id,$description,$time);
-        redirect(Admin_Res_Details);
+        redirect('Admin_Res_Details');
     }
 
     public function insert_rating(){
@@ -137,7 +137,7 @@ class Admin_Res_Details extends CI_Controller {
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->edit_res_details($name,$description,$time);
-        redirect(Admin_Res_Details);
+        redirect('Admin_Res_Details');
 
 
     }

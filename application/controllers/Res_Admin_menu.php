@@ -94,7 +94,7 @@ class Res_Admin_menu extends CI_Controller
         $this->Menum->insert_menu_attr();
         //$this->load->view('admin_faq');
 
-        redirect(Res_Admin_Home);
+        redirect('Res_Admin_Home');
     }
         else{
             $this->load->model('viewall');
@@ -219,7 +219,7 @@ class Res_Admin_menu extends CI_Controller
             $this->Menum->insertmenuitem();
             //$this->load->view('admin_faq');
 
-            redirect(Res_Admin_menu);
+            redirect('Res_Admin_menu');
         }
         else{
             $this->load->model('viewall');

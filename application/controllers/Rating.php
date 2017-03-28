@@ -16,6 +16,6 @@ class Rating extends CI_Controller
         $this->id = $this->input->post('postID');
         $this->load->model('Ratingm');
         $this->Ratingm->insert_rating($this->id);
-        redirect(Admin_Restaurant);
+        redirect('Admin_Restaurant');
     }
 }

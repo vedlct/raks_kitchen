@@ -29,7 +29,7 @@ class Admin_Faq extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
         $this->load->model('Faqm');
         $this->Faqm->insert_faq();
-        redirect(Admin_Faq);
+        redirect('Admin_Faq');
     }
 
         else{
@@ -52,7 +52,7 @@ class Admin_Faq extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
         $this->load->model('Faqm');
         $this->Faqm->edit($id);
-        redirect(Admin_Faq);
+        redirect('Admin_Faq');
     }
 
         else{

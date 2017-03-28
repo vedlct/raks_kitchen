@@ -39,7 +39,7 @@ class Admin_aboutus extends CI_Controller {
 
             $this->load->model('Aboutusm');
             $this->Aboutusm->insert_about_us_content();
-            redirect(Admin_aboutus);
+            redirect('Admin_aboutus');
 
         }
         else{
@@ -64,7 +64,7 @@ class Admin_aboutus extends CI_Controller {
 
             $this->load->model('Aboutusm');
             $this->Aboutusm->insert_about_us_details_content();
-            redirect(Admin_aboutus);
+            redirect('Admin_aboutus');
 
         }
         else{
@@ -86,7 +86,7 @@ class Admin_aboutus extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
         $this->load->model('Aboutusm');
         $this->Aboutusm->insert_about_us_feature_content();
-        redirect(Admin_aboutus);
+        redirect('Admin_aboutus');
         }
 
     else{
@@ -207,7 +207,7 @@ class Admin_aboutus extends CI_Controller {
 
             $this->load->model('Aboutusm');
             $this->Aboutusm->insert_about_us_banner_content();
-            redirect(Admin_aboutus);
+            redirect('Admin_aboutus');
 
         }
         else{

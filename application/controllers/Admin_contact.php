@@ -35,7 +35,7 @@ class Admin_contact extends CI_Controller {
 
             $this->load->model('Contactm');
             $this->Contactm->insert_main_content();
-            redirect(Admin_contact);
+            redirect('Admin_contact');
 
         }
         else{
@@ -59,7 +59,7 @@ class Admin_contact extends CI_Controller {
 
             $this->load->model('Contactm');
             $this->Contactm->insert_customer_service_content();
-            redirect(Admin_contact);
+            redirect('Admin_contact');
 
         }
         else{
@@ -83,7 +83,7 @@ class Admin_contact extends CI_Controller {
 
             $this->load->model('Contactm');
             $this->Contactm->insert_resturant_service_content();
-            redirect(Admin_contact);
+            redirect('Admin_contact');
 
         }
         else{
