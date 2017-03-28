@@ -113,7 +113,7 @@ class Res_Admin_menu_attribute extends CI_Controller
 
             $this->load->model('Res_Admin_m');
             $this->Res_Admin_m->edit_res($id);
-            redirect(Res_Admin_menu_attribute);
+            redirect('Res_Admin_menu_attribute');
             /*
             $this->load->model('Menum');
             $this->Menum->menuedit($id);

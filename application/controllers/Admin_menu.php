@@ -113,7 +113,7 @@ class Admin_menu extends CI_Controller
             $this->Menum->insert_menu_attr();
             //$this->load->view('admin_faq');
 
-            redirect(Admin_menu);
+            redirect('Admin_menu');
         }
         else{
             $this->load->model('viewall');
@@ -346,7 +346,7 @@ class Admin_menu extends CI_Controller
             $this->Menum->insertmenuitem();
             //$this->load->view('admin_faq');
 
-            redirect(Admin_menu);
+            redirect('Admin_menu');
         }
         else{
             $this->load->model('viewall');

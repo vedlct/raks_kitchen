@@ -30,7 +30,7 @@ class Admin_Restaurant extends CI_Controller
         if ($this->session->userdata('type') == "Admin") {
             $this->load->model('Restaurantm');
             $this->Restaurantm->insert_restuarant_content();
-            redirect(Admin_Restaurant);
+            redirect('Admin_Restaurant');
         } else {
             $this->load->model('viewall');
             $data['head'] = $this->viewall->show_main_content();
@@ -51,7 +51,7 @@ class Admin_Restaurant extends CI_Controller
         if ($this->session->userdata('type') == "Admin") {
             $this->load->model('Restaurantm');
             $this->Restaurantm->edit_res($id);
-            redirect(Admin_Restaurant);
+            redirect('Admin_Restaurant');
 
             /*
             $this->load->model('Menum');
@@ -181,7 +181,7 @@ class Admin_Restaurant extends CI_Controller
             $this->load->model('Restaurantm');
             $this->Restaurantm->edit_res($id,$rname,$rtype,$raddress,$rcity,$rstate,$rpostal_code,$rcountry,$rtime,$rusername,$rpassword,$rvat,$rstatus,$rimage,$website,$email);
 
-            redirect(Admin_Restaurant);
+            redirect('Admin_Restaurant');
         }
     }
 

@@ -47,14 +47,14 @@ class Admin_Restaurant_Req extends CI_Controller
         $this->Login->insert_res($username,$password);
         $this->Restaurantm->insert_restuarant_req_content($name,$type,$address,$city,$state,$postal_code,$country,$time,$vat,$status,$image,$website,$email,$username,$password);
         $this->Restaurantm->del_res_req($id);
-        redirect(Admin_Restaurant_Req);
+        redirect('Admin_Restaurant_Req');
     }
 
     public function edit_res($id){
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->edit_res($id);
-        redirect(Admin_Restaurant_Req);
+        redirect('Admin_Restaurant_Req');
         /*
         $this->load->model('Menum');
         $this->Menum->menuedit($id);
@@ -66,7 +66,7 @@ class Admin_Restaurant_Req extends CI_Controller
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->accept_res($id);
-        redirect(Admin_Restaurant_Req);
+        redirect('Admin_Restaurant_Req');
         /*
         $this->load->model('Menum');
         $this->Menum->menuedit($id);
@@ -78,7 +78,7 @@ class Admin_Restaurant_Req extends CI_Controller
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->delete_res($id);
-        redirect(Admin_Restaurant_Req);
+        redirect('Admin_Restaurant_Req');
         /*
         $this->load->model('Menum');
         $this->Menum->menuedit($id);

@@ -174,7 +174,7 @@ class Res_Admin_Res_Details extends CI_Controller {
                 $time = $this->input->post('time');
                 $this->load->model('Res_Admin_m');
                 $this->Res_Admin_m->add_new_res_details($id,$description, $time);
-                redirect(Res_Admin_Res_Details);
+                redirect('Res_Admin_Res_Details');
 
 
             }

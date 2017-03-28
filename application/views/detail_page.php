@@ -50,8 +50,7 @@
                 ?>
 
 
-
-                <!--(<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)-->
+                (<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)
                 </div>
             <h1>Rak's Kitchen</h1>
 

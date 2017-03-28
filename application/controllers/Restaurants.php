@@ -44,16 +44,16 @@ class Restaurants extends CI_Controller {
 
         $type_id = $id;
         $this->data['details']= $this->Restaurantm->restaurant_details_description($id);
-        $this->data['res_details']= $this->Restaurantm->showedit($res_id);
+        $this->data['res_details']= $this->Restaurantm->showedit($type_id);
         $this->data['details_head']= $this->Restaurantm->restaurant_details_head($id);
         if ($this->session->userdata('username') != null){
 
-        $this->data['res_rating']= $this->Restaurantm->get_rating($res_id);
+        $this->data['res_rating']= $this->Restaurantm->get_rating($type_id);
         }
 
-        $this->data['rating_avg']= $this->Restaurantm->get_rating_avg($res_id);
+        $this->data['rating_avg']= $this->Restaurantm->get_rating_avg($type_id);
         $this->data['res_id']=$id;
-        $this->data['comments']=$this->Commentm->get_comment($res_id);
+        $this->data['comments']=$this->Commentm->get_comment($type_id);
         $this->data['user']=null;
         //$user=null;
         foreach ($this->data['comments'] as $comm)
@@ -61,8 +61,8 @@ class Restaurants extends CI_Controller {
             $user = $comm->username;
             $this->data['user']= $this->Userm->get_user($user);
         }
-        $this->data['user']= $this->Commentm->get_comment($res_id);
+        $this->data['user']= $this->Commentm->get_comment($type_id);
         //print_r($this->data);
-        $this->load->view('admin_res_datails',$this->data);
+        $this->load->view('item_review',$this->data);
     }
 }

@@ -52,13 +52,13 @@ class Home extends CI_Controller {
 
 
             if ($this->session->userdata('type') == "Admin"){
-                redirect(Admin_Home);
+                redirect('Admin_Home');
             } elseif ($this->session->userdata('type') == "User"){
 
-                redirect(Home);
+                redirect('Home');
             } elseif ($this->session->userdata('type') == "Res"){
 
-                redirect(Res_Admin_Home);
+                redirect('Res_Admin_Home');
             }
             elseif ($this->session->userdata('type') == ""){
 

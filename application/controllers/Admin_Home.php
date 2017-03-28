@@ -40,7 +40,7 @@ class Admin_Home extends CI_Controller {
             $this->load->model('Homem');
             $this->Homem->insert_main_content();
             $this->Homem->insert_resturant_andmore_content();
-            redirect(Admin_Home);
+            redirect('Admin_Home');
         }
         else{
             $this->load->model('viewall');
@@ -64,7 +64,7 @@ class Admin_Home extends CI_Controller {
 
             $this->load->model('Homem');
             $this->Homem->insert_resturant_andmore_content();
-            redirect(Admin_Home);
+            redirect('Admin_Home');
         }
         else{
             $this->load->model('viewall');
@@ -87,7 +87,7 @@ class Admin_Home extends CI_Controller {
 
             $this->load->model('Homem');
             $this->Homem->insert_howitwork_content();
-            redirect(Admin_Home);
+            redirect('Admin_Home');
         }
 
         else{
@@ -112,7 +112,7 @@ class Admin_Home extends CI_Controller {
 
             $this->load->model('Homem');
             $this->Homem->insert_sectionfour_content();
-            redirect(Admin_Home);
+            redirect('Admin_Home');
 
         }
         else{
@@ -136,7 +136,7 @@ class Admin_Home extends CI_Controller {
 
             $this->load->model('Homem');
             $this->Homem->insert_sectionfive_content();
-            redirect(Admin_Home);
+            redirect('Admin_Home');
         }
         else{
             $this->load->model('viewall');
@@ -160,7 +160,7 @@ class Admin_Home extends CI_Controller {
 
             $this->load->model('Homem');
             $this->Homem->insert_sectionsix_content();
-            redirect(Admin_Home);
+            redirect('Admin_Home');
 
         }
         else{

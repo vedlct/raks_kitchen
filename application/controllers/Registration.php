@@ -35,7 +35,7 @@ class Registration extends CI_Controller {
             'email'=> $emailto,
             'username'=> $username,
             'full_address'=> $full_address,
-            'phone_number'=>$phone_no,
+            'phone'=>$phone_no,
             'state' => $state,
             'city'=> $city,
             'postal_code'=> $postal_code,
@@ -66,7 +66,7 @@ class Registration extends CI_Controller {
         //echo 'http://localhost/Rak/Registration/Approve';
 
         }else{ ?> <script>alert("Username already taken");</script><?php }
-        redirect(Home);
+        redirect('Home');
     }
 
     public function Approve(){
@@ -89,7 +89,7 @@ class Registration extends CI_Controller {
        // $this->load->view('rating',$this->data);
 
 
-        redirect(Home);
+        redirect('Home');
 
     }
 

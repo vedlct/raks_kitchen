@@ -9,7 +9,7 @@ class Registrationm extends CI_Model
             'email' => $emailto,
             'username' => $username,
             'password' => $password2,
-            'phone_number'=>$phone_no,
+            'phone'=>$phone_no,
             'full_address'=>$full_address,
             'city'=>$city,
             'state'=>$state,
