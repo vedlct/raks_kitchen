@@ -9,16 +9,29 @@ class Item_Menu extends CI_Controller
     }
     public function show_menu($type_id)
     {
-        $this->load->model('Menum');
-        $this->load->model('Restaurantm');
-        $this->data['show_menu'] = $this->Menum->show_menu($type_id);
-        $this->data['show_type'] = $this->Menum->show_type($type_id);
-        $this->data['menu_attr']= $this->Menum->show_menu_attr($type_id);
-        $this->data['rating_avg']= $this->Restaurantm->get_rating_avg($type_id);
-        $this->data['id']=$type_id;
-        $this->data['show_item_type']=$this->Menum->show_item_type();
-        $this->load->view('detail_page', $this->data);
+        if ($this->session->userdata('username') == null) {
 
+            $this->load->model('Menum');
+            $this->load->model('Restaurantm');
+            $this->data['show_menu'] = $this->Menum->show_menu($type_id);
+            $this->data['show_type'] = $this->Menum->show_type($type_id);
+            $this->data['menu_attr'] = $this->Menum->show_menu_attr($type_id);
+            $this->data['rating_avg'] = $this->Restaurantm->get_rating_avg($type_id);
+            $this->data['id'] = $type_id;
+            $this->data['show_item_type'] = $this->Menum->show_item_type();
+            $this->load->view('detail_page_npeople', $this->data);
+        } else {
+            $this->load->model('Menum');
+            $this->load->model('Restaurantm');
+            $this->data['show_menu'] = $this->Menum->show_menu($type_id);
+            $this->data['show_type'] = $this->Menum->show_type($type_id);
+            $this->data['menu_attr'] = $this->Menum->show_menu_attr($type_id);
+            $this->data['rating_avg'] = $this->Restaurantm->get_rating_avg($type_id);
+            $this->data['id'] = $type_id;
+            $this->data['show_item_type'] = $this->Menum->show_item_type();
+            $this->load->view('detail_page', $this->data);
+
+        }
     }
 
     public function inser_cart(){

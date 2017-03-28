@@ -145,16 +145,89 @@
                                  </p>
 
 <!--                                 <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="60px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="60px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="60px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="60px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="60px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="30px" style="float: left">
 
                              </td>
-                         <?php
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+                         <script type="text/javascript">
 
-                         ?>
+
+//                             var x = '<?//= $q->id ?>//';
+//
+//                             imgA = ("imgA" + x).toString();
+//                             imgB = ("imgB" + x).toString();
+//                             imgC = ("imgC" + x).toString();
+//                             imgD = ("imgD" + x).toString();
+//                             imgE = ("imgE" + x).toString();
+
+                            $("document").ready(function () {
+
+                                $("#imgA<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                }).mouseout(function () {
+                                    if (count = 1) {
+                                    } else
+                                        this.src = "<?php echo base_url()?>img/blank.png"
+                                });
+
+                                $("#imgB<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                });
+
+                                $("#imgC<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                });
+
+                                $("#imgD<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+
+                                });
+
+                                $("#imgE<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                    document.getElementById("imgD<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgD<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+
+                                });
+
+                            });
+                        </script>
                          <td>
                                  <strong><?php
                                      if ($q->item_price == null){
@@ -525,71 +598,9 @@
    // var item_id = document.getElementById("item_id").value;
 
     var x = '<?php echo $counter?>';
-    alert(x);
+  //  alert(x);
 
-    $("document").ready(function () {
 
-        $("#imgA").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-        }).mouseout(function () {
-            if (count = 1) {
-            } else
-                this.src = "<?php echo base_url()?>img/blank.png"
-        });
-
-        $("#imgB").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-        });
-
-        $("#imgC").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-        });
-
-        $("#imgD").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-
-        });
-
-        $("#imgE").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-            document.getElementById("imgD").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgD").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-
-        });
-
-    });
 
 
 
@@ -660,7 +671,7 @@
             cache: false,
             success:function(data)
             {
-                alert(data);
+               // alert(data);
                 alert("You have successfully gave rating rating 4");
             }
 
