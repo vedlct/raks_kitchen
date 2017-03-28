@@ -84,8 +84,14 @@ class Admin_aboutus extends CI_Controller {
     public function insert_about_us_feature_content(){
 
         if ($this->session->userdata('type') == "Admin") {
+            $big = $this->input->post('big');
+            $small  = $this->input->post('small');
+            $box_header = $this->input->post('boxheader');
+            $box_details = $this->input->post('boxdetails');
+            $icon = $this->input->post('icon');
+           // print_r($big);
         $this->load->model('Aboutusm');
-        $this->Aboutusm->insert_about_us_feature_content();
+        $this->Aboutusm->insert_about_us_feature_content($big,$small,$box_header,$box_details,$icon);
         redirect(Admin_aboutus);
         }
 
@@ -105,17 +111,19 @@ class Admin_aboutus extends CI_Controller {
 
     }
 
-    public function update_about_us_feature_content(){
+    public function update_about_us_feature_content($id){
 
-        $id = $this->input->post('id');
+        //$id = $this->input->post('id');
         $big = $this->input->post('big');
         $small = $this->input->post('small');
         $boxheader = $this->input->post('boxheader');
         $boxdetails = $this->input->post('boxdetails');
-        $box_icon = $this->input->post('box_icon');
+        //$box_icon = $this->input->post('box_icon');
+       // print_r($big);
         $this->load->model('Aboutusm');
 
-        $this->Aboutusm->update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails,$box_icon);
+        $this->Aboutusm->update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails);
+        redirect('Admin_aboutus');
 
 
     }
@@ -134,66 +142,12 @@ class Admin_aboutus extends CI_Controller {
         $this->data['about_us_feature_content'] = $this->Aboutusm->get_about_us_feature_content($id);
 
 
-        //echo $id;
-
-        foreach ($this->data['about_us_feature_content'] as $s) {
-
-
-            echo "
-                            
-                                <div class=\"panel-body\">
-                                <form method=\"post\" action=\"http://localhost/Rak/Admin_aboutus/update_about_us_feature_content\"
-                                    <div class=\"form-group\">
-                                        <label>Big</label>
-                                        <input class=\"form-control\" type=\"text\" name=\"big\" value=\"$s->big\">
-                                    </div>
-                                    
-                                    <div class=\"form - group\">
-                                        
-                                        <input class=\"form - control\" type=\"hidden\" name=\"id\" value=\"$s->id\"value=\"$s->id\">
-                                    </div>
-
-                                    <div class=\"form-group\">
-                                        <label>Small</label>
-                                        <input class=\"form-control\" type=\"text\" name=\"small\" value=\"$s->small\">
-                                    </div>
-
-                                    <div class=\"form-group\">
-                                        <label>Box Header</label>
-                                        <input class=\"form-control\" type=\"text\" name=\"boxheader\" value=\"$s->box_header\">
-                                    </div>
-
-                                    <div class=\"form-group\">
-                                        <label>Box details</label>
-                                        <input class=\"form-control\" type=\"text\" name=\"boxdetails\"value=\"$s->box_details\" >
-                                    </div>
-                                    
-                                    <div class=\"form-group\">
-                                        <label>Icon</label>
-                                        
-                                        <input class=\"form - control\" type=\"text\" name=\"box_icon\"value=\"$s->box_icon\" readonly>
- 
-                                    </div>
-                                    
-                                    <input class=\"btn btn-success\" type=\"submit\">
-                                    
-                                    </div>
+        $this->load->view('test_view',$this->data);
 
 
 
-                                
-                               
-                                    
-                                   
-
-           
-           
-           ";
 
 
-            //redirect(Admin_aboutus);
-
-        }
     }
 
 

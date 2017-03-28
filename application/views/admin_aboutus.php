@@ -254,7 +254,7 @@
 
 
 
-                                    <input class="btn btn-success" type="button" value="ADD">
+                                    <!--<input class="btn btn-success" type="button" value="ADD">-->
 
                                     <table class="table table-bordered">
                                         <thead>
@@ -322,10 +322,11 @@
                 </div>
 
                 <div id="myModal1" class="modal">
+                    <br/><br/><br/>
 
                     <!-- Modal content -->
 
-                    <div class="modal-content">
+                    <div class="modal-content" style="padding: 35px; width: 50%; margin: 0 auto">
                         <span class="close">×</span>
 
                         <h2>Edit Content</h2>
@@ -340,18 +341,18 @@
 
                 </div>
 
-                <div id="myModal2" class="modal">
+                <div id="myModal2" class="modal" >
 
                     <!-- Modal content -->
 
-                    <div class="modal-content">
+                    <div class="modal-content" style="padding: 35px; width: 50%; margin: 0 auto">
                         <span class="close">×</span>
 
                         <h2>Edit Content</h2>
 
                         <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_feature_content" enctype="multipart/form-data">
 
-                            <?php if ($show_about_us_feature_content == Null){ ?>
+                            <?php if ($show_about_us_feature_content != Null){ ?>
 
                                 <div class="form-group">
                                     <label>Big</label>
@@ -453,13 +454,13 @@
 
 
 
-                        <div id="txtHint"></div>
+
 
                     </div>
-
-
-
                 </div>
+
+
+
 
 
 
@@ -595,7 +596,7 @@
             cache: false,
             success:function(data)
             {
-                //alert(data);
+               // alert(data);
                 $('#txtHint').html(data);
             }
 
