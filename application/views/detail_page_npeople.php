@@ -144,7 +144,7 @@
                                     <?php echo $q->item_description?>
                                 </p>
 
-                                <div class="rating" onclick="loginplz()">
+                                <span class="rating" onclick="loginplz()">
                                 <?php
                                 $type_id=$q->id;
                                 $query4=$this->db->query("SELECT ROUND(AVG(`rating`)) as rat FROM `res_rating` WHERE res_id = '$type_id'");
@@ -158,13 +158,13 @@
                                     }
                                     for ($i = 1; $i <= (5 - $rating_avg); $i++) {
                                         ?>
-                                        <i class="icon_star"></i>
+                                        <i class="icon_star" style="color: #837E7C"></i>
                                         <?php
                                     }
 
 
                                 ?>
-                                </div>
+                                </span>
 
                             </td>
 
