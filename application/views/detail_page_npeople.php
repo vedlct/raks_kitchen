@@ -318,7 +318,8 @@
                     </table>
                     <hr>
                     <!--<a class="btn_full" href="cart.php">Order now</a>-->
-                    <a class="btn_full" href="#" onclick="loginplz()">Order now</a>
+                    <a class="btn_full" href="#" onclick="loginplz()" data-toggle="modal" data-target="#login_2">Order now</a>
+
 
                 </div><!-- End cart_box -->
             </div><!-- End theiaStickySidebar -->
@@ -339,12 +340,13 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myLogin">
+            <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
                 <input type="text" class="form-control form-white" placeholder="Username">
                 <input type="text" class="form-control form-white" placeholder="Password">
                 <div class="text-left">
                     <a href="#">Forgot Password?</a>
+                    <a href="<?php echo base_url()?>Registration">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
@@ -357,7 +359,7 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myRegister">
+            <form action="<?php echo base_url()?>Registration" class="popup-form" id="myRegister" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
                 <input type="text" class="form-control form-white" placeholder="Name">
                 <input type="text" class="form-control form-white" placeholder="Last Name">

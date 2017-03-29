@@ -90,14 +90,14 @@ class Admin_aboutus extends CI_Controller {
             $box_details = $this->input->post('boxdetails');
             $icon = $this->input->post('icon');
            // print_r($big);
-        $this->load->model('Aboutusm');
-<<<<<<< HEAD
-        $this->Aboutusm->insert_about_us_feature_content($big,$small,$box_header,$box_details,$icon);
-        redirect(Admin_aboutus);
-=======
-        $this->Aboutusm->insert_about_us_feature_content();
-        redirect('Admin_aboutus');
->>>>>>> 293c4b6f68ab48b46aff0930e1018d7a04d2e0e5
+            $this->load->model('Aboutusm');
+
+            $this->Aboutusm->insert_about_us_feature_content($big,$small,$box_header,$box_details,$icon);
+            redirect('Admin_aboutus');
+
+       /* $this->Aboutusm->insert_about_us_feature_content();
+        redirect('Admin_aboutus');*/
+
         }
 
     else{
