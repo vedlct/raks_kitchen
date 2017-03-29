@@ -70,7 +70,7 @@ class Admin_Res_Details extends CI_Controller {
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->add_new_res_details($id,$description,$time);
-        redirect(Admin_Res_Details);
+        redirect('Admin_Res_Details');
     }
 
     public function insert_rating(){
@@ -79,11 +79,16 @@ class Admin_Res_Details extends CI_Controller {
         if ($this->session->userdata('username') != null) {
             $this->load->model('Ratingm');
             $rating = $this->input->post('rating');
-            $res_id = $this->input->post('r_id');
+            $item_id = $this->input->post('r_id');
             $username = $this->session->userdata('username');
-            $this->Ratingm->insert_rating($rating, $res_id, $username);
+            $this->Ratingm->insert_rating($rating, $item_id, $username);
+           //echo $item_id;
 
 
+        }
+        else
+        {
+           echo "<script>alert('insert')</script>";
         }
 
 
@@ -137,7 +142,7 @@ class Admin_Res_Details extends CI_Controller {
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->edit_res_details($name,$description,$time);
-        redirect(Admin_Res_Details);
+        redirect('Admin_Res_Details');
 
 
     }

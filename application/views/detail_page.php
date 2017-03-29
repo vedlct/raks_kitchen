@@ -50,8 +50,7 @@
                 ?>
 
 
-
-                <!--(<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)-->
+                (<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)
                 </div>
             <h1>Rak's Kitchen</h1>
 
@@ -102,6 +101,7 @@
                 <h2 class="inner">Menu</h2>
 
                 <?php
+
                 foreach ($show_item_type as $s){
                 ?>
                     <table class="table table-striped cart-list">
@@ -128,10 +128,13 @@
                    $item_type=$s->type;
                   //  $item_name=$s->item_name;
                     $query1=$this->db->query("SELECT * FROM `menu` WHERE `item_type` ='$item_type'");
+                    $counter=0;
                      foreach ($query1->result() as $q) {
                          $item_name=$q->item_name;
+
                          $string = preg_replace('/[^a-zA-Z0-9-]/', '', $item_name);
                          ?>
+
                          <tr>
                              <td>
                                  <figure class="thumb_menu_list"><img src="<?php echo base_url() ?>img/menu-thumb-1.jpg"
@@ -141,16 +144,91 @@
                                      <?php echo $q->item_description?>
                                  </p>
 
-                                 
-                                 <i class="icon_star voted"></i>
-                                 <i class="icon_star voted"></i>
-                                 <i class="icon_star voted"></i>
-                                 <i class="icon_star voted"></i>
-                                 <i class="icon_star"></i>
+<!--                                 <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="30px" style="float: left">
 
                              </td>
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+                         <script type="text/javascript">
 
-                             <td>
+
+//                             var x = '<?//= $q->id ?>//';
+//
+//                             imgA = ("imgA" + x).toString();
+//                             imgB = ("imgB" + x).toString();
+//                             imgC = ("imgC" + x).toString();
+//                             imgD = ("imgD" + x).toString();
+//                             imgE = ("imgE" + x).toString();
+
+                            $("document").ready(function () {
+
+                                $("#imgA<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                }).mouseout(function () {
+                                    if (count = 1) {
+                                    } else
+                                        this.src = "<?php echo base_url()?>img/blank.png"
+                                });
+
+                                $("#imgB<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                });
+
+                                $("#imgC<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                });
+
+                                $("#imgD<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+
+                                });
+
+                                $("#imgE<?= $q->id ?>").mouseover(function () {
+                                    this.src = "<?php echo base_url()?>img/yellow.png"
+                                    document.getElementById("imgD<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/yellow.png";
+
+                                }).mouseout(function () {
+
+                                    this.src = "<?php echo base_url()?>img/blank.png"
+                                    document.getElementById("imgD<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgC<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgB<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+                                    document.getElementById("imgA<?= $q->id ?>").src = "<?php echo base_url()?>img/blank.png";
+
+                                });
+
+                            });
+                        </script>
+                         <td>
                                  <strong><?php
                                      if ($q->item_price == null){
 
@@ -204,11 +282,16 @@
                          </tr>
 
                          <?php
-                     } }
+                     }
+                         $counter++;
+                     }
+
                     ?>
                 </table>
                     <hr>
-                <?php } ?>
+                <?php
+
+                } ?>
                 <hr>
             </div><!-- End box_style_1 -->
         </div><!-- End col-md-6 -->
@@ -508,6 +591,115 @@
     }
 
 </script>
+
+<script type="text/javascript">
+
+    var count =0;
+   // var item_id = document.getElementById("item_id").value;
+
+    var x = '<?php echo $counter?>';
+  //  alert(x);
+
+
+
+
+
+
+    function myfuncA(x) {
+        btn = $(x).data('panel-id');
+        count =1;
+        //alert(btn);
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+btn+count,
+            data:{'rating':count,'r_id':btn},
+            cache: false,
+            success:function(data)
+            {
+                alert("You have successfully gave rating rating 1");
+                //alert(data);
+            }
+
+        });
+
+
+    }
+    function myfuncB(x) {
+        count =2;
+        btn = $(x).data('panel-id');
+
+        //alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count+btn,
+            data:{'rating':count,'r_id':btn},
+            cache: false,
+            success:function(data)
+            {
+                alert("You have successfully gave rating rating 2");
+            }
+
+        });
+
+    }
+    function myfuncC(x) {
+        count =3;
+        btn = $(x).data('panel-id');
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count+btn,
+            data:{'rating':count,'r_id':btn},
+            cache: false,
+            success:function(data)
+            {
+                //$('#myReview').html(data);
+                alert("You have successfully gave rating rating 3");
+            }
+
+        });
+
+    }
+    function myfuncD(x) {
+        count =4;
+        btn = $(x).data('panel-id');
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count+btn,
+            data:{'rating':count,'r_id':btn},
+            cache: false,
+            success:function(data)
+            {
+               // alert(data);
+                alert("You have successfully gave rating rating 4");
+            }
+
+        });
+
+    }
+    function myfuncE(x) {
+      
+        count =5;
+
+        btn = $(x).data('panel-id');
+        //alert(btn);
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count+btn,
+            data:{'rating':count,'r_id':btn},
+            cache: false,
+            success:function(data)
+            {
+                alert("You have successfully gave rating rating 5");
+            }
+
+        });
+
+
+    }
+</script>
+
 
 </body>
 </html>

@@ -72,7 +72,7 @@ class Admin_menu_attribute extends CI_Controller
 
             $this->load->model('Menum');
             $this->Menum->edit_res($id);
-            redirect(Admin_menu_attribute);
+            redirect('Admin_menu_attribute');
             /*
             $this->load->model('Menum');
             $this->Menum->menuedit($id);

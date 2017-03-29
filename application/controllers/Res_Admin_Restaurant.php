@@ -63,7 +63,7 @@ class Res_Admin_Restaurant extends CI_Controller
             //print_r($id);
             $this->load->model('Res_Admin_m');
             $this->Res_Admin_m->insert_restuarant_content();
-            redirect(Res_Admin_Restaurant);
+            redirect('Res_Admin_Restaurant');
         }
         else{
             $this->load->model('viewall');
@@ -86,7 +86,7 @@ class Res_Admin_Restaurant extends CI_Controller
 
             $this->load->model('Restaurantm');
             $this->Restaurantm->edit_res($id);
-            redirect(Res_Admin_Restaurant);
+            redirect('Res_Admin_Restaurant');
             /*
             $this->load->model('Menum');
             $this->Menum->menuedit($id);

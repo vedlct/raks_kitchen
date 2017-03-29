@@ -31,7 +31,7 @@ class Order extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
             $this->load->model('Orderm');
             $this->Orderm->delete_order($username);
-            redirect(Order);
+            redirect('Order');
 
         }
         else{
@@ -53,7 +53,7 @@ class Order extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
             $this->load->model('Orderm');
             $this->Orderm->accept_order($name);
-            redirect(Order);
+            redirect('Order');
 
         }
         else{

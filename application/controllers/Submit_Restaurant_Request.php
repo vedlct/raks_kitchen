@@ -16,7 +16,7 @@ class Submit_Restaurant_Request extends CI_Controller
 
             $this->load->model('Restaurantm');
             $this->Restaurantm->insert_restuarant_content();
-            redirect(Admin_Restaurant_Req);
+            redirect('Admin_Restaurant_Req');
 
     }
 
@@ -24,7 +24,7 @@ class Submit_Restaurant_Request extends CI_Controller
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->submit_restuarant_content();
-        redirect(Submit_Restaurant_Request);
+        redirect('Submit_Restaurant_Request');
     }
 
     public function get_submitted_res(){
@@ -38,7 +38,7 @@ class Submit_Restaurant_Request extends CI_Controller
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->edit_res($id);
-        redirect(Admin_Restaurant_Req);
+        redirect('Admin_Restaurant_Req');
         /*
         $this->load->model('Menum');
         $this->Menum->menuedit($id);

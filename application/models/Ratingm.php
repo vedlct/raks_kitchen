@@ -53,12 +53,12 @@ class Ratingm extends CI_Model
         }
     }*/
 
-    public function insert_rating($rating,$res_id,$username)
+    public function insert_rating($rating, $item_id, $username)
     {
 
 
         $data = array(
-            'res_id' => $res_id,
+            'res_id' => $item_id,
             'rating' => $rating,
             'username' => $username
         );

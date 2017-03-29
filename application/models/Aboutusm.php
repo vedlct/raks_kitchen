@@ -62,12 +62,8 @@ class Aboutusm extends CI_Model
 
         $this->db->insert('about_us_details',$data);
     }
-    function insert_about_us_feature_content(){
-        $big = $this->input->post('details');
-        $small  = $this->input->post('phone');
-        $box_header = $this->input->post('boxheader');
-        $box_details = $this->input->post('boxdetails');
-        $icon = $this->input->post('icon');
+    function insert_about_us_feature_content($big,$small,$box_header,$box_details,$icon){
+
         $data = array(
             'big' => $big,
             'small' => $small,
@@ -87,7 +83,7 @@ class Aboutusm extends CI_Model
         return $query->result();
 
     }
-    function update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails,$box_icon){
+    function update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails){
         /* $query = $this->db->get_where('about_us_feature', array('id' => $id));
          return $query->result();*/
 
@@ -96,12 +92,12 @@ class Aboutusm extends CI_Model
             'small' => $small,
             'box_header' => $boxheader,
             'box_details' => $boxdetails,
-            'box_icon' => $box_icon
+
         );
 
 
         $this->db->where('id',$id);
-        $this->db->insert('about_us_feature',$data);
+        $this->db->update('about_us_feature',$data);
 
 
 
