@@ -318,7 +318,7 @@
                     </table>
                     <hr>
                     <!--<a class="btn_full" href="cart.php">Order now</a>-->
-                    <a class="btn_full" href="#" onclick="loginplz()" data-toggle="modal" data-target="#login_2">Order now</a>
+                    <a class="btn_full" href="#"  data-toggle="modal" data-target="#login_2">Order now</a>
 
 
                 </div><!-- End cart_box -->
@@ -342,17 +342,24 @@
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
             <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                <input type="text" class="form-control form-white" placeholder="Username">
-                <input type="text" class="form-control form-white" placeholder="Password">
+                <input type="text" name="username" class="form-control form-white" placeholder="Username">
+                <input type="password" name="password" class="form-control form-white" placeholder="Password">
+
                 <div class="text-left">
                     <a href="#">Forgot Password?</a>
-                    <a href="<?php echo base_url()?>Registration">Forgot Password?</a>
+
                 </div>
+                <div class="text-right">
+                    <a  href="#" data-toggle="modal" data-target="#register"  onclick="login()">Sign Up</a>
+                    <!--<button type="button" class="btn btn-primary"   onclick="login()">Sign Up</button>-->
+                </div>
+
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
     </div>
 </div><!-- End modal -->
+
 
 <!-- Register modal -->
 <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
@@ -361,11 +368,35 @@
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
             <form action="<?php echo base_url()?>Registration" class="popup-form" id="myRegister" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                <input type="text" class="form-control form-white" placeholder="Name">
-                <input type="text" class="form-control form-white" placeholder="Last Name">
-                <input type="email" class="form-control form-white" placeholder="Email">
-                <input type="text" class="form-control form-white" placeholder="Password"  id="password1">
-                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2">
+                <input type="text" class="form-control form-white" placeholder="Name" name="Name">
+
+                <input type="email" class="form-control form-white" placeholder="Email" name="Email">
+                <input type="text" class="form-control form-white" id="Username" placeholder="UserName" name="UserName" onclick="hidediv()" onfocusout="myFunc()">
+                <div style="display: none" id="alerttext"><span style="color: red"> UserName Already Taken</span></div>
+
+                <input type="text" class="form-control form-white" placeholder=" Your full address" name="full_address"  >
+                <input type="text" class="form-control form-white" placeholder=" Your phone number" name="phone_number"  >
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="city" class="form-control form-white" placeholder="Your city">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="postal_code" class="form-control form-white" placeholder="Your postal code">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="state" class="form-control form-white" placeholder="State">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="country" class="form-control form-white" placeholder="Country">
+
+                    </div>
+                </div>
+
+                <input type="text" class="form-control form-white" placeholder="Password"  id="password1"name="password1">
+                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2"name="password2">
                 <div id="pass-info" class="clearfix"></div>
                 <div class="checkbox-holder text-left">
                     <div class="checkbox">
@@ -373,7 +404,7 @@
                         <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-submit">Register</button>
+                <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
             </form>
         </div>
     </div>
@@ -648,6 +679,20 @@
         alert("Please login ");
     }
 </script>
+
+<script>
+    function  login() {
+
+        //$('#login_2').modal('hide');
+       // $('#register').modal('toggle');
+
+         document.getElementById("login_2").style.display = 'none';
+        document.getElementById("register").style.display = 'block';
+
+    }
+</script>
+
+
 
 </body>
 </html>

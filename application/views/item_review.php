@@ -72,10 +72,10 @@
                 }
                 ?>
                  ( <small><a href="#0">98 reviews</a></small> )</div>
-            <h1><?php foreach ($details_head as $s){?>
+            <h1><?php foreach ($this->data['details_head'] as $s){?>
                     <?php echo $s->name ?>
                 </h1>
-            <div><input type="hidden" name="<?php echo $s->res_id ?>" id="res_id" value="<?php echo $s->res_id ?>" style="color: black"></div>
+            <div><input type="hidden" name="<?php echo $s->id ?>" id="res_id" value="<?php echo $s->id ?>" style="color: black"></div>
             <div><em><?php echo $s->type ?></em></div>
             <div><i class="icon_pin"></i> <?php echo $s->address ?> ,<?php echo $s->city ?>-<?php echo $s->postal_code ?> ,<?php echo $s->country ?>- <strong>Delivery charge:</strong> $10, free over $15.</div>
             <?php }?>
@@ -142,75 +142,30 @@
 
 
                     </div>
-                    <div class="rating">
 
-
-
-                        <?php
-                        if ($this->session->userdata('username') != null){
-                        if ($res_rating == null){
-                            ?>
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
-
-                        <?php }
-                        foreach ($res_rating as $r) {
-                            $rating2 = $r->rating;
-
-                            echo $rating2;
-                            echo "<div style='color: black'><h3>Your Last Rating</h3></div>";
-
-                        if ($rating2 == 1){?>
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
-                        <?php } else if( $rating2 == 2) {?>
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
-
-
-                        <?php } else if( $rating2 == 3) { ?>
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
-
-                        <?php  } else if( $rating2 == 4) { ?>
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
-
-                        <?php    } else if( $rating2 == 5) { ?>
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                            <img src="<?php echo base_url()?>img/yellow.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
-
-                        <?php }} }else {}
-                        ?>
-
-                    </div>
 
                     <div class="row" id="rating_summary">
 
 
                     </div><!-- End row -->
+
+                    <?php if($this->session->userdata('loggedin')=="true"){
+                    $username=$this->session->userdata('username');
+                    $usertype=$this->session->userdata('type');
+                    if($usertype=="User"){
+
+                    ?>
+
                     <hr class="styled">
                     <a href="#" class="btn_1 add_bottom_15" data-toggle="modal" data-target="#myReview">Leave a review</a>
                 </div><!-- End summary_review -->
 
+                <?php }else{?>
+
+                <hr class="styled">
+                <a href="#" class="btn_1 add_bottom_15" data-toggle="modal" data-target="#login_2">Leave a review</a>
+            </div>
+            <?php }}?>
 
 
                     <?php foreach($comments as $c){  ?>
@@ -218,7 +173,7 @@
                 <div class="review_strip_single">
                     <?php
                     $username=$c->username;
-                    $query =$this->db->query(" select name from user WHERE `username`= '$username'");
+                    $query =$this->db->query(" select `name` from `user` WHERE `username`= '$username'");
                     foreach ($query->result() as $r ){$name=$r->name;}
                     ?>
                     <h4><?php echo $name ?> said</h4>
@@ -354,31 +309,63 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myLogin">
+            <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                <input type="text" class="form-control form-white" placeholder="Username">
-                <input type="text" class="form-control form-white" placeholder="Password">
+                <input type="text" name="username" class="form-control form-white" placeholder="Username">
+                <input type="password" name="password" class="form-control form-white" placeholder="Password">
+
                 <div class="text-left">
                     <a href="#">Forgot Password?</a>
+
                 </div>
+                <div class="text-right">
+                    <a  href="#" data-toggle="modal" data-target="#register"  onclick="login()">Sign Up</a>
+                    <!--<button type="button" class="btn btn-primary"   onclick="login()">Sign Up</button>-->
+                </div>
+
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
     </div>
 </div><!-- End modal -->
 
+
 <!-- Register modal -->
 <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myRegister">
+            <form action="<?php echo base_url()?>Registration" class="popup-form" id="myRegister" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                <input type="text" class="form-control form-white" placeholder="Name">
-                <input type="text" class="form-control form-white" placeholder="Last Name">
-                <input type="email" class="form-control form-white" placeholder="Email">
-                <input type="text" class="form-control form-white" placeholder="Password"  id="password1">
-                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2">
+                <input type="text" class="form-control form-white" placeholder="Name" name="Name">
+
+                <input type="email" class="form-control form-white" placeholder="Email" name="Email">
+                <input type="text" class="form-control form-white" id="Username" placeholder="UserName" name="UserName" onclick="hidediv()" onfocusout="myFunc()">
+                <div style="display: none" id="alerttext"><span style="color: red"> UserName Already Taken</span></div>
+
+                <input type="text" class="form-control form-white" placeholder=" Your full address" name="full_address"  >
+                <input type="text" class="form-control form-white" placeholder=" Your phone number" name="phone_number"  >
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="city" class="form-control form-white" placeholder="Your city">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="postal_code" class="form-control form-white" placeholder="Your postal code">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="state" class="form-control form-white" placeholder="State">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="country" class="form-control form-white" placeholder="Country">
+
+                    </div>
+                </div>
+
+                <input type="text" class="form-control form-white" placeholder="Password"  id="password1"name="password1">
+                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2"name="password2">
                 <div id="pass-info" class="clearfix"></div>
                 <div class="checkbox-holder text-left">
                     <div class="checkbox">
@@ -386,7 +373,7 @@
                         <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-submit">Register</button>
+                <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
             </form>
         </div>
     </div>
@@ -400,12 +387,21 @@
 
             <form method="post" action="<?php echo base_url() ?>Admin_Res_Details/insert_comment/" name="review" id="review" class="popup-form">
                 <div class="login_icon"><i class="icon_comment_alt"></i></div>
-                <?php foreach ($res_details as $e){?>
+                <!--<?php foreach ($res_details as $e){?>
 
                 <input name="restaurant_name" id="restaurant_name" type="hidden" value="Mexican Taco Mex">
-                <input name="re_id" id="re_id" type="hidden" value="<?php echo $e->res_id ?>" style="color: black">
 
-                <?php }?>
+                <input name="re_id" id="re_id" type="text" value="<?php echo $e->id ?>" style="color: black">
+
+
+
+                <?php }?>-->
+
+                <?php $query5 =$this->db->query(" select `id` from `restaurant` ");
+                foreach ($query5->result() as $v ){$id=$v->id;}
+                ?>
+
+                <input name="res_id" id="res_id" type="hidden" value="<?php echo $id ?>" style="color: black">
 
 
                 <textarea name="review_text" id="review_text" class="form-control form-white" style="height:100px" placeholder="write review" ></textarea>

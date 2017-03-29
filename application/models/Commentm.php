@@ -6,7 +6,7 @@ class Commentm extends CI_Model
     public function insert_comment($username)
     {
         $review = $this->input->post('review_text');
-        $res_id = $this->input->post('re_id');
+        $res_id = $this->input->post('res_id');
         //$re_id = $this->input->post('re_id');
 
         $data = array(
@@ -17,9 +17,9 @@ class Commentm extends CI_Model
         $this->db->insert('res_comment',$data);
     }
 
-    public function get_comment($resid)
+    public function get_comment($type_id)
     {
-        $query = $this->db->query("SELECT * FROM `res_comment` WHERE `res_id` = '$resid'");
+        $query = $this->db->query("SELECT * FROM `res_comment` WHERE `res_id` = '$type_id'");
         return $query->result();
     }
 }

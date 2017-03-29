@@ -73,7 +73,7 @@ class Home extends CI_Controller {
             echo "<script>
                         alert('wrong username or password');
                        
-					window.location=\"/Rak/Home\";
+					window.location=\"/raks_kitchen/Home\";
 					
                     </script>";
             // redirect('test');

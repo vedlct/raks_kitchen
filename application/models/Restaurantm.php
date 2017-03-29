@@ -175,7 +175,7 @@ class Restaurantm extends CI_Model
 
     public function showedit($id){
 
-    $query=$this->db->query("SELECT *  FROM  restaurant WHERE `res_id`= '$id'");
+    $query=$this->db->query("SELECT *  FROM  restaurant WHERE `id`= '$id'");
     return $query->result();
     }
 
@@ -185,18 +185,18 @@ class Restaurantm extends CI_Model
         return $query->result();
     }
 
-    public function restaurant_details_description($id){
+    public function restaurant_details_description(){
 
-        $query = $this->db->get_where('restaurant_details', array('res_id' => $id));
+        $query = $this->db->get('restaurant_details');
         return $query->result();
 
     }
 
-    public function restaurant_details_head($id){
+    public function restaurant_details_head(){
 
 
 
-        $query = $this->db->get_where('restaurant', array('res_id' => $id));
+        $query = $this->db->get('restaurant');
         return $query->result();
 
     }

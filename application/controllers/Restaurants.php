@@ -43,9 +43,9 @@ class Restaurants extends CI_Controller {
         $this->load->model('Userm');
 
         $type_id = $id;
-        $this->data['details']= $this->Restaurantm->restaurant_details_description($id);
-        $this->data['res_details']= $this->Restaurantm->showedit($type_id);
-        $this->data['details_head']= $this->Restaurantm->restaurant_details_head($id);
+        $this->data['details']= $this->Restaurantm->restaurant_details_description();
+        $this->data['res_details']= $this->Restaurantm->showedit($id);
+        $this->data['details_head']= $this->Restaurantm->restaurant_details_head();
         if ($this->session->userdata('username') != null){
 
         $this->data['res_rating']= $this->Restaurantm->get_rating($type_id);
