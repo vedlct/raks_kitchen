@@ -18,15 +18,18 @@
 
 
     <!-- search box-->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php base_url()?>css/style.css" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
     <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
-    <link href="css/modal.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -39,9 +42,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -258,11 +259,7 @@
     });
 </script>
 
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
+
 <script>
 
     var modal3 = document.getElementById('myModal3');
