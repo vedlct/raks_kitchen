@@ -48,9 +48,11 @@
                 }
 
                 ?>
+                <?php $query5 =$this->db->query(" select `id` from `restaurant` ");
+                foreach ($query5->result() as $v ){$id1=$v->id;}
+                ?>
 
-
-                (<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)
+                (<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id1?>">Read 98 reviews</a></small>)
                 </div>
             <h1>Rak's Kitchen</h1>
 
@@ -399,7 +401,7 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myLogin">
+            <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
                 <input type="text" class="form-control form-white" placeholder="Username">
                 <input type="text" class="form-control form-white" placeholder="Password">
