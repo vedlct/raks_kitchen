@@ -98,4 +98,10 @@ class Order extends CI_Controller {
 
         }
     }
+
+    public function oderdelete()
+    {
+        $id = $this->input->post('id');
+        
+    }
 }
