@@ -52,6 +52,20 @@ class Restaurant_menu extends CI_Controller
 
         }
 
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+
 
     }
 

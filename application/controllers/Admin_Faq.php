@@ -75,7 +75,7 @@ class Admin_Faq extends CI_Controller {
             $id = $this->input->post('id');
             $this->load->model('Faqm');
             $this->data['edit'] = $this->Faqm->showedit($id);
-            foreach ($this->data['edit'] as $e) {
+            /*foreach ($this->data['edit'] as $e) {
                 echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Admin_Faq/editcontent/$e->id\" >
                                     <div class=\"form-group\">
                                         <label>Header</label>
@@ -91,7 +91,9 @@ class Admin_Faq extends CI_Controller {
                                     </div>
                                         <input class=\"btn btn-success\" type=\"submit\">
                                     </form>";
-            }
+            }*/
+            $this->load->view('test_admin_faq');
+
         }
         else{
             $this->load->model('viewall');

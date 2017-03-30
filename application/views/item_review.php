@@ -57,21 +57,7 @@
     <div id="subheader">
         <div id="sub_content">
             <div id="thumb"><img src="<?php echo base_url() ?>img/thumb_restaurant.jpg" alt=""></div>
-            <div class="rating">
-                <?php
-                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
-                for ($i=1 ; $i<=$rating_avg; $i++ ) {
-                    ?>
-                    <i class="icon_star voted"></i>
-                    <?php
-                }
-                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
-                ?>
-                    <i class="icon_star"></i></i>
-                <?php
-                }
-                ?>
-                 ( <small><a href="#0">98 reviews</a></small> )</div>
+
             <h1><?php foreach ($this->data['details_head'] as $s){?>
                     <?php echo $s->name ?>
                 </h1>
@@ -160,12 +146,12 @@
                     <a href="#" class="btn_1 add_bottom_15" data-toggle="modal" data-target="#myReview">Leave a review</a>
                 </div><!-- End summary_review -->
 
-                <?php }else{?>
+                <?php }}else{?>
 
                 <hr class="styled">
                 <a href="#" class="btn_1 add_bottom_15" data-toggle="modal" data-target="#login_2">Leave a review</a>
             </div>
-            <?php }}?>
+            <?php }?>
 
 
                     <?php foreach($comments as $c){  ?>
@@ -612,6 +598,18 @@
 
         });
 
+
+    }
+</script>
+
+<script>
+    function  login() {
+
+        //$('#login_2').modal('hide');
+        // $('#register').modal('toggle');
+
+        document.getElementById("login_2").style.display = 'none';
+        document.getElementById("register").style.display = 'block';
 
     }
 </script>

@@ -146,7 +146,7 @@
                             <div id="myModal2" class="modal">
 
                                 <!-- Modal content -->
-                                <div class="modal-content">
+                                <div class="modal-content" style="padding: 35px; width: 50%; margin: 0 auto">
                                     <span class="close">×</span>
 
                                     <h2>Add Content</h2>
@@ -170,10 +170,10 @@
 
                             </div>
 
-                            <div id="myModal3" class="modal">
+                            <div id="myModal3" class="modal" >
 
                                 <!-- Modal content -->
-                                <div class="modal-content">
+                                <div class="modal-content"  style="padding: 35px; width: 50%; margin: 0 auto">
                                     <span class="close">×</span>
 
                                     <h2>Edit Content</h2>
@@ -214,6 +214,7 @@
     //var btn = document.getElementById("myBtn");
 
     var span = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close")[0];
 
 
     // When the user clicks the button, open the modal
@@ -248,7 +249,7 @@
     }
 
 
-    span.onclick = function() {
+    span1.onclick = function() {
         modal2.style.display = "none";
     }
 

@@ -135,7 +135,7 @@
                                     <table class=" table table-bordered">
                                         <thead>
                                         <tr>
-                                            <th>Item Type</th>
+                                            <!--<th>Item Type</th>-->
                                             <th>Item Name</th>
                                             <th>Item Description</th>
                                             <th>Price</th>
@@ -150,7 +150,7 @@
                                     -->
                                             <tbody>
                                             <tr>
-                                                <td><?php echo $q->item_type ?></td>
+                                                <!--<td><?php echo $q->item_type ?></td>-->
                                                 <td><?php echo $q->item_name ?></td>
                                                 <td><?php echo $q->item_description ?></td>
                                                 <td><?php echo $q->item_price ?></td>
