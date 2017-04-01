@@ -25,7 +25,7 @@
     <!--<link href="<?php echo  base_url()?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
     <link href="<?php echo  base_url()?>css/elegant_font/elegant_font.min.css" rel="stylesheet" type="text/css">
 
-    <script src="<?php echo base_url()?>js/jquery.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>js/bootstrap.js"></script>
@@ -59,7 +59,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <?php $this->load->view('adminmenu');?>
+        <?php $this->load->view('adminmenu')?>
 
         <!-- /.navbar-collapse -->
     </nav>
@@ -239,7 +239,7 @@
 </div>
 <!-- /#page-wrapper -->
 
-</div>
+
 
 <!-- /#wrapper -->
 

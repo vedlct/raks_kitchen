@@ -165,7 +165,7 @@
                     <h4><?php echo $name ?> said</h4>
                     <p>
                          <?php echo $c->comment ?>
-                        <small> at - <?php echo $c->Date ?>-</small>
+                        <small>  - <?php echo $c->Date ?></small>
                     </p>
 
 
