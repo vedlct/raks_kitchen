@@ -12,7 +12,8 @@
     <title>Rak's kitchen</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
 
@@ -35,6 +36,16 @@
     <!-- include summernote css/js-->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+    <!-- Date Picker -->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="<?php echo base_url()?>css/datepicker.css">
+    <!--<link rel="stylesheet" href="<?php echo base_url()?>css/main.css">-->
+
+<!--    <script src="--><?php //echo base_url()?><!--js/datepicker.js"></script>-->
+<!--    <script src="--><?php //echo base_url()?><!--js/main.js"></script>-->
+
+    <!-- end Date Picker -->
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -85,6 +96,42 @@
 
                         <div class="panel-body">
 
+
+                            <div class="container">
+
+
+                                <div class="row" >
+                                    <form method="post" action="<?php echo base_url()?>Report">
+                                        <div class="col-md-3 col-sm-6" >
+                                        <div class="form-group" >
+
+                                            <label for="date">From</label>
+                                            <input type="text" class="form-control docs-date" name="date_from" placeholder="Pick a date">
+                                        </div >
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-6" >
+                                            <div class="form-group" >
+
+                                                <label for="date">To</label>
+                                                <input type="text" class="form-control docs-date" name="date_to" placeholder="Pick a date">
+                                            </div >
+                                        </div>
+
+                                     <input style="margin-top: 30px" type="submit" name="generate" class="btn btn-success" value="Generate">
+
+                                    </form>
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                            <?php if($this->input->post('generate')){?>
+
                             <div class="table-responsive">
                                 <table class=" table table-bordered">
                                     <thead>
@@ -110,7 +157,7 @@
                                         <td><?php echo $e->date ?></td>
                                         <td><?php echo $e->item_name ?></td>
                                         <td><?php echo $e->item_attr ?></td>
-                                        <td><?php echo $e->quantity ?></td>
+                                        <td><?php echo $e->qun ?></td>
                                         <td><?php echo $e->price ?></td>
 
                                     </tr>
@@ -121,20 +168,24 @@
                                         <td colspan="4"></td>
 
                                         <th id="1">Total Price</th>
-                                        <?php foreach ($this->data['gettotaltrans'] as $p){?>
-                                            <td id="mat"><?php echo $p->price ?></td>
+                                        <?php foreach ($this->data['gettotaltrans'] as $p) { ?>
+                                            <td ><?php echo $p->total?></td>
+
                                         <?php } ?>
                                     </tr>
-                                    <tr>
 
-                                    </tr>
+                                    <?php } ?>
                                 </table>
                             </div>
 
-                        </div>
+
+
+
+
                     </div>
                 </div
             </div>
+        </div>
 
 
 
@@ -148,6 +199,11 @@
 
 
 
+
+
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="<?php echo base_url()?>js/datepicker.js"></script>
+<script src="<?php echo base_url()?>js/main.js"></script>
