@@ -2,45 +2,40 @@
 <html lang="en">
 
 <head>
-    <?php include ('head.php') ?>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rak</title>
-
-    <!--autocomplete search-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-    <!-- search box-->
-    <link href="<?php base_url()?>css/style.css" rel="stylesheet">
+    <title>Rak's kitchen</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/modal.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
     <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
     <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <script src="js/jquery.js"></script>
+    <!-- Custom Fonts -->
+    <!--<link href="<?php echo  base_url()?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="<?php echo  base_url()?>css/elegant_font/elegant_font.min.css" rel="stylesheet" type="text/css">
+
+    <script src="<?php echo base_url()?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>js/bootstrap.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 
 
 
@@ -54,10 +49,7 @@
 
     <![endif]-->
 
-
-
 </head>
-
 <body>
 
 <div id="wrapper">

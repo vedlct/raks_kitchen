@@ -63,7 +63,7 @@
             <a href="<?php echo base_url()?>Admin_aboutus"><i class="fa fa-fw fa-edit"></i> About Us</a>
         </li>
         <li>
-            <!--<a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>-->
+
             <a href="javascript:;" data-toggle="collapse" data-target="#dropdown"><i class="fa fa-fw fa-arrows-v"></i> Restaurant <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="dropdown" class="collapse">
                 <li>
@@ -76,10 +76,7 @@
             </ul>
 
         </li>
-        <!--<li>
-            <a href="<?php echo base_url()?>Admin_Res_Details"><i class="fa fa-fw fa-desktop"></i> Add Restaurant Details</a>
 
-        </li>-->
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Menu <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
@@ -97,20 +94,12 @@
                 </li>
 
             </ul>
-            <!--<a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>-->
+
         </li>
-        <!--<li>
-            <a href="<?php echo base_url()?>Admin_menu_attribute"><i class="fa fa-fw fa-wrench"></i>Menu Attribute</a>
-        </li>-->
-
-
-
 
         <li>
             <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>Order</a>
         </li>
-
-
             <li>
                 <a href="<?php echo base_url()?>Report"><i class="fa fa-fw fa-wrench"></i>Sales Report</a>
             </li>
@@ -118,27 +107,7 @@
 
 
 
-    <?php }elseif ($usertype=="Res"){?>
+    <?php }}?>
 
-
-
-
-
-
-
-            <li  class="active">
-                <a href="<?php echo base_url()?>Res_Admin_Home"><i class="fa fa-fw fa-dashboard"></i> Home</a>
-            </li>
-            <li>
-                <a href="<?php echo base_url()?>Res_Admin_menu_attribute"><i class="fa fa-fw fa-bar-chart-o"></i> Menu Attribute</a>
-            </li>
-            <li>
-                <a href="<?php echo base_url()?>Res_Admin_Restaurant"><i class="fa fa-fw fa-table"></i> Restaurant</a>
-            </li>
-            <li>
-                <a href="<?php echo base_url()?>Res_Admin_Res_Details"><i class="fa fa-fw fa-edit"></i> Restaurant Details</a>
-            </li>
-
-        <?php }}?>
     </ul>
 </div>

@@ -8,14 +8,7 @@ class Report extends CI_Controller {
     public function index()
     {
         if ($this->session->userdata('type') == "Admin") {
-            /*$this->load->model('Faqm');
-            $this->data['show_faq_content'] = $this->Faqm->show_faq_content();
-            $this->load->view('admin_faq', $this->data);*/
-            /*$this->load->model('Reportm');
-            $this->data['show_Sales_review_by_date'] = $this->Reportm->show_Sales_review_by_date();
-            $this->data['gettotaltrans'] = $this->Reportm->gettotaltrans();
-            //print_r($this->data['gettotaltrans']);
-            $this->load->view('report',$this->data);*/
+
 
             if(!$this->input->post('generate')){
 
