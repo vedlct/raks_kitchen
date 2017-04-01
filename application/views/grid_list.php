@@ -33,7 +33,7 @@
 <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
 
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
+
 
     <div id="subheader">
         <div id="sub_content">
@@ -248,31 +248,31 @@
 <script src="<?php echo base_url()?>assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
-<script>$('#cat_nav').mobileMenu();</script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
-<script src="<?php echo base_url()?>js/map.js"></script>
-<script src="<?php echo base_url()?>js/infobox.js"></script>
-<script src="<?php echo base_url()?>js/ion.rangeSlider.js"></script>
+<!--<script  src="--><?php //echo base_url()?><!--js/cat_nav_mobile.js"></script>-->
+<!--<script>$('#cat_nav').mobileMenu();</script>-->
+<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--js/map.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--js/infobox.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--js/ion.rangeSlider.js"></script>-->
 
-<script>
-
-    $(function () {
-        'use strict';
-        $("#range").ionRangeSlider({
-            hide_min_max: true,
-            keyboard: true,
-            min: 0,
-            max: 15,
-            from: 0,
-            to:5,
-            type: 'double',
-            step: 1,
-            prefix: "Km ",
-            grid: true
-        });
-    });
-</script>
+<!--<script>-->
+<!---->
+<!--    $(function () {-->
+<!--        'use strict';-->
+<!--        $("#range").ionRangeSlider({-->
+<!--            hide_min_max: true,-->
+<!--            keyboard: true,-->
+<!--            min: 0,-->
+<!--            max: 15,-->
+<!--            from: 0,-->
+<!--            to:5,-->
+<!--            type: 'double',-->
+<!--            step: 1,-->
+<!--            prefix: "Km ",-->
+<!--            grid: true-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 
 <script>
     function selectid(x) {
