@@ -84,6 +84,9 @@
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Menu <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
                 <li>
+                    <a href="<?php echo base_url()?>Admin_menu/insert_menu_type">Add Menu Type</a>
+                </li>
+                <li>
                     <a href="<?php echo base_url()?>Admin_menu">Menu</a>
                 </li>
                 <li>
@@ -92,9 +95,7 @@
                 <li>
                     <a href="<?php echo base_url()?>Admin_menu_attribute">Admin Menu Attribute</a>
                 </li>
-                <li>
-                    <a href="<?php echo base_url()?>Admin_menu/insert_menu_type">Add Menu Type</a>
-                </li>
+
             </ul>
             <!--<a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>-->
         </li>
@@ -108,6 +109,25 @@
         <li>
             <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>Order</a>
         </li>
+
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-arrows-v"></i>SalesReports <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo3" class="collapse">
+                    <li>
+                        <a href="<?php echo base_url()?>Report"><i class="fa fa-fw fa-wrench"></i>Report by date</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url()?>Report/by_week">Report by week</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url()?>Restaurant_menu">Report by month</a>
+                    </li>
+
+
+                </ul>
+                <!--<a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>-->
+            </li>
 
 
 
