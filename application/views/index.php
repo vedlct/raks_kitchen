@@ -235,6 +235,7 @@
 	</div><!-- End Register modal -->
     
 <!-- COMMON SCRIPTS -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
