@@ -56,6 +56,29 @@ class Orderm extends CI_Model
         return $query->result();
 
     }
+    public function get_quantity($id){
+
+
+        $query=$this->db->query("SELECT * FROM `order_cart` WHERE `id` = '$id'");
+        return $query->result();
+
+    }
+
+    public function update_quantity($id, $quantity){
+
+
+        $query=$this->db->query("UPDATE `order_cart` SET `quantity`='$quantity' WHERE `id` = '$id'");
+        return $query->result();
+
+    }
+
+    public function delete_order_quantity($id){
+
+
+        $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");
+
+
+    }
 
     public function showfulladdress($username){
 

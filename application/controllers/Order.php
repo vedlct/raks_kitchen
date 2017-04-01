@@ -102,6 +102,22 @@ class Order extends CI_Controller {
     public function oderdelete()
     {
         $id = $this->input->post('id');
-        
+        //echo $id;
+        $this->load->model('Orderm');
+
+        $quantity=$this->Orderm->get_quantity($id);
+
+      foreach ($quantity as $q){ $quantity = $q->quantity;}
+
+
+        if ($quantity <= 1){
+            $this->Orderm->delete_order_quantity($id);
+        }else {
+
+            $quantity = $quantity-1;
+            $this->Orderm->update_quantity($id, $quantity);
+
+        }
+
     }
 }

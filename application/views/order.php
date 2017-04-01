@@ -125,24 +125,27 @@
                                                     <td><?php echo $e->address ?></td>
                                                         <!--<button type="button" data-panel-id="<?= $e->username ?>" onclick="selectid4(this)">See full address</button>-->
                                                     <td>
-                                                        <table class="table-bordered table-responsive">
+                                                        <table class="table-bordered table-responsive" id="price_table">
                                                             <tr>
                                                             <th width="5%">
-                                                                    Action
+                                                                Action
                                                             </th>
-                                                            <th width="50%">
+                                                            <th width="20%">
+                                                                Item Type
+                                                            </th>
+                                                            <th width="30%">
                                                                 Item Name
                                                             </th>
                                                             <th width="10%">
                                                                 Size
                                                             </th>
-                                                            <th width="10%">
+                                                            <th width="5%" >
                                                                 Quantity
                                                             </th>
-                                                            <th width="20%">
+                                                            <th width="10%">
                                                                 rate
                                                             </th>
-                                                            <th width="20%">
+                                                            <th width="10%">
                                                                 price
                                                             </th>
 
@@ -151,6 +154,7 @@
                                                             $date=$e->date;
                                                             $query=$this->db->query("SELECT * FROM `order_cart` WHERE  `date`='$date'" );
                                                             $total=0;
+                                                            //$type_id=$e->type_id;
                                                             foreach ( $query->result() as $s ) {
 
                                                                 ?>
@@ -158,19 +162,29 @@
                                                                     <td style="text-align: center">
                                                                         <a href="#0" class="remove_item"  data-panel-id="<?= $s->id ?>" onclick="selectid(this)"><i class="icon_minus_alt"></i></a>
                                                                     </td>
-                                                                    <td style="color:#00aba9">
+                                                                    <td style="color:#00aba9;text-align: center">
+
+                                                                        <?php
+
+                                                                        //echo $s->type_id;
+                                                                        $query5= $this->db->query("select `type` from `menu_type` WHERE `id` ='$s->type_id' ");
+                                                                        foreach ( $query5->result() as $t ) { echo $t->type;}
+                                                                        ?>
+
+                                                                    </td>
+                                                                    <td style="color:#00aba9;text-align: center">
                                                                         <?php echo $s->item_name ?>
                                                                     </td>
-                                                                    <td style="color:#00aba9">
+                                                                    <td style="color:#00aba9;text-align: center">
                                                                         <?php echo $s->item_attr ?>
                                                                     </td>
-                                                                    <td style="color:#00aba9">
+                                                                    <td style="color:#00aba9;text-align: center " >
                                                                         <?php echo $s->quantity ?>
                                                                     </td>
-                                                                    <td style="color:#00aba9">
+                                                                    <td style=" color:#00aba9;text-align: center ">
                                                                         <?php echo $rate=($s->quantity*$s->price)/$s->quantity ?>
                                                                     </td>
-                                                                    <td style="color:#00aba9">
+                                                                    <td style="color:#00aba9; text-align: center">
                                                                         <?php echo $price=$s->quantity*$s->price ?>
                                                                     </td>
 
@@ -183,7 +197,7 @@
                                                             ?>
                                                             <tr>
 
-                                                                <td colspan="5" align="right" style="color: red">Total (Including $2 delivery fee): &nbsp;</td>
+                                                                <td colspan="6" align="right" style="color: red">Total (Including $2 delivery fee): &nbsp;</td>
                                                                 <td style="color: red"><?php echo $total+2 ?></td>
                                                             </tr>
                                                         </table>
@@ -309,10 +323,11 @@
             success:function(data)
             {
                // $('#txtHint').html(data);
-                alert(data);
+               // alert(data);
             }
 
         });
+        $('#price_table').load(document.URL +  ' #price_table');
 
     }
 </script>
