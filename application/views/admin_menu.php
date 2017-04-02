@@ -23,7 +23,7 @@
     <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
 
     <script src="js/jquery.js"></script>
 
@@ -356,12 +356,7 @@
     }
 
 
-    span.onclick = function() {
-        modal2.style.display = "none";
-    }
-    span2.onclick = function() {
-        modal5.style.display = "none";
-    }
+
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal2) {
