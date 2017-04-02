@@ -12,10 +12,10 @@
     <title>Rak</title>
 
     <!--autocomplete search-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+<!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+<!--    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<!---->
 
     <!-- search box-->
     <link href="css/style.css" rel="stylesheet">
@@ -32,7 +32,7 @@
     <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
 
     <script src="js/jquery.js"></script>
 
@@ -322,12 +322,12 @@
 
 
 </script>
-<script src="js/theia-sticky-sidebar.js"></script>
-<script>
-    jQuery('#sidebar').theiaStickySidebar({
-        additionalMarginTop: 80
-    });
-</script>
+<!--<script src="js/theia-sticky-sidebar.js"></script>-->
+<!--<script>-->
+<!--    jQuery('#sidebar').theiaStickySidebar({-->
+<!--        additionalMarginTop: 80-->
+<!--    });-->
+<!--</script>-->
 <script>
     $('#faq_box a[href^="#"]').on('click', function (e) {
         e.preventDefault();

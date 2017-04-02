@@ -27,6 +27,15 @@
 
 
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!--    <!--autocomplete search-->-->
+<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
+<!--    <script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+<!--    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+<!---->
+
+
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>js/bootstrap.js"></script>
 
@@ -251,27 +260,10 @@
 
 
 
-<!--autocomplete search-->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-<script>
-    $(function x() {
-        $( "#skills" ).autocomplete({
-            source: '<?php echo base_url(); ?>Admin_menu_attribute/autocomplete'
-        });
-    });
 
-</script>
 
-<script>
-    $(function(){
-        $("#srch_menu_attr").autocomplete({
-            source: "<?php echo site_url('Admin_menu_attribute/get_search_menu_attr_autocomplete');?>" // path to the get_birds method
-        });
-    });
-</script>
+
 
 
 <script>
