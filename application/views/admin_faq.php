@@ -143,11 +143,14 @@
                             }
                             ?>
 
+
                             <div id="myModal2" class="modal">
 
                                 <!-- Modal content -->
                                 <div class="modal-content" style="padding: 35px; width: 50%; margin: 0 auto">
                                     <span class="close">×</span>
+
+
 
                                     <h2>Add Content</h2>
                                     <form role="form" method="post" action="<?php echo base_url()?>Admin_Faq/insert_faq" >
@@ -161,7 +164,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Details</label>
-                                        <textarea class="form-control"  name="details"></textarea>
+                                        <textarea class="form-control" id="summernote" name="details"></textarea>
+                                        <!--<textarea class="form-control"  id="summernote" name="details" ></textarea>-->
                                     </div>
                                         <input class="btn btn-success" type="submit">
                                     </form>
@@ -170,11 +174,14 @@
 
                             </div>
 
+
                             <div id="myModal3" class="modal" >
 
                                 <!-- Modal content -->
                                 <div class="modal-content"  style="padding: 35px; width: 50%; margin: 0 auto">
                                     <span class="close">×</span>
+
+
 
                                     <h2>Edit Content</h2>
                                     <div id="txtHint"></div>
@@ -271,6 +278,7 @@
         $('#summernote').summernote();
     });
 </script>
+
 
 
 </body>

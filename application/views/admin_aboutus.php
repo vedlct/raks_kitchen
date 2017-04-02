@@ -151,7 +151,8 @@
 
                                     <div class="form-group">
                                         <label>details</label>
-                                        <input class="form-control" type="text" name="details">
+                                        <!--<input class="form-control" type="text" name="details">-->
+                                        <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
                                     </div>
 
                                     <input class="btn btn-success" type="submit">
@@ -167,7 +168,8 @@
 
                                         <div class="form-group">
                                             <label>details</label>
-                                            <input class="form-control" type="text" name="details" value="<?php echo $s->details?>">
+                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
+                                            <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
                                         </div>
 
 
@@ -228,6 +230,7 @@
                                     <div class="form-group">
                                         <label>Box details</label>
                                         <input class="form-control" type="text" name="boxdetails" >
+
                                     </div>
 
                                     <div class="form-group">
@@ -371,7 +374,8 @@
 
                                 <div class="form-group">
                                     <label>Box details</label>
-                                    <input class="form-control" type="text" name="boxdetails" >
+                                    <!--<input class="form-control" type="text" name="boxdetails" >-->
+                                    <textarea class= "form-control "  id="summernote1" type= "text" name= "boxdetails" ></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -558,6 +562,8 @@
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
+        $('#summernote1').summernote();
+
     });
 
     function myfunc() {
@@ -638,6 +644,8 @@
 
 
 </script>
+
+
 
 
 </body>
