@@ -147,7 +147,9 @@ class Admin_aboutus extends CI_Controller {
         $this->data['about_us_feature_content'] = $this->Aboutusm->get_about_us_feature_content($id);
 
 
-        $this->load->view('test_view',$this->data);
+
+
+        $this->load->view('modal_about_feature_edit_view',$this->data);
 
 
 
