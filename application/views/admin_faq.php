@@ -168,8 +168,6 @@
 
 <!-- jQuery -->
 <script>
-
-
     // Get the modal
     // var modal = document.getElementById('myModal');
     var modal2 = document.getElementById('myModal2');
@@ -178,7 +176,7 @@
     // Get the button that opens the modal
     //var btn = document.getElementById("myBtn");
 
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close")[1];
     var span1 = document.getElementsByClassName("close")[0];
 
 
@@ -186,12 +184,8 @@
     // btn = $(x).data('panel-name');
 
     function selectid2(x) {
-
-
         modal2.style.display = "block";
-
     }
-
 
     function selectid(x) {
         modal3.style.display = "block";
@@ -208,30 +202,30 @@
             }
 
         });
-
-
-
     }
 
 
     span1.onclick = function() {
         modal2.style.display = "none";
     }
-
+    /*
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal2) {
             modal2.style.display = "none";
         }
     }
-
+    */
 
     span.onclick = function() {
         modal3.style.display = "none";
     }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == modal3) {
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+        else if (event.target == modal3) {
             modal3.style.display = "none";
         }
     }

@@ -91,8 +91,11 @@
                                         <label>Serial #1 : </label><input class="form-control" type='textbox' id='textserial1' name="textserial[]">
                                     </div>
                                 </div>
-                                    <input type='button' value='Add Button' id='addButton'>
-                                    <input type='button' value='Remove Button' id='removeButton'>
+                                    <div id="add_remove_button">
+                                        <input type='button' value='Add Button' id='addButton'>
+                                        <input type='button' value='Remove Button' id='removeButton'>
+                                    </div>
+
                                 </div>
                                 <div id = "Item_price" class="form-group">
                                     <label>Item Price</label>
@@ -218,15 +221,8 @@
 
     function selectid5(x) {
 
-
         modal5.style.display = "block";
         //btn1 = document.getElementById('addtype').value;
-
-
-
-
-
-
     }
 
 
@@ -377,6 +373,8 @@
         $("#removeButton").click(function () {
             if(counter==1){
                 alert("No more textbox to remove");
+                document.getElementById('Item_price').style.display = "block";
+                document.getElementById('add_remove_button').style.display = "none";
                 return false;
             }
 

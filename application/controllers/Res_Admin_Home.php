@@ -226,7 +226,7 @@ class Res_Admin_Home extends CI_Controller {
         if ($this->session->userdata('type') == "Res") {
 
             $id = $this->input->post('res_id');
-            print_r($id);
+            //print_r($id);
             $itype = $this->input->post('itype');
 
             $this->load->model('Res_Admin_m');

@@ -310,7 +310,7 @@
                     <div class="modal-content" style="padding: 35px; width: 50%; margin: 0 auto">
                         <span class="close">×</span>
 
-                        <h2>Edit Content</h2>
+                        <h2>Add Content</h2>
 
                         <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_feature_content" enctype="multipart/form-data">
 
@@ -568,39 +568,37 @@
             }
 
         });
-
-
-
-
-
     }
 
     function selectid1(x) {
         modal2.style.display = "block";
-
-
     }
 
 
 
     span.onclick = function() {
             modal1.style.display = "none";
-        }
+    }
     span1.onclick = function() {
         modal2.style.display = "none";
     }
 
 
 
+    /*
     window.onclick = function(event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
+        if (event.target == modal2) {
+            modal2.style.display = "none";
         }
+    }
+    */
 
     window.onclick = function(event) {
         if (event.target == modal2) {
             modal2.style.display = "none";
+        }
+        else if (event.target == modal1) {
+            modal1.style.display = "none";
         }
     }
 
