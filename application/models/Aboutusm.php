@@ -106,12 +106,13 @@ class Aboutusm extends CI_Model
 
     function insert_about_us_banner_content(){
         $details = $this->input->post('details');
-        $phone  = $this->input->post('phone');
-        $email = $this->input->post('email');
+        //$phone  = $this->input->post('phone');
+        //$email = $this->input->post('email');
         $data = array(
             'details' => $details,
-            'phone' => $phone,
-            'email' => $email
+            //'image'
+            //'phone' => $phone,
+            //'email' => $email
         );
 
         $this->db->insert('about_us_banner',$data);

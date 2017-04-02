@@ -53,8 +53,12 @@
     <div id="subheader">
     	<div id="sub_content">
     	 <h1>About us</h1>
-         <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
-         <p></p>
+            <?php
+            foreach ($aboutusSmall as $aussmall) {
+            }
+            ?>
+            <p><?php echo $aussmall->small; ?></p>
+
         </div><!-- End sub_content -->
 	</div><!-- End subheader -->
 </section><!-- End section -->

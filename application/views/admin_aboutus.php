@@ -140,43 +140,39 @@
                         </div>
 
                         <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_details_content" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_banner_content" enctype="multipart/form-data">
 
-                                <?php if ($show_about_us_details_content == Null){ ?>
+                                <?php if ($show_about_us_banner_content == Null){ ?>
 
                                     <div class="form-group">
-                                        <label>header</label>
-                                        <input class="form-control" type="text" name="header">
+                                        <label>Details</label>
+                                        <input class="form-control" type="text" name="details">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>details</label>
-                                        <!--<input class="form-control" type="text" name="details">-->
-                                        <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
+                                        <label>image</label>
+                                        <input class="form-control" type="text" name="image">
                                     </div>
 
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
-                                    foreach ($show_about_us_details_content as $s){
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>header</label>
-                                            <input class="form-control" type="text" name="header" value="<?php echo $s->header ?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>details</label>
-                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
-                                            <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
-                                        </div>
-
-
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
+                                    foreach ($show_about_us_banner_content as $s){
                                     }}
                                 ?>
+
+                                <div class="form-group">
+                                    <label>Details</label>
+                                    <input class="form-control" type="text" name="details" value="<?php echo $s->details?>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>image</label>
+                                    <input class="form-control" type="file" name="image">
+                                </div>
+
+                                <input class="btn btn-success" type="submit">
+
 
                             </form>
                         </div>
@@ -494,35 +490,38 @@
                         </div>
 
                         <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_banner_content" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_details_content" enctype="multipart/form-data">
 
-                                <?php if ($show_about_us_banner_content == Null){ ?>
+                                <?php if ($show_about_us_details_content == Null){ ?>
 
                                     <div class="form-group">
-                                        <label>Details</label>
-                                        <input class="form-control" type="text" name="details">
+                                        <label>header</label>
+                                        <input class="form-control" type="text" name="header">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>image</label>
-                                        <input class="form-control" type="text" name="image">
+                                        <label>details</label>
+                                        <!--<input class="form-control" type="text" name="details">-->
+                                        <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
                                     </div>
 
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
-                                    foreach ($show_about_us_banner_content as $s){
+                                    foreach ($show_about_us_details_content as $s){
                                         ?>
 
                                         <div class="form-group">
-                                            <label>Details</label>
-                                            <input class="form-control" type="text" name="details" value="<?php echo $s->details?>">
+                                            <label>header</label>
+                                            <input class="form-control" type="text" name="header" value="<?php echo $s->header ?>">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>image</label>
-                                            <input class="form-control" type="file" name="image">
+                                            <label>details</label>
+                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
+                                            <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
                                         </div>
+
 
                                         <input class="btn btn-success" type="submit">
                                         <?php
