@@ -45,7 +45,7 @@
             <?php } ?>
         </div><!-- End sub_content -->
     </div>
-    <img src="img/video_fix.png" alt="" class="header-video--media" data-video-src="video/intro" data-teaser-source="video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">
+    <img src="<?php echo base_url()?>img/video_fix.png" alt="" class="header-video--media" data-video-src="<?php echo  base_url()?>video/intro" data-teaser-source="<?php echo  base_url()?>video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">
     <div id="count" class="hidden-xs">
         <ul>
             <?php
@@ -59,8 +59,8 @@
         </ul>
 
     </div>
-    <video autoplay loop muted id="teaser-video" class="teaser-video"><source src="video/intro.mp4" type="video/mp4"><source src="video/intro.ogv" type="video/ogg"></video>
-    <iframe id="video" src="video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    <video autoplay loop muted id="teaser-video" class="teaser-video"><source src="<?php echo base_url()?>video/intro.mp4" type="video/mp4"><source src="<?php echo base_url()?>video/intro.ogv" type="video/ogg"></video>
+    <iframe id="video" src="<?php echo base_url()?>video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
     </section><!-- End Header video -->
     <!-- End SubHeader ============================================ -->
     
@@ -233,9 +233,9 @@
 			</div>
 		</div>
 	</div><!-- End Register modal -->
-    
+
 <!-- COMMON SCRIPTS -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
@@ -243,9 +243,9 @@
 
 <!-- SPECIFIC SCRIPTS -->
 <script src="<?php echo base_url()?>js/video_header.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<!--    <script src="//code.jquery.com/jquery-1.12.4.js"></script>-->
+<!--    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 <script>
 $(document).ready(function() {
 	'use strict';
@@ -254,7 +254,7 @@ $(document).ready(function() {
       header: $('.header-video--media'),
       videoTrigger: $("#video-trigger"),
       autoPlayVideo: true
-    });    
+    });
 
 });
 </script>
