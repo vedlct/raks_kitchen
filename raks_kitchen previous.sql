@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2017 at 02:32 PM
+-- Generation Time: Mar 27, 2017 at 03:11 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -31,14 +31,6 @@ CREATE TABLE `about_us` (
   `small` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `about_us`
---
-
-INSERT INTO `about_us` (`id`, `small`) VALUES
-(1, ''),
-(2, 'small');
-
 -- --------------------------------------------------------
 
 --
@@ -47,7 +39,7 @@ INSERT INTO `about_us` (`id`, `small`) VALUES
 
 CREATE TABLE `about_us_banner` (
   `id` int(10) NOT NULL,
-  `details` varchar(60000) DEFAULT NULL,
+  `details` varchar(10000) DEFAULT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -56,7 +48,7 @@ CREATE TABLE `about_us_banner` (
 --
 
 INSERT INTO `about_us_banner` (`id`, `details`, `image`) VALUES
-(1, 'Some words about us\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n\nMission\n\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n\nFilosofy\n\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.', '');
+(1, 'Some words about us\r\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\r\n\r\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\r\n\r\nMission\r\n\r\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\r\n\r\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\r\n\r\nFilosofy\r\n\r\nId pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.', '');
 
 -- --------------------------------------------------------
 
@@ -75,16 +67,7 @@ CREATE TABLE `about_us_details` (
 --
 
 INSERT INTO `about_us_details` (`id`, `header`, `details`) VALUES
-(4, '"EX VERO MEDIOCREM"', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.\r\n\r\nPer ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.'),
-(5, 'header', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.'),
-(6, 'header', '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum pri</b><img data-filename="sales-report-template-image-11.jpg" xss=removed><b>mis in faucibus.Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.</b></p>'),
-(7, 'header', '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum pri</b><img data-filename="sales-report-template-image-11.jpg" xss="removed"><b>mis in faucibus.Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.</b></p><p><img data-filename="images.jpg" xss=removed><b><br></b></p>'),
-(8, 'header', '<p><br></p>'),
-(9, 'header', '<p><p xss=removed><img data-filename="images.jpg" xss="removed" xss=removed></p></p><p xss=removed><b xss=removed>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum pri</b><img data-filename="sales-report-template-image-11.jpg" xss="removed" xss=removed><b xss=removed>mis in faucibus.Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.</b></p>'),
-(10, 'header', '<p></p><p xss="removed"><b><img data-filename="images.jpg" xss="removed"></b></p><p></p><p xss="removed"><span xss="removed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum pri</span><img data-filename="sales-report-template-image-11.jpg" xss="removed"><span xss="removed">mis in faucibus.Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.</span></p>'),
-(11, 'header', '<p></p><p xss="removed"><img data-filename="images.jpg" xss=removed><b><img data-filename="images.jpg" xss="removed"></b></p><p></p><p xss="removed"><span xss="removed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum pri</span><img data-filename="sales-report-template-image-11.jpg" xss="removed"><span xss="removed">mis in faucibus.Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.</span></p>'),
-(12, 'header', '<p></p><p xss="removed"><img data-filename="images.jpg" xss="removed"><b><img data-filename="images.jpg" xss="removed"></b></p>'),
-(13, 'header', '<p></p><p xss="removed"><img data-filename="images.jpg" xss="removed"><span xss=removed>Some words about us Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in. Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in. Mission Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in. Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in. Filosofy Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.</span><b><img data-filename="images.jpg" xss="removed"></b></p>');
+(4, '"EX VERO MEDIOCREM"', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.\r\n\r\nPer ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.');
 
 -- --------------------------------------------------------
 
@@ -106,9 +89,9 @@ CREATE TABLE `about_us_feature` (
 --
 
 INSERT INTO `about_us_feature` (`id`, `big`, `small`, `box_header`, `box_details`, `box_icon`) VALUES
-(1, 'Quick Food quality feautures   ?       ', 'Quick food quality feautures ', '  1000 Restaurants           ', '<p><img style="width: 51.75px; height: 34.5px;" src="data:image/jpeg;base64,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" data-filename="images.jpg">   Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p><p> </p>', 'icon_documents_alt'),
-(2, 'Quick food ', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil'),
-(4, '', '', '', '', '');
+(1, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil'),
+(2, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil'),
+(3, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -126,8 +109,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `small`) VALUES
-(1, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.'),
-(2, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.');
+(1, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.');
 
 -- --------------------------------------------------------
 
@@ -137,7 +119,7 @@ INSERT INTO `contact` (`id`, `small`) VALUES
 
 CREATE TABLE `contact_customer_service` (
   `id` int(10) NOT NULL,
-  `details` varchar(60000) NOT NULL,
+  `details` varchar(10000) NOT NULL,
   `phone` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -147,9 +129,7 @@ CREATE TABLE `contact_customer_service` (
 --
 
 INSERT INTO `contact_customer_service` (`id`, `details`, `phone`, `email`) VALUES
-(1, 'Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te.', '+45 423 445 70', 'customercare@quickfood.com'),
-(2, 'Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI', '+45 423 445 70', 'customercare@quickfood.com'),
-(3, '<p>Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI <img style="width: 134px;" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFoAhgMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xAA3EAACAQMDAgQDBgUEAwAAAAABAgMABBEFEiExQQYTUWEUInEHMoGRodEjUsHw8SQzQmI0guH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGxEBAQEAAwEBAAAAAAAAAAAAAAERAiExQRL/2gAMAwEAAhEDEQA/APOvMEa7c9KP0q7SGZGfoOtVDZJrorJk3aanZsRuIbnijL/ULIW2EKnjGMV56GZRwamSQ7eTmq/Sv0Mu1F1JtToDmhzbCM/MM06GUpk9j1o4Wx+SXUd8ELDKLj53HqM9B/2P4ZqfU+gAMDFaHQvFt5pwEWS6KuOOoFNsr8SQyHQ/DiXaxkKZjC1wc9+f8VanxVqFrEq3WkSwD7kh+H8vGMdR2qpxs+nONiPUPG8842qxKgdG45rR/Z9q73TPHK+XaQn8MCg7fxFbagXCWrGXACxkBtxOCPXPbj0P0omxvrSJlntbSCORtv8AEQADLDJ+6Bnt2/arnvqsrfTFRE5f7oU5r5/8XzodbnWIjIOCR3r2Ua/DPA8YX+IQQCOhPYfj6V4h4ntZ7fWrgTxtGzMWAYfeHqPajmXxXCnKOa4nHWnO4UcVkSZMU2bFQLKc9a6GLGgpO3GUMMGlTzxSpmFL809TkVERxmuebt4owhBNSRMM80JvzXVdshVBZicADufSlgabTTFaWxv2jWeYyeVbQkZBcYJbHtkY/H0rT2fhdD/qfETtcSNgiAS4GT139zTbSwi0eH4i9SIpp8fkQfNndKQDI/ud2R7CsXqXiu9e9LRyk7DxmtJMaSZHtGnzwWNultaCGO2RQqxQqAq/v9amv7wtD/qE3Rs2wrjIx7+31ryPQfGaovw12WVCcq2M4NbbTPECXiCyBy5VctkckfvVSjFfqHhx47svZRZZnVFT+ZMdu34en61Evh+9tInnvjqF3cMP4FpYKXCn0Y7SPxHFegTvIJYishGMnGOvuf770r69igh3yIp4zyoPNLDeXJb+IYbuCzksprF5XGwTqVJ6YBYHB79qsZ7y9jmbTNeRZ4SwALDjt9xwOGA+n5ddaPEvnqVaYZU5RJFDBcemaHuJtH19RFqax+cpB82JipY+4Bwe/wBM0YHmWuWTaddhY5DNbSZME4UgOBwfoR0I/oRQ8UTyLmtdqXh+406zvNNuH86DHxVjL1K7cbh+KnGPYGsujND/AMcis6i9UPKjREAjinR81JLIH4IqDzAp4pJGIoxSqATEjrSpF2HONtDsuTUzDbULHDVUUW0gcVbeDbb4rxTp0Ugyvm7ycdNoJB/MCqoOMVqPs2XzPFKYzn4eQ7h1XGCD+YFOG13ipXn0uJV5jLyOw287i5ycjr2rzHUrRLVo3kVmRnwe2QK9VF2t7BPZtt822mddm8fdznOM8DvzWc1fR5L6EI8a+Wx+Vhwc+o45NVVsBPNFKoKQiJ8n7hO3Hbj1960/2exltYBCMy7cvg9Pegb/AML3Fkm95QQegA5ra/Zzpoto5mdTkKOSODmgNZMokuYVDAHaSQMdsfvWY+0y9ey0yIQSFWkfA55qK+1V18cRWUcQw0BR8Ng8nPH4LVd9p0UgtbEYwuSefX/Bp0MUkupTxFlkkMfqXCg/nUVvdXFtICrODnpk9agEblwvlsW9Mc1p9O0NmsUaUDcrbm9s9v3pBsPD11JqGh5vlK+WWCkDJYMuDzWOvITa3M1tKCGicoc+1bmG2ittCgXzlSR7hccF1YD1A5Ye2KyfjFUj1YPEu1ZolfBGCDjHPvxz75pcp0jnFFMBuqFk7ipJMtTCSOKhJRqaVdEm2lQCdc1C8WRRIO4ZpjnAoAYR7etabwBcR23iDZI5QT28kW4dV4zn9DWcY5p2mzSW2pWsw/4Sqck9s81UVK1+oaiND8XrerGhtnUK6LyCCMEj3r0W30xHKXefNiKiRCP5TyMfpWD13T4tSs2iUp59ux+bhQV9SewGK2v2fa7Za3pUVhO+y+gUKyE4L47j9u1XPVVzWLK3MahkHAOAO/8Af7UVpjwJb7kIC5zgDpwKb4itmUkxkggEdPr+9ZfRNRNtcG0u2ykzEBm7e1PwO2ukeZ4wn1W5lDMwKJEg4VQOv14/WpvE1sutywWhBHlg47880VqGq28Pl/DSA4TGcZ5x1P0yaF0SK8mlS4c4wePbnNIw+neGo4EMl0gyuApFOez8mQfD/Jgkt/IB+1b23sUnjMkwGMfMG4A9a8+8Ta3BqU8uj6V/s7iJrgfdK9OvoScU7MIPPdNfTKoAMTbY4Izjkclie+OhP0xVR4w8qS6jlDEuuYmHrjoc59zVvdzx6daNEhB/hCMyg854HHt1qgup4rvTHhRW3xxtJyBgYJIxjnGOue9RRe4pPMXNRuMnNDCTmiY2yKjGeOPjgUqZMcHilTw0gYKKax3VGAxFczg0A4HBpEbmGBzmuAg09FJdQMZJHWgNrB5tlexQyoD5gUMSxwRj7uCMHsMdj+gcqta3T3VgiiVJN6vGcGJs+2eP/nGOlzb38BgX4kFmcCTaxGAfr25GKAnt0OoF2dUZY2LeUxy7ZxtwePy4PWraNX4d8aR6qvw2rPClwG2JISF8z35wPw61B4j0QxbbiMbWL7hj061htR+HmLARbh0BAzn+oovTfE11ZWslq8kl1bY4WU/PH9D3o0LXRtNkvgiDcQWY7vXJP7Vs7CKHTI9l1LGqRgZ+cflj+leeQ+L7m20tLS3tYUYKBv3Zz61TzTm/ffIoGDkhRgZ9f80aG38S+M7zUVfSdEjEELHbJcDlnXp9AP1qm0+2j023MaMzTySdwMlcYIOfqKqbMsoKwOVQDD4OeB6n14oiLPltIX3hFI5PQDAzz9f1FGjE/iiMrZRTBhlpFXJAGOPoMflVVp7OY5hCQrCBxnPbnP59PfIqbVLwXllLE0qxOzBkBzjaowB65OBUdi05tTbwIXkDBUXvyfu/ixUfU0BmlqZHrrxqsrquMAnbjuO1M2HPFTUU98tSroBzzSoIeYlCe9V8qnfxRzfdqAf7hqYmGRwsRnFdEbBuc4FWMIG3pTHA3dKalgl4soyZNgUZVDwGHr7U6S6VYREzKEOBgDIB7YPVeo46Cq2cD4qx4HzQy59+DUw/8hB2K5I/9qpogdkZ/M2ozjgndz9femsN3KMgPqyY/wA02QAq2RnaePbmoJeJFxxlMnHfikBESJG3zZfP/JhhVH0qRGQxnMoCj/ttDH0wevamoiMSWVSR0JHTiobYAtKSASIyR7UwMF0gkXfNiFTnamRu98nr9KXxhCOURxCqsgWTqc+vuSPyoGJm+DlOTnA5zTnJBwDwFbA9OtBi5rllygaKUsjZDrwme657/KOalYw2jssLO8eVGZF2MejHjqOc/pVIWYygFiR5Z71e6ozHW5iSSQWYc9/WgBNSVfPiCR7THAkb/Nuyy5UnP4ChUQk9KJswPhF4H9iiIgMdKlnnatljIPSlR8wG7pSoGP/Z" data-filename="images.jpg"><br></p>', '+45 423 445 70', 'customercare@quickfood.com');
+(1, 'Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te.', '+45 423 445 70', 'customercare@quickfood.com');
 
 -- --------------------------------------------------------
 
@@ -169,8 +149,7 @@ CREATE TABLE `contact_restutant_service` (
 --
 
 INSERT INTO `contact_restutant_service` (`id`, `details`, `phone`, `email`) VALUES
-(1, 'Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.', '+45 423 445 99', 'support@quickfood.com'),
-(2, '<p>Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.&nbsp;<img src="data:image/jpeg;base64,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" data-filename="images.jpg" style="width: 134px;"></p>', '+45 423 445 99', 'support@quickfood.com');
+(1, 'Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.', '+45 423 445 99', 'support@quickfood.com');
 
 -- --------------------------------------------------------
 
@@ -190,7 +169,7 @@ CREATE TABLE `faq` (
 --
 
 INSERT INTO `faq` (`id`, `header`, `sub_header`, `details`) VALUES
-(1, '        Payments        ', '        Anim pariatur cliche reprehenderit  ? ', 'Anim pariatur cliche reprehenderit, <b>enim</b> eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore '),
+(1, ' Payments ', ' Anim pariatur cliche reprehenderit? ', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore '),
 (2, 'Payments', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (3, 'How it works', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (4, 'How it works', 'Beet greens peanut salad?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
@@ -268,8 +247,7 @@ INSERT INTO `home_main_content` (`id`, `big`, `small`) VALUES
 (6, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (7, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (8, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(10, 'this is big content and thanks a lot ', '<b>this is small content and thanks for that . ok </b>');
+(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok ');
 
 -- --------------------------------------------------------
 
@@ -291,8 +269,7 @@ CREATE TABLE `home_resturant_andmore_content` (
 INSERT INTO `home_resturant_andmore_content` (`id`, `resturant`, `people_served`, `registered_user`) VALUES
 (1, '2650 Restaurant', '5350 People Served', '12350 Registered Users'),
 (2, 'this is new content ', '12160', ''),
-(3, '2650 Restaurant', '5350 People Served', '12350 Registered Users'),
-(4, NULL, NULL, NULL);
+(3, '2650 Restaurant', '5350 People Served', '12350 Registered Users');
 
 -- --------------------------------------------------------
 
@@ -541,29 +518,28 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `type_id`, `res_name`, `item_type`, `item_name`, `item_description`, `item_price`) VALUES
-(60, '6', 'Mexican TacoMex', 'Mexicano', 'acos', 'options of chicken,steak or lamb', '100'),
-(62, '6', 'Mexican TacoMex', 'Mexicano', 'burritos', 'options of chicken,steak or lamb', '200'),
+(60, '5', 'Mexican TacoMex', 'Mexicano', 'acos', 'options of chicken,steak or lamb', '100'),
+(62, '5', 'Mexican TacoMex', 'Mexicano', 'burritos', 'options of chicken,steak or lamb', '200'),
 (66, '6', 'Naples Pizza', 'Mexicano', 'Empanda', 'options of chicken,steak or lamb', '300'),
 (67, '6', 'Naples Pizza', 'Mexicano', 'Chip & Salsa', 'options of chicken,steak or lamb', '400'),
 (70, '7', 'Japan Food Sushi ', 'Italiano', 'Pizza', 'Fuisset mentitum deleniti sit ea', ''),
 (71, '7', 'Japan Food Sushi ', 'Italiano', 'Stromboli', 'Fuisset mentitum deleniti sit ea', '150'),
 (72, '7', 'Japan Food Sushi ', 'Italiano', 'Pasta', 'Fuisset mentitum deleniti sit ea', '250'),
-(74, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides       ', 'Mozzarella Sticks        ', 'Fuisset   ', '   200   '),
-(75, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides', 'Jalapenos Poppers', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '450'),
-(76, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides ', ' Fries ', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', ' 550 '),
-(78, '8', 'China Food ', 'Appetizers & Sides', 'Wings', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '300'),
-(81, '8', 'China Food ', 'Appetizers & Sides', 'Boneless', 'Fuisset mentitum deleniti sit ea.', '600'),
-(82, '8', 'China Food ', 'Appetizers & Sides', 'Regular', 'Fuisset mentitum deleniti sit ea.', '650'),
-(83, '8', 'China Food ', 'Appetizers & Sides', 'Chicken Tenders', 'Fuisset mentitum deleniti sit ea.', '120'),
-(84, '8', 'Mexican TacoMex', 'Appetizers & Sides', 'Onions Rings', 'Fuisset mentitum deleniti sit ea.', '140'),
-(85, '9', 'Mexican TacoMex', 'Burgers ', 'Chicken', 'Fuisset mentitum deleniti sit ea.', '320'),
-(86, '9', 'Naples Pizza', 'Burgers ', 'Beef', 'Fuisset mentitum deleniti sit ea.', '240'),
-(88, '9', 'Dragon Tower Chinese ', 'Burgers ', ' Lamb ', 'Chorizo & Cheese Chorizo & Cheese', '280 '),
-(89, '5', 'Dragon Tower Chinese ', 'Sandwich ', 'Steak & Cheese', 'Chorizo & Cheese Chorizo & Cheese', '340'),
-(90, '5', 'Dragon Tower Chinese ', 'Sandwich', 'Chicken', 'Chorizo & Cheese Chorizo & Cheese', '380'),
+(74, '9', 'Dragon Tower Chinese ', 'Appetizers & Sides', 'Mozzarella Sticks', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '350'),
+(75, '9', 'Dragon Tower Chinese ', 'Appetizers & Sides', 'Jalapenos Poppers', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '450'),
+(76, '9', 'Dragon Tower Chinese ', 'Appetizers & Sides', 'Fries', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '550'),
+(78, '11', 'China Food ', 'Appetizers & Sides', 'Wings', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '300'),
+(81, '11', 'China Food ', 'Appetizers & Sides', 'Boneless', 'Fuisset mentitum deleniti sit ea.', '600'),
+(82, '11', 'China Food ', 'Appetizers & Sides', 'Regular', 'Fuisset mentitum deleniti sit ea.', '650'),
+(83, '11', 'China Food ', 'Appetizers & Sides', 'Chicken Tenders', 'Fuisset mentitum deleniti sit ea.', '120'),
+(84, '5', 'Mexican TacoMex', 'Appetizers & Sides', 'Onions Rings', 'Fuisset mentitum deleniti sit ea.', '140'),
+(85, '5', 'Mexican TacoMex', 'Burgers ', 'Chicken', 'Fuisset mentitum deleniti sit ea.', '320'),
+(86, '6', 'Naples Pizza', 'Burgers ', 'Beef', 'Fuisset mentitum deleniti sit ea.', '240'),
+(88, '9', 'Dragon Tower Chinese ', 'Burgers', 'Lamb\n', 'Chorizo & Cheese Chorizo & Cheese', '280'),
+(89, '9', 'Dragon Tower Chinese ', 'Sandwich ', 'Steak & Cheese', 'Chorizo & Cheese Chorizo & Cheese', '340'),
+(90, '9', 'Dragon Tower Chinese ', 'Sandwich', 'Chicken', 'Chorizo & Cheese Chorizo & Cheese', '380'),
 (91, '5', 'Mexican TacoMex', 'Sandwich', 'Buffalo Chicken', 'Chorizo & Cheese Chorizo & Cheese', '420'),
-(92, '5', 'Mexican TacoMex', 'Sandwich', 'Turkey\n', 'options of chicken,steak or lamb', '500'),
-(93, '11', 'Rak''s Kitchen  ', 'test', 'chili chicken', 'big', '200');
+(92, '5', 'Mexican TacoMex', 'Sandwich', 'Turkey\n', 'options of chicken,steak or lamb', '500');
 
 -- --------------------------------------------------------
 
@@ -587,8 +563,8 @@ CREATE TABLE `menu_attribute` (
 INSERT INTO `menu_attribute` (`id`, `type_id`, `item_name`, `item_attribute`, `price`, `serial`) VALUES
 (8, '7', 'Pizza', ' Extra Large ', ' 40 ', 1),
 (9, '7', 'Pizza', ' Medium ', ' 10 ', 2),
-(14, '8', '   Fajitas    ', '    Medium     ', '    100', 1),
-(37, '5', ' Fajitas  ', '  Medium  ', '  300 ', 1);
+(14, '8', ' Fajitas ', ' Medium  ', ' 10 ', 1),
+(37, '5', 'Fajitas ', ' Medium ', ' 300', 0);
 
 -- --------------------------------------------------------
 
@@ -608,13 +584,12 @@ CREATE TABLE `menu_type` (
 --
 
 INSERT INTO `menu_type` (`id`, `type`, `details`, `image`) VALUES
-(5, 'Sandwich', '-Rak''s Steak & Cheese -Chicken -Buffalo Chicken -Turkey', 'Sandwich.jpg'),
 (6, 'Mexicano', 'Tacos(options of chicken,steak or lamb) --burritos(options of chicken steak or lamb) --Empanda(options of Chicken,Steak or Lamb) --Rak''s Chip & Salsa', 'maxicano.jpg'),
 (7, 'Italiano', '--Pizza  --Stromboli --Pasta', 'Italian.jpg'),
 (8, 'Appetizers & Sides', '-Mozzarella Sticks -Jalapenos Poppers -Fries -Wings --Boneless --Regular  -Chicken Tenders -Onions Rings', 'appetizers-and-sides.jpg'),
 (9, 'Burgers', '-Chicken  -Beef  -Lamb', 'burger.jpg'),
-(11, 'test', 'this is test', 's8mv_sqp.jpg'),
-(12, 'testing', 'qwq', '');
+(10, 'Sandwich', '-Rak''s Steak & Cheese -Chicken -Buffalo Chicken -Turkey', 'Sandwich.jpg'),
+(11, 'test', 'this is test', 's8mv_sqp.jpg');
 
 -- --------------------------------------------------------
 
@@ -640,20 +615,8 @@ CREATE TABLE `order` (
   `quantity` varchar(100) NOT NULL,
   `order_time` varchar(100) NOT NULL,
   `order_day` varchar(100) NOT NULL,
-  `date` date DEFAULT NULL
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`id`, `name`, `username`, `email`, `address`, `city`, `state`, `postcode`, `country`, `phone`, `type_id`, `item_name`, `item_attr`, `price`, `quantity`, `order_time`, `order_day`, `date`) VALUES
-(1, 'rumi1', 'rumi', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', '8', 'Mozzarella Sticks', '', '350', '2', '04:49:24am', 'Today', '2017-03-30'),
-(2, 'rumi1', 'rumi', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', '8', 'Fries', '', '550', '1', '04:49:24am', 'Today', '2017-03-30'),
-(3, 'aaa', 'sss', 'ssd', 'fsdf', 'zccz', 'reer', 'fsd', 'dffsd', 'dsfsd', '8', 'dfsd', 'vcxv', '1000', '5', '4:51 pm', 'tomorrow', '2017-03-28'),
-(4, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2017-02-23'),
-(5, 'rumi1', 'rumi', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', '8', 'Fries', '', '550', '3', '06:36:32am', '', '2017-04-01'),
-(6, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2017-04-02');
 
 -- --------------------------------------------------------
 
@@ -712,7 +675,7 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`id`, `name`, `type`, `address`, `city`, `state`, `postal_code`, `country`, `website`, `time`, `email`, `username`, `password`, `vat`, `status`, `Image`) VALUES
-(1, 'Rak''s Kitchen  ', '   Mexican/American   ', '135 Newtownards Road, Belfast, BT4 1AB   ', '   Belfast   ', '   Belfast   ', '   222   ', '   American   ', 'www.tarka.com', '   American   ', 'tarka@gmail.com', 'admin', '   admin   ', '  20%  ', '   American   ', '');
+(1, '  tarka  ', '   Mexican/American   ', '   Mexican / American  135 Newtownards Road, Belfast, BT4 1AB   ', '   Belfast   ', '   Belfast   ', '   222   ', '   American   ', 'www.tarka.com', '   American   ', 'tarka@gmail.com', '   akib   ', '   admin   ', '  20%  ', '   American   ', 'tiger 2.jpg');
 
 -- --------------------------------------------------------
 
@@ -732,36 +695,7 @@ CREATE TABLE `restaurant_details` (
 --
 
 INSERT INTO `restaurant_details` (`id`, `res_id`, `description`, `time`) VALUES
-(1, 1, '<p>my own resturant</p>', '9:00 am - 5:00 pm'),
-(2, 9, '<p>my own resturant</p>', '9:00 am - 5:00 pm');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `res_comment`
---
-
-CREATE TABLE `res_comment` (
-  `id` int(100) NOT NULL,
-  `res_id` int(100) NOT NULL,
-  `username` varchar(200) DEFAULT NULL,
-  `comment` text,
-  `Date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `res_comment`
---
-
-INSERT INTO `res_comment` (`id`, `res_id`, `username`, `comment`, `Date`) VALUES
-(1, 1, 'rumi', 'good', '0000-00-00'),
-(2, 1, 'akib', 'very good', '2017-03-29'),
-(4, 0, 'rumi', 'excellent', NULL),
-(5, 0, 'rumi', 'as', '2017-03-29'),
-(6, 0, 'rumi', 'a', '2017-03-29'),
-(7, 1, 'rumi', 'sadas', '2017-03-29'),
-(8, 1, 'rumi', 'rumi', '2017-03-29'),
-(9, 1, 'rumi', '321', '2017-04-01');
+(1, 1, 'my own resturant', '3:46');
 
 -- --------------------------------------------------------
 
@@ -788,41 +722,7 @@ INSERT INTO `res_rating` (`id`, `res_id`, `username`, `rating`) VALUES
 (5, '74', '', 4),
 (6, '63', '', 5),
 (7, '65', '', 2),
-(8, '81', '', 4),
-(9, '74', 'rumi', 2),
-(10, '75', 'rumi', 1),
-(11, '75', 'rumi', 1),
-(12, '74', 'rumi', 2),
-(13, '74', 'rumi', 5),
-(14, '76', 'rumi', 5),
-(15, '75', 'rumi', 1),
-(16, '75', 'rumi', 2),
-(17, '82', 'rumi', 2),
-(18, '76', 'rumi', 3),
-(19, '74', 'rumi', 1),
-(20, '74', 'rumi', 1),
-(21, '75', 'rumi', 2),
-(22, '74', 'admin', 5),
-(23, '75', 'admin', 5),
-(24, '86', 'admin', 5),
-(25, '76', 'admin', 5),
-(26, '74', 'admin', 5),
-(27, '74', 'admin', 5),
-(28, '81', 'admin', 5),
-(29, '74', 'admin', 5),
-(30, '74', 'admin', 5),
-(31, '85', 'admin', 5),
-(32, '74', 'admin', 5),
-(33, '74', 'admin', 5),
-(34, '78', 'admin', 5),
-(35, '76', 'admin', 5),
-(36, '75', 'admin', 3),
-(37, '75', 'admin', 5),
-(38, '74', 'admin', 2),
-(39, '1', 'rumi', 4),
-(40, '1', 'rumi', 4),
-(41, '1', 'rumi', 5),
-(42, '88', 'rumi', 3);
+(8, '81', '', 4);
 
 -- --------------------------------------------------------
 
@@ -988,12 +888,6 @@ ALTER TABLE `restaurant_details`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `res_comment`
---
-ALTER TABLE `res_comment`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `res_rating`
 --
 ALTER TABLE `res_rating`
@@ -1014,7 +908,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `about_us`
 --
 ALTER TABLE `about_us`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `about_us_banner`
 --
@@ -1024,27 +918,27 @@ ALTER TABLE `about_us_banner`
 -- AUTO_INCREMENT for table `about_us_details`
 --
 ALTER TABLE `about_us_details`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `about_us_feature`
 --
 ALTER TABLE `about_us_feature`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `contact_customer_service`
 --
 ALTER TABLE `contact_customer_service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `contact_restutant_service`
 --
 ALTER TABLE `contact_restutant_service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `faq`
 --
@@ -1054,12 +948,12 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `home_main_content`
 --
 ALTER TABLE `home_main_content`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `home_resturant_andmore_content`
 --
 ALTER TABLE `home_resturant_andmore_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `home_section_4`
 --
@@ -1089,7 +983,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 --
 -- AUTO_INCREMENT for table `menu_attribute`
 --
@@ -1099,37 +993,32 @@ ALTER TABLE `menu_attribute`
 -- AUTO_INCREMENT for table `menu_type`
 --
 ALTER TABLE `menu_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `order_cart`
 --
 ALTER TABLE `order_cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `restaurant_details`
 --
 ALTER TABLE `restaurant_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `res_comment`
---
-ALTER TABLE `res_comment`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `res_rating`
 --
 ALTER TABLE `res_rating`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `user`
 --

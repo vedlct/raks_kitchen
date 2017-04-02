@@ -3,6 +3,7 @@
 
 <head>
 
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,6 +77,10 @@
 
     <![endif]-->
 
+    <?php $this->load->view('head');?>
+    <?php $this->load->view('admin_head');?>
+
+
 </head>
 
 <body>
@@ -121,7 +126,7 @@
                                     <br>
                                     <label>Main Content Small</label>
 
-                                    <textarea id="summernote" name="main_content_small" ></textarea>
+                                    <textarea  name="main_content_small" ></textarea>
 
                                     <br>
 
@@ -372,12 +377,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
 
-</script>
 <script>
     $(function() {
         $("#rating_star").codexworld_rating_widget({

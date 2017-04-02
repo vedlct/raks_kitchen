@@ -102,29 +102,8 @@ class Admin_menu_attribute extends CI_Controller
             $id = $this->input->post('id');
             $this->load->model('Menum');
             $this->data['edit'] = $this->Menum->showedit($id);
-            foreach ($this->data['edit'] as $e) {
-                echo "<form role=\"form\" method=\"post\" action=\"http://localhost/raks_kitchen/Admin_menu_attribute/edit_res/$e->id\" >
-                   
-                                        <div class=\"form-group\">
-                                            <label>Item Name</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"Item_name\" value=\" $e->item_name \">
-                                        </div>
-                                        <div class=\"form-group\">
-                                            <label>Item attribute</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"textbox\" value=\" $e->item_attribute \">
-                                        </div>
-                                        <div class=\"form-group\">
-                                            <label>Price</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"Item_price\" value=\" $e->price \">
-                                        </div>
-                                        <div class=\"form-group\">
-                                            <label>Serial</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"serial\" value=\" $e->serial \">
-                                        </div>                                 
-                                        <input class=\"btn btn-success\" type=\"submit\">
-                                    </form>
-                                    ";
-            }
+            $this->load->view('edit_admin_menu_attribute',$this->data);
+
         }
         else{
             $this->load->model('viewall');
