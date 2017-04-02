@@ -10,103 +10,80 @@
 
 <body>
 
-    <!--[if lte IE 8]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
-    <![endif]-->
+<!--[if lte IE 8]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<![endif]-->
 
-    <div id="preloader">
-        <div class="sk-spinner sk-spinner-wave" id="status">
-            <div class="sk-rect1"></div>
-            <div class="sk-rect2"></div>
-            <div class="sk-rect3"></div>
-            <div class="sk-rect4"></div>
-            <div class="sk-rect5"></div>
-        </div>
-    </div><!-- End Preload -->
+<div id="preloader">
+    <div class="sk-spinner sk-spinner-wave" id="status">
+        <div class="sk-rect1"></div>
+        <div class="sk-rect2"></div>
+        <div class="sk-rect3"></div>
+        <div class="sk-rect4"></div>
+        <div class="sk-rect5"></div>
+    </div>
+</div><!-- End Preload -->
 
-    <!-- Header ================================================== -->
-    <?php include ('menu.php') ?>
-	<!-- End Header =============================================== -->
+<!-- Header ================================================== -->
+<?php include ('menu.php') ?>
+<!-- End Header =============================================== -->
 
-    <!-- Login modal -->
-    <div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-popup">
-                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-                <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin" method="post">
-                    <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                    <input type="text" class="form-control form-white" placeholder="Username" name="username" >
-                    <input type="password" class="form-control form-white" placeholder="Password" name="password">
-                    <div class="text-left">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div><!-- End modal -->
-
-    <!-- SubHeader =============================================== -->
+<!-- SubHeader =============================================== -->
 <section class="parallax-window" id="short"  data-parallax="scroll" data-image-src="img/sub_header_short.jpg" data-natural-width="1400" data-natural-height="350">
     <div id="subheader">
-    	<div id="sub_content">
-    	 <h1>Frequently asked questions</h1>
-         <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
+        <div id="sub_content">
+            <h1>Frequently asked questions</h1>
+            <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
         </div><!-- End sub_content -->
-	</div><!-- End subheader -->
+    </div><!-- End subheader -->
 </section><!-- End section -->
 <!-- End SubHeader ============================================ -->
 
-    <div id="position">
-        <div class="container">
-            <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">Category</a></li>
-                <li>Page active</li>
-            </ul>
-            <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
-        </div>
-    </div><!-- Position -->
+<div id="position">
+    <div class="container">
+        <ul>
+            <li><a href="#0">Home</a></li>
+            <li><a href="#0">Category</a></li>
+            <li>Page active</li>
+        </ul>
+        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+    </div>
+</div><!-- Position -->
 
 <!-- Content ================================================== -->
 <div class="container margin_60_35">
-	<div class="row">
+    <div class="row">
 
-    <div class="col-md-3" id="sidebar">
-    <div class="theiaStickySidebar">
-        <div class="box_style_1" id="faq_box">
-
-            <ul id="cat_nav">
-                <?php foreach ($show_faq as $s){?>
-					<li><a href="#<?php echo $s->id ?>" class="active"><?php echo $s->header ?></a></li>
-                <?php } ?>
-			</ul>
-		</div><!-- End box_style_1 -->
-        </div><!-- End theiaStickySidebar -->
-     </div><!-- End col-md-3 -->
+        <div class="col-md-3" id="sidebar">
+            <div class="theiaStickySidebar">
+                <div class="box_style_1" id="faq_box">
+                    <ul id="cat_nav">
+                        <?php
+                        foreach ($show_faq as $s) {
+                            ?>
+                            <li><a href="#<?php echo $s->id?>" class="active"><?php echo $s->header?></a></li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
+                </div><!-- End box_style_1 -->
+            </div><!-- End theiaStickySidebar -->
+        </div><!-- End col-md-3 -->
 
         <div class="col-md-9">
+            <?php foreach ($show_faq as $s) {?>
+            <h3 class="nomargin_top"><?php echo $s->header?></h3>
 
-            <?php
-            foreach ($show_faq as $s) {
-                $header= $s->header;
-               $query = $this->db->query("select * from faq WHERE header = '$header'");
-
-               ?>
-
-
-                <h3 class="nomargin_top"><?php echo $s->header ?></h3>
-
-                <?php foreach ($query->result() as $r){
+                <?php $query=$this->db->query("select * from `faq` WHERE `header`= '$s->header'");
+                 foreach ($query->result() as $r){
                 ?>
 
-                <div class="panel-group" id=<?php echo $r->id?>>
-                    <div class="panel panel-default" style="box-shadow: none">
+                 <div class="panel-group" id="<?php echo $s->id?>">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#payment"
-                                   href="#<?php echo $r->id?>"><?php echo $r->sub_header?><i
-                                            class="indicator icon_plus_alt2 pull-right"></i></a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#<?php echo $s->id?>"
+                                   href="#<?php echo $r->id?>"><?php echo $r->sub_header?><i class="indicator icon_plus_alt2 pull-right"></i></a>
                             </h4>
                         </div>
                         <div id="<?php echo $r->id?>" class="panel-collapse collapse">
@@ -115,17 +92,12 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div><!-- End panel-group -->
-
 
                 <?php
             } }
             ?>
 
-
-         		<!-- End panel-group -->
 
         </div><!-- End col-md-9 -->
     </div><!-- End row -->
@@ -133,88 +105,64 @@
 <!-- End Content =============================================== -->
 
 <!-- Footer ================================================== -->
-	<?php include ('footer.php') ?>
+<?php include ('footer.php') ?>
 <!-- End Footer =============================================== -->
 
 <div class="layer"></div><!-- Mobile menu overlay mask -->
 
 <!-- Login modal -->
 <div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content modal-popup">
-				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin">
-                	<div class="login_icon"><i class="icon_lock_alt"></i></div>
-                    <input type="text" name="username" class="form-control form-white" placeholder="Username">
-                    <input type="password" name="password" class="form-control form-white" placeholder="Password">
-					<div class="text-left">
-						<a href="#">Forgot Password?</a>
-					</div>
-					<button type="submit" class="btn btn-submit">Submit</button>
-				</form>
-			</div>
-		</div>
-	</div><!-- End modal -->
-
-    <!-- Register modal -->
-    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-popup">
-                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-                <form action="<?php echo base_url()?>Registration" class="popup-form" id="myRegister" method="post">
-                    <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                    <input type="text" class="form-control form-white" placeholder="Name" name="Name">
-
-                    <input type="email" class="form-control form-white" placeholder="Email" name="Email">
-                    <input type="text" class="form-control form-white" id="Username" placeholder="UserName" name="UserName" onclick="hidediv()" onfocusout="myFunc()">
-                    <div style="display: none" id="alerttext"><span style="color: red"> UserName Already Taken</span></div>
-
-                    <input type="text" class="form-control form-white" placeholder=" Your full address" name="full_address"  >
-                    <input type="text" class="form-control form-white" placeholder=" Your phone number" name="phone_number"  >
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <input type="text"  name="city" class="form-control form-white" placeholder="Your city">
-
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <input type="text"  name="postal_code" class="form-control form-white" placeholder="Your postal code">
-
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <input type="text"  name="state" class="form-control form-white" placeholder="State">
-
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <input type="text"  name="country" class="form-control form-white" placeholder="Country">
-
-                        </div>
-                    </div>
-
-                    <input type="text" class="form-control form-white" placeholder="Password"  id="password1"name="password1">
-                    <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2"name="password2">
-                    <div id="pass-info" class="clearfix"></div>
-                    <div class="checkbox-holder text-left">
-                        <div class="checkbox">
-                            <input type="checkbox" value="accept_2" id="check_2" name="check_2" />
-                            <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
-                </form>
-            </div>
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+            <form action="#" class="popup-form" id="myLogin">
+                <div class="login_icon"><i class="icon_lock_alt"></i></div>
+                <input type="text" class="form-control form-white" placeholder="Username">
+                <input type="text" class="form-control form-white" placeholder="Password">
+                <div class="text-left">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
         </div>
-    </div><!-- End Register modal -->
+    </div>
+</div><!-- End modal -->
 
-     <!-- Search Menu -->
-	<div class="search-overlay-menu">
-		<span class="search-overlay-close"><i class="icon_close"></i></span>
-		<form role="search" id="searchform" method="get">
-			<input value="" name="q" type="search" placeholder="Search..." />
-			<button type="submit"><i class="icon-search-6"></i>
-			</button>
-		</form>
-	</div>
-	<!-- End Search Menu -->
+<!-- Register modal -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+            <form action="#" class="popup-form" id="myRegister">
+                <div class="login_icon"><i class="icon_lock_alt"></i></div>
+                <input type="text" class="form-control form-white" placeholder="Name">
+                <input type="text" class="form-control form-white" placeholder="Last Name">
+                <input type="email" class="form-control form-white" placeholder="Email">
+                <input type="text" class="form-control form-white" placeholder="Password"  id="password1">
+                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2">
+                <div id="pass-info" class="clearfix"></div>
+                <div class="checkbox-holder text-left">
+                    <div class="checkbox">
+                        <input type="checkbox" value="accept_2" id="check_2" name="check_2" />
+                        <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-submit">Register</button>
+            </form>
+        </div>
+    </div>
+</div><!-- End Register modal -->
+
+<!-- Search Menu -->
+<div class="search-overlay-menu">
+    <span class="search-overlay-close"><i class="icon_close"></i></span>
+    <form role="search" id="searchform" method="get">
+        <input value="" name="q" type="search" placeholder="Search..." />
+        <button type="submit"><i class="icon-search-6"></i>
+        </button>
+    </form>
+</div>
+<!-- End Search Menu -->
 
 <!-- COMMON SCRIPTS -->
 <script src="js/jquery-2.2.4.min.js"></script>
@@ -222,24 +170,24 @@
 <script src="js/functions.js"></script>
 <script src="assets/validate.js"></script>
 
-<!-- SPECIFIC SCRIPTS -->
+ SPECIFIC SCRIPTS
 <script src="js/theia-sticky-sidebar.js"></script>
 <script>
     jQuery('#sidebar').theiaStickySidebar({
-      additionalMarginTop: 80
+        additionalMarginTop: 80
     });
 </script>
 <script>
-$('#faq_box a[href^="#"]').on('click', function (e) {
-			e.preventDefault();
-			var target = this.hash;
-			var $target = $(target);
-			$('html, body').stop().animate({
-				'scrollTop': $target.offset().top - 120
-			}, 900, 'swing', function () {
-				window.location.hash = target;
-			});
-		});
+    $('#faq_box a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 120
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
 </script>
 
 </body>
