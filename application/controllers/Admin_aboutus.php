@@ -123,11 +123,11 @@ class Admin_aboutus extends CI_Controller {
         $small = $this->input->post('small');
         $boxheader = $this->input->post('boxheader');
         $boxdetails = $this->input->post('boxdetails');
-        //$box_icon = $this->input->post('box_icon');
-       // print_r($big);
+        $box_icon = $this->input->post('icon');
+       //print_r($box_icon);
         $this->load->model('Aboutusm');
 
-        $this->Aboutusm->update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails);
+        $this->Aboutusm->update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails,$box_icon);
         redirect('Admin_aboutus');
 
 
@@ -143,6 +143,7 @@ class Admin_aboutus extends CI_Controller {
 
 
         $this->load->model('Aboutusm');
+        $this->data['icon'] = $this->Aboutusm->show_icon();
 
         $this->data['about_us_feature_content'] = $this->Aboutusm->get_about_us_feature_content($id);
 

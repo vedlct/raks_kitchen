@@ -93,7 +93,8 @@
                         <div class="col-md-6 col-sm-6" >
                             <div class="form-group">
                                 <label>Description</label>
-                                <input class="form-control"type="text" name="description" value="<?php echo $s->description ?>">
+                                <!--<input class="form-control"type="text" name="description" value="<?php echo $s->description ?>">-->
+                                <textarea class= "form-control "  id="summernote"type="text"  name="description" ><?php echo $s->description ?></textarea>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6" >
@@ -140,8 +141,13 @@
 
 <!-- jQuery -->
 
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
 
 
+    });
+</script>
 
 </body>
 

@@ -96,7 +96,8 @@
                                 <div class="col-md-12 col-sm-12" >
                                     <div class="form-group">
                                         <label>Details</label>
-                                        <input class="form-control"type="text" name="details" value="">
+                                        <!--<input class="form-control"type="text" name="details" value="">-->
+                                        <textarea class= "form-control "  id="summernote" type="text"  name="details" ></textarea>
 
 
 

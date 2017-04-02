@@ -516,7 +516,8 @@
 
                                         <div class="form-group">
                                             <label>Details</label>
-                                            <input class="form-control" type="text" name="details" value="<?php echo $s->details?>">
+                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
+                                            <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -563,6 +564,7 @@
     $(document).ready(function() {
         $('#summernote').summernote();
         $('#summernote1').summernote();
+        $('#summernote2').summernote();
 
     });
 

@@ -183,30 +183,10 @@ class Restaurant_menu extends CI_Controller
             $id = $this->input->post('id');
             $this->load->model('Menum');
             $this->data['edit'] = $this->Menum->showedit_for_menu($id);
-            foreach ($this->data['edit'] as $e) {
-                echo "<form role=\"form\" method=\"post\" action=\"http://localhost/raks_kitchen/Restaurant_menu/edit_res_menu/$e->id\" >
-                                         
-                                         <div class=\"form - group\">
-                                            <label>Item Type</label>
-                                            <input class=\"form - control\" type=\"text\" name=\"Item_type\" value=\" $e->item_type \">
-                                        </div>  
-                                        <div class=\"form-group\">
-                                            <label>Item Name</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"Item_name\" value=\" $e->item_name \">
-                                        </div>
-                                        <div class=\"form-group\">
-                                            <label>Item Description</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"textbox\" value=\" $e->item_description \">
-                                        </div>
-                                        <div class=\"form-group\">
-                                            <label>Price</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"Item_price\" value=\" $e->item_price \">
-                                        </div>
-                                                                       
-                                        <input class=\"btn btn-success\" type=\"submit\">
-                                    </form>
-                                    ";
-            }
+
+            $this->load->view('edit_restaurant_menu',$this->data);
+
+
             //echo $id;
         }
         else{

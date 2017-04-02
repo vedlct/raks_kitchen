@@ -118,7 +118,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Item description</label>
-                                    <textarea class="form-control"  name="Item_description"></textarea><br/>
+                                    <textarea class="form-control" id="summernote" type="text" name="Item_description"></textarea><br/>
+
                                     <label>If you want to add some item click </label>
 <!--                                    <button data-panel-id="" onclick="selectid2()">Edit</button>-->
                                     <input class="btn btn-success" type="button" name = 'add' value='Add'onclick="selectid2()">
