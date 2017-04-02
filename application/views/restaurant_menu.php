@@ -3,57 +3,7 @@
 
 <head>
     <?php include ('head.php') ?>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Rak</title>
-
-    <!--autocomplete search-->
-<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
-<!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-<!--    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-<!---->
-
-    <!-- search box-->
-    <link href="css/style.css" rel="stylesheet">
-
-
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/modal.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-<!--    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
-
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
-    <![endif]-->
+    <?php $this->load->view('admin_head');?>
 
 
 
@@ -212,10 +162,10 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
+<!--<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>assets/validate.js"></script>-->
 
 <script>
 
@@ -341,33 +291,29 @@
     });
 </script>
 
-<!--autocomplete search-->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!--<!--autocomplete search-->-->
+<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
+<!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+<!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+<!---->
+<!--<script>-->
+<!--    $(function x() {-->
+<!--        $( "#skills" ).autocomplete({-->
+<!--            source: '--><?php //echo base_url(); ?>//Admin_menu_attribute/autocomplete'
+//        });
+//    });
+//
+//</script>
 
-<script>
-    $(function x() {
-        $( "#skills" ).autocomplete({
-            source: '<?php echo base_url(); ?>Admin_menu_attribute/autocomplete'
-        });
-    });
+//<script>
+//    $(function(){
+//        $("#srch_menu_attr").autocomplete({
+//            source: "<?php //echo site_url('Admin_menu_attribute/get_search_menu_attr_autocomplete');?>//" // path to the get_birds method
+//        });
+//    });
+//</script>
 
-</script>
 
-<script>
-    $(function(){
-        $("#srch_menu_attr").autocomplete({
-            source: "<?php echo site_url('Admin_menu_attribute/get_search_menu_attr_autocomplete');?>" // path to the get_birds method
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
 
 
 

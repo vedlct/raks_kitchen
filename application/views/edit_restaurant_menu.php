@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 
 
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+
+
 
 
 
 
 
 </head>
-
 <body>
 
 
@@ -33,8 +31,8 @@
     </div>
     <div class="form-group">
         <label>Item Description</label>
-        <!--<input class="form-control" type="text" name="textbox" value=" <?php echo$e->item_description?> ">-->
-        <textarea class="form-control" id="summernote" type="text" name="textbox" ><?php echo $e->item_description?></textarea>
+
+        <textarea class="form-control"  cols="150" rows="6" name="textbox" ><?php echo $e->item_description?></textarea>
     </div>
     <div class="form-group">
         <label>Price</label>
@@ -45,10 +43,6 @@
 </form>
 
 <?php } ?>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
+
 
 </body>

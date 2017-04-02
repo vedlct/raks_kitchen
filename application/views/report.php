@@ -3,59 +3,11 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Rak's kitchen</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url()?>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-
-    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
+    <?php $this->load->view('admin_head');?>
 
 
-    <!-- Custom Fonts -->
-<!--    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
-    <link href="<?php echo  base_url()?>css/elegant_font/elegant_font.min.css" rel="stylesheet" type="text/css">
-
-    <script src="<?php echo base_url()?>js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url()?>js/bootstrap.min.js"></script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
-    <!-- Date Picker -->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="<?php echo base_url()?>css/datepicker.css">
-    <!--<link rel="stylesheet" href="<?php echo base_url()?>css/main.css">-->
 
-<!--    <script src="--><?php //echo base_url()?><!--js/datepicker.js"></script>-->
-<!--    <script src="--><?php //echo base_url()?><!--js/main.js"></script>-->
-
-    <!-- end Date Picker -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
-
-    <![endif]-->
 
 </head>
 
@@ -173,10 +125,56 @@
 
                                         <?php } ?>
                                     </tr>
-
-                                    <?php } ?>
                                 </table>
                             </div>
+                                    <?php }else{ ?>
+
+
+                            <div class="table-responsive">
+                                <table class=" table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>Date</th>
+                                        <th>Item Name</th>
+                                        <th>Item attribute</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <!--<th >Order Date</th>
+
+                                        <th colspan="2">Action</th>-->
+                                    </tr>
+                                    </thead>
+                                    <?php $count=0; ?>
+
+                                    <?php foreach ($this->data['show_Sales_review_date'] as $v){
+                                        $count++;?>
+                                        <tbody>
+                                        <tr>
+                                            <td><?php echo $count?></td>
+                                            <td><?php echo $v->date ?></td>
+                                            <td><?php echo $v->item_name ?></td>
+                                            <td><?php echo $v->item_attr ?></td>
+                                            <td><?php echo $v->qun ?></td>
+                                            <td><?php echo $v->price ?></td>
+
+                                        </tr>
+
+                                        </tbody>
+                                    <?php }?>
+                                    <tr >
+                                        <td colspan="4"></td>
+
+                                        <th id="1">Total Price</th>
+                                        <?php foreach ($this->data['gettotal'] as $r) { ?>
+                                            <td ><?php echo $r->total?></td>
+
+                                        <?php } ?>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <?php } ?>
 
 
 
