@@ -25,7 +25,7 @@
     <!--<link href="<?php echo  base_url()?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
     <link href="<?php echo  base_url()?>css/elegant_font/elegant_font.min.css" rel="stylesheet" type="text/css">
 
-    
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>js/bootstrap.js"></script>
