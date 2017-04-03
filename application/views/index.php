@@ -243,7 +243,7 @@
 
 <!-- SPECIFIC SCRIPTS -->
 <script src="<?php echo base_url()?>js/video_header.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
 <!--    <script src="//code.jquery.com/jquery-1.12.4.js"></script>-->
 <!--    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 <script>
@@ -265,7 +265,10 @@ $(document).ready(function() {
 </script>
 <script>
     function myFunc() {
+        //alert("hello0");
        var x = document.getElementById("Username").value;
+
+
 
 
         $.ajax({
@@ -278,8 +281,7 @@ $(document).ready(function() {
               //  $('#txtHint').html(data);
                 if (data == "duplicate"){
 
-
-                    $( "#Username" ).effect( "shake" );
+                    $("#Username" ).effect( "shake" );
                     $('#Username').css('border-color', 'red');
                     document.getElementById("alerttext").style.display= 'block'
                 }
