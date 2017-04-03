@@ -45,7 +45,7 @@
             <?php } ?>
         </div><!-- End sub_content -->
     </div>
-    <img src="<?php echo base_url()?>img/video_fix.png" alt="" class="header-video--media" data-video-src="<?php echo  base_url()?>video/intro" data-teaser-source="<?php echo  base_url()?>video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">
+    <img src="<?php echo base_url()?>img/video_fix.png" alt="" class="header-video--media" data-video-src="<?php echo  base_url()?>video/intro" data-teaser-source="<?php echo  base_url()?>video/intro" data-provider="html5" data-video-width="1920" data-video-height="960">
     <div id="count" class="hidden-xs">
         <ul>
             <?php
@@ -59,8 +59,8 @@
         </ul>
 
     </div>
-    <video autoplay loop muted id="teaser-video" class="teaser-video"><source src="<?php echo base_url()?>video/intro.mp4" type="video/mp4"><source src="<?php echo base_url()?>video/intro.ogv" type="video/ogg"></video>
-    <iframe id="video" src="<?php echo base_url()?>video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    <video data-provider="html5" autoplay loop muted id="teaser-video" class="teaser-video"><source src="<?php echo base_url()?>video/intro.mp4" type="video/mp4"><source src="<?php echo base_url()?>video/intro.ogv" type="video/ogg"><source src="<?php echo base_url()?>video/intro.webm" type="video/webm"></video>
+    <iframe data-provider="html5" id="video" src="<?php echo base_url()?>video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
     </section><!-- End Header video -->
     <!-- End SubHeader ============================================ -->
     
@@ -239,7 +239,7 @@
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
 <script src="<?php echo base_url()?>js/video_header.js"></script>
