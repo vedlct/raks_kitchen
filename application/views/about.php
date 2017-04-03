@@ -142,14 +142,14 @@
         }
         ?>
         <div class="col-md-6 nopadding">
-            <div class="features">
-                <img src="<?php echo base_url() ?>img/<?php echo $ausdtls->image?>" style="height: 400px ; width: 800px" class="img-responsive">
+            <div class="features img-responsive">
+                <img src="<?php echo base_url() ?>img/<?php echo $ausdtls->image?>" style="height: 400px ; width: 1000px" class="img-responsive">
                 <!--<div class="features-img">
                 </div>-->
             </div>
         </div>
         <div class="col-md-6 nopadding">
-            <div class="features-content">
+            <div class="features-content embed-responsive" style="text-align: justify">
                 <p>
                     <?php echo $ausdtls->details?>
 				</p>

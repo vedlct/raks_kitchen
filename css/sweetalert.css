@@ -163,7 +163,6 @@ body.stop-scrolling {
   .sweet-alert .sa-confirm-button-container {
     display: inline-block;
     position: relative; }
-
   .sweet-alert .la-ball-fall {
     position: absolute;
     left: 50%;
@@ -172,11 +171,7 @@ body.stop-scrolling {
     margin-top: 4px;
     opacity: 0;
     visibility: hidden; }
-  .sweet-alert .sakib{
-    display: none;
-  }
   .sweet-alert button {
-    display: none;
     background-color: #8CD4F5;
     color: white;
     border: none;
