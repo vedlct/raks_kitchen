@@ -24,6 +24,7 @@ class Profilem extends CI_Model
             'postcode' => $postcode,
             'country' => $country);
 
+        $data = $this->security->xss_clean($data);
         $this->db->where('id', $id);
         $this->db->update('user', $data);
     }

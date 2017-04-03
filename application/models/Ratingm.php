@@ -62,6 +62,7 @@ class Ratingm extends CI_Model
             'rating' => $rating,
             'username' => $username
         );
+        $data = $this->security->xss_clean($data);
         $this->db->insert('res_rating',$data);
     }
 }

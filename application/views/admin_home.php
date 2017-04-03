@@ -56,7 +56,7 @@
                                     <textarea  name="main_content_small" ></textarea>
 
                                     <br>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
                                     foreach ($show_main_content as $s){
@@ -73,7 +73,7 @@
 
                                             <textarea id="summernote" class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ><?php echo $s->small?></textarea>
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                     <?php } }?>
                             </form>
@@ -116,6 +116,7 @@
                                         <label>Register User</label>
                                         <input class="form-control" type="text" name="resturant3">
                                     </div>
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -134,6 +135,7 @@
                                             <label>Register User</label>
                                             <input class="form-control" type="text" name="resturant3" value="<?php echo $s->registered_user?>">
                                         </div>
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -180,7 +182,7 @@
                                         <label>Section four Small</label>
                                         <input class="form-control" type="text" name="sfoursmall">
                                     </div>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-default" type="submit">
                                 <?php }else{
 
@@ -196,7 +198,7 @@
                                             <label>Section four Small</label>
                                             <input class="form-control" type="text" name="sfoursmall" value="<?php echo $s->small?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -245,7 +247,7 @@
                                         <label>Section Five Image</label>
                                         <input class="form-control" type="file" name="sfiveimage" >
                                     </div>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-default" type="submit">
                                 <?php }else{
 
@@ -266,7 +268,7 @@
                                             <label>Section Five Image</label>
                                             <input class="form-control" type="file" name="sfiveimage" value="<?php echo $s->image?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}

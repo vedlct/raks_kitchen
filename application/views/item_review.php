@@ -77,7 +77,7 @@
             <li><a href="#0">Category</a></li>
             <li>Page active</li>
         </ul>
-        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
     </div>
 </div><!-- Position -->
 
@@ -245,6 +245,7 @@
                     <div class="form-group">
                         <input name="email_newsletter_2" id="email_newsletter_2"  type="email" value=""  placeholder="Your mail" class="form-control">
                     </div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                     <input type="submit" value="Subscribe" class="btn_1" id="submit-newsletter_2">
                 </form>
             </div>
@@ -308,7 +309,7 @@
                     <a  href="#" data-toggle="modal" data-target="#register"  onclick="login()">Sign Up</a>
                     <!--<button type="button" class="btn btn-primary"   onclick="login()">Sign Up</button>-->
                 </div>
-
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
@@ -359,6 +360,7 @@
                         <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                     </div>
                 </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
             </form>
         </div>
@@ -392,6 +394,7 @@
 
                 <textarea name="review_text" id="review_text" class="form-control form-white" style="height:100px" placeholder="write review" ></textarea>
                 <input type="text" name="verify_review" id="verify_review" class="form-control form-white" placeholder="Are you human? 3 + 1 =">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <input type="submit" value="Submit" class="btn btn-submit" id="submit-review">
             </form>
             <div id="message-review"></div>
@@ -399,16 +402,7 @@
     </div>
 </div><!-- End Register modal -->
 
-<!-- Search Menu -->
-<div class="search-overlay-menu">
-    <span class="search-overlay-close"><i class="icon_close"></i></span>
-    <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
-        <button type="submit"><i class="icon-search-6"></i>
-        </button>
-    </form>
-</div>
-<!-- End Search Menu -->
+
 
 <!-- COMMON SCRIPTS -->
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>

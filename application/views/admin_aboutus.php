@@ -54,7 +54,7 @@
                                     </div>
 
 
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -65,7 +65,7 @@
                                             <label>About us small</label>
                                             <input class="form-control" type="text" name="asmall" value="<?php echo $s->small?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -113,7 +113,7 @@
                                         <!--<input class="form-control" type="text" name="details">-->
                                         <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
                                     </div>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -131,7 +131,7 @@
                                             <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
                                         </div>
 
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -409,6 +409,7 @@
 
                                     <?php $count++; } }?>
                             </table>
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <input class="btn btn-success" type="submit">
 
 
@@ -466,7 +467,7 @@
                                         <label>image</label>
                                         <input class="form-control" type="text" name="image">
                                     </div>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -483,7 +484,7 @@
                                             <label>image</label>
                                             <input class="form-control" type="file" name="image">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}

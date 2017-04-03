@@ -16,6 +16,7 @@ class Registrationm extends CI_Model
             'postcode'=>$postal_code,
             'country'=>$country
         );
+        $data = $this->security->xss_clean($data);
             $this->db->insert('user', $data);
 
             $data2 = array(
@@ -26,6 +27,7 @@ class Registrationm extends CI_Model
 
             );
 
+        $data = $this->security->xss_clean($data);
             $this->db->insert('login', $data2);
 
     }

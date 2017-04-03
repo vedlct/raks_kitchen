@@ -100,6 +100,7 @@ class Restaurantm extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('res_request',$data);
     }
 
@@ -145,6 +146,7 @@ class Restaurantm extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('restaurant',$data);
     }
 
@@ -168,6 +170,7 @@ class Restaurantm extends CI_Model
             'status' => $rstatus,
             'Image' => $rimage,
         );
+        $data = $this->security->xss_clean($data);
         $this->db->where('id', $id);
         $this->db->update('restaurant', $data);
 
@@ -235,6 +238,7 @@ class Restaurantm extends CI_Model
             'description' => $description,
             'time'=>$time,
         );
+        $data = $this->security->xss_clean($data);
         $this->db->where('res_id', $id);
         $this->db->update('restaurant_details', $data);
 

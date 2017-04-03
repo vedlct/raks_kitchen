@@ -155,6 +155,7 @@
                                                     </td>
                                                     <td><?php echo $e->order_time ?></td>
                                                     <td><?php echo  date("Y-m-d", strtotime($e->date)) ?></td>
+                                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                                     <!--<td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Accept</button></td>-->
                                                     <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->username ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
 

@@ -23,6 +23,7 @@ class Faqm extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('faq',$data);
 
     }
@@ -47,6 +48,7 @@ class Faqm extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->where('id', $id);
         $this->db->update('faq', $data);
 

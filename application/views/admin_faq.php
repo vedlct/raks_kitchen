@@ -125,6 +125,7 @@
                                         <textarea class="form-control" id="summernote" name="details"></textarea>
                                         <!--<textarea class="form-control"  id="summernote" name="details" ></textarea>-->
                                     </div>
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                     </form>
 

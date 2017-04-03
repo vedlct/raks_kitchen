@@ -33,6 +33,7 @@ class Contactm extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('contact',$data);
     }
     function insert_customer_service_content(){
@@ -45,6 +46,7 @@ class Contactm extends CI_Model
             'email' => $email
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('contact_customer_service',$data);
     }
     function insert_resturant_service_content(){
@@ -57,6 +59,7 @@ class Contactm extends CI_Model
             'email' => $email
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('contact_restutant_service',$data);
     }
     function show_customer_service()

@@ -36,6 +36,7 @@ class Menum extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('menu',$data);
     }
 
@@ -63,6 +64,7 @@ class Menum extends CI_Model
                 'item_description' => $idescription,
                 'item_price' => $price,
             );
+            $data = $this->security->xss_clean($menudata);
             $this->db->insert('menu', $menudata);
         }
         else{
@@ -82,6 +84,7 @@ class Menum extends CI_Model
                     'item_description' => $idescription,
                 );*/
                 //$this->db->insert('menu', $menudata);
+                $data = $this->security->xss_clean($data);
                 $this->db->insert('menu_attribute', $data);
             }
             $menudata = array(
@@ -91,6 +94,8 @@ class Menum extends CI_Model
                 'item_name' => $iname,
                 'item_description' => $idescription,
             );
+
+            $data = $this->security->xss_clean($menudata);
             $this->db->insert('menu', $menudata);
         }
 
@@ -138,6 +143,7 @@ class Menum extends CI_Model
         );
 
 
+        $data = $this->security->xss_clean($data);
         $this->db->where('res_id', $id);
         $this->db->update('menu', $data);
 

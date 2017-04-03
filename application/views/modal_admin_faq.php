@@ -31,6 +31,7 @@
         <textarea class="form-control"  id="summernote1" name="details" value=" <?php echo $e->details?> "><?php echo$e->details ?></textarea>
         <!--<textarea class="form-control"  name="details" value=" <?php echo $e->details?> "><?php echo$e->details ?></textarea>-->
     </div>
+    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
     <input class="btn btn-success" type="submit">
 </form>
 
