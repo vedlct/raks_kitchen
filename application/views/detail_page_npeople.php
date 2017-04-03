@@ -64,8 +64,9 @@
 <div id="position">
     <div class="container">
         <ul>
-            <li><a href="#0">Home</a></li>
-            <li><a href="#0">Category</a></li>
+            <li><a href="<?php echo base_url()?>Home">Home</a></li>
+            <li><a href="<?php echo base_url()?>Restaurants">RAK's Dishes</a></li>
+            <li><a href="<?php echo base_url()?>Item_Menu/show_menu/9">Item Menu</a></li>
             <li>Page active</li>
         </ul>
         <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
@@ -353,6 +354,7 @@
                     <a  href="#" data-toggle="modal" data-target="#register"  onclick="login()">Sign Up</a>
                     <!--<button type="button" class="btn btn-primary"   onclick="login()">Sign Up</button>-->
                 </div>
+
                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
@@ -410,6 +412,7 @@
         </div>
     </div>
 </div><!-- End Register modal -->
+
 
 
 

@@ -329,6 +329,7 @@
                             </div>
                             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <button type="submit" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
@@ -361,6 +362,7 @@
                                 </div>
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                 <button type="submit" class="btn btn-primary">Disabled Button</button>
 
                             </fieldset>
@@ -381,6 +383,7 @@
                                 <input type="text" class="form-control" id="inputWarning">
                             </div>
 
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <div class="form-group has-error">
                                 <label class="control-label" for="inputError">Input with error</label>
                                 <input type="text" class="form-control" id="inputError">
@@ -413,6 +416,7 @@
                                 <span class="input-group-addon">.00</span>
                             </div>
 
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <div class="form-group input-group">
                                 <input type="text" class="form-control">
                                 <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>

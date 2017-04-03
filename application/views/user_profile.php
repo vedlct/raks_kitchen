@@ -136,7 +136,9 @@
                     </div >
                 </div ><!--End row-->
                 <hr style = "border-color:#ddd;" >
+
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
                 <div class="text-center" ><button class="btn_full_outline" type = "submit" > Update</button ></div >
             </form >
            <?php } ?>

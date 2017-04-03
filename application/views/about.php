@@ -54,8 +54,12 @@
     <div id="subheader">
     	<div id="sub_content">
     	 <h1>About us</h1>
-         <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
-         <p></p>
+            <?php
+            foreach ($aboutusSmall as $aussmall) {
+            }
+            ?>
+            <p><?php echo $aussmall->small; ?></p>
+
         </div><!-- End sub_content -->
 	</div><!-- End subheader -->
 </section><!-- End section -->
@@ -64,8 +68,8 @@
     <div id="position">
         <div class="container">
             <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">Category</a></li>
+                <li><a href="<?php echo base_url()?>Home">Home</a></li>
+                <li><a href="<?php echo base_url()?>About">About</a></li>
                 <li>Page active</li>
             </ul>
 
@@ -78,9 +82,14 @@
 		<div class="col-md-4">
 			<h3 class="nomargin_top">Some words about us</h3>
             <?php
-            foreach ($aboutUs as $aus) {
+            foreach ($aboutUsDetails as $aus) {
             }
             ?>
+           <h3>
+               <?php echo $aus->header; ?>
+           </h3>
+
+
 			<p>
                 <?php echo $aus->details; ?>
             </p>
@@ -129,20 +138,20 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-6 nopadding features-intro-img">
-			<div class="features-bg">
-				<div class="features-img">
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 nopadding">
-			<div class="features-content">
-                <?php
-                foreach ($aboutUsDetails as $ausdtls) {
-                }
-                ?>
-				<h3>"<?php echo $ausdtls->header?>"</h3>
-				<p>
+        <?php
+        foreach ($aboutUs as $ausdtls) {
+        }
+        ?>
+        <div class="col-md-6 nopadding">
+            <div class="features img-responsive">
+                <img src="<?php echo base_url() ?>img/<?php echo $ausdtls->image?>" style="height: 400px ; width: 1000px" class="img-responsive">
+                <!--<div class="features-img">
+                </div>-->
+            </div>
+        </div>
+        <div class="col-md-6 nopadding">
+            <div class="features-content embed-responsive" style="text-align: justify">
+                <p>
                     <?php echo $ausdtls->details?>
 				</p>
 

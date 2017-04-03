@@ -66,8 +66,9 @@
 <div id="position">
     <div class="container">
         <ul>
-            <li><a href="#0">Home</a></li>
-            <li><a href="#0">Category</a></li>
+            <li><a href="<?php echo base_url()?>Home">Home</a></li>
+            <li><a href="<?php echo base_url()?>Restaurants">RAK's Dishes</a></li>
+            <li><a href="<?php echo base_url()?>Item_Menu/show_menu/9">Item Menu</a></li>
             <li>Page active</li>
         </ul>
 
@@ -147,11 +148,11 @@
                                  </p>
 
 <!--                                 <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
 
                              </td>
                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
