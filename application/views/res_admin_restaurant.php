@@ -183,6 +183,7 @@
                                             <input class="form-control" type="hidden" name="res_id" value="<?php echo $e->res_id?>" >
                                         </div>
                                     </div>
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
                                     <div class="col-md-12 col-sm-12" >
                                     <input   class="btn btn-success" type="submit">

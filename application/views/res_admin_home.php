@@ -208,6 +208,7 @@
                                         <label>Item Price</label>
                                         <input class="form-control"type="text" name="Item_price" >
                                     </div>
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 </form>
 
@@ -243,6 +244,7 @@
                                                 <label>Item type</label>
                                                 <input class="form-control" type="text" id="itype" name="itype">
                                             </div>
+                                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
                                             <input class="btn btn-success" type="submit">
                                         </form>

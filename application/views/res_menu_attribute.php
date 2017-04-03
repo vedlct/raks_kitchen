@@ -97,6 +97,7 @@
                             <div class="input-group">
                                 <input type="text" name="search_menu_att" class=" search-query" placeholder="Search item" id="srch_menu_attr" >
                                 <span class="input-group-btn">
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input type="submit" name="btn_search_menu_attr" class="btn_search" value="Search"><br/><br/><br/><br/>
                                         </span>
                                 <br/><br/><br/><br/>

@@ -179,6 +179,7 @@
 					<div class="text-left">
 						<a href="#">Forgot Password?</a>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
@@ -228,6 +229,7 @@
 							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
 				</form>
 			</div>

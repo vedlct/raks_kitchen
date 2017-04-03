@@ -70,6 +70,7 @@
                                             </div >
                                         </div>
 
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                      <input style="margin-top: 30px" type="submit" name="generate" class="btn btn-success" value="Generate">
 
                                     </form>
