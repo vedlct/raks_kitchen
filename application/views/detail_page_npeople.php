@@ -428,8 +428,8 @@
 <script src="<?php echo base_url()?>assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
-<script>$('#cat_nav').mobileMenu();</script>
+<!--<script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
+<script>$('#cat_nav').mobileMenu();</script>-->
 <script src="<?php echo base_url()?>js/theia-sticky-sidebar.js"></script>
 <script>
     jQuery('#sidebar').theiaStickySidebar({

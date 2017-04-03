@@ -6,6 +6,10 @@
     <?php include ('head.php') ?>
     <title>RAK - Quality Delivery or Take Away Food</title>
 
+    <!-- This is what you need -->
+    <script src="<?php echo base_url()?>js/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url()?>css/sweetalert.css">
+    <!--.......................-->
 </head>
 
 <body>
@@ -101,7 +105,7 @@
 
                     <?php if ($this->session->userdata('type') == "User") {
                     foreach ($this->data['show_userinfo'] as $e){?>
-                    <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
+                    <form method="post" id="cart_form" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" class="form-control"  name="name_order" placeholder="Name" value="<?php echo $e->name?>">
@@ -149,7 +153,7 @@
 					<hr>
                         <?php }} else{?>
 
-                        <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
+                        <form method="post" id="cart_form" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control"  name="name_order" placeholder="name" >
@@ -310,7 +314,7 @@
                         </table>
                         <hr>
 					<!--<a class="btn_full" href="<?php echo base_url("Item_Menu/order_confirm/")?>">Go to checkout</a>-->
-                        <button type="submit" class="btn btn-submit">Go to checkout</button>
+                        <button type="button" onclick="cartconfirm()" class="btn btn-submit">Go to checkout</button>
 					<a class="btn_full_outline" href="<?php echo base_url("Item_Menu")?>"><i class="icon-right"></i> Add other items</a>
 				</div><!-- End cart_box -->
                 </div><!-- End theiaStickySidebar -->
@@ -510,6 +514,30 @@
             $('#total_table').load(document.URL +  ' #total_table');
         }
 
+    </script>
+
+    <script>
+        function cartconfirm() {
+            swal({
+                    title: "Are you sure to place the Oder?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#DD6B55',
+                    confirmButtonText: 'Yes',
+                    closeOnConfirm: false
+                },
+                function(){
+                    swal("Done!", "Your Oder is Placed", "success");
+                    setTimeout(myFunction, 2000);
+
+                });
+
+
+            function myFunction() {
+                document.getElementById("cart_form").submit();
+            }
+
+        }
     </script>
 
 </body>

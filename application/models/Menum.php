@@ -262,13 +262,13 @@ class Menum extends CI_Model
         $iname = $this->input->post('Item_name');
         $idescription = $this->input->post('textbox');
         $price  = $this->input->post('Item_price');
-        $itype = $this->input->post('Item_type');
+        //$itype = $this->input->post('Item_type');
 
         $data = array(
             'item_name' => $iname,
             'item_description' => $idescription,
             'item_price' => $price,
-            'item_type' => $itype,
+
 
         );
         $this->db->where('id', $id);

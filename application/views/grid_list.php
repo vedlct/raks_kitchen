@@ -50,7 +50,11 @@
     <div class="container">
         <ul>
             <li><a href="<?php echo base_url()?>Home">Home</a></li>
+
             <li><a href="<?php echo base_url()?>Restaurants">RAK's Dishes</a></li>
+
+            <li><a href="#0">Category</a></li>
+
             <li>Page active</li>
         </ul>
     </div>

@@ -282,8 +282,8 @@
         });
     });
 </script>
-
-<!--autocomplete search-->
+<!--
+<!--autocomplete search
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -304,13 +304,13 @@
         });
     });
 </script>
-
-<script>
+-->
+<!--<script>
     $(document).ready(function() {
         $('#summernote').summernote();
     });
 </script>
-
+-->
 
 
 </body>

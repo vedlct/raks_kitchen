@@ -305,7 +305,7 @@
 
 <!-- jQuery -->
 
-<script>
+<!--<script>
     $(function() {
         $("#rating_star").codexworld_rating_widget({
             starLength: '5',
@@ -315,7 +315,7 @@
             inputAttr: 'postID'
         });
     });
-</script>
+</script>-->
 
 
 </body>

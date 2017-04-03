@@ -178,7 +178,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
+<!--<script>
 
 
     // Get the modal
@@ -259,7 +259,7 @@
     });
 </script>
 
-
+-->
 </body>
 
 </html>

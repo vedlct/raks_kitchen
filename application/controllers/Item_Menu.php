@@ -141,65 +141,61 @@ class Item_Menu extends CI_Controller
             $this->load->model('Userm');
             $this->data['show_userinfo'] = $this->Userm->show_userinfo($usename);
             $this->load->view('cart',$this->data);
-            /*foreach ($this->data['show_userinfo'] as $e){
 
-                //print_r($e->res_id);
-                $id=$e->id;
-                //print_r($id);
-
-        }*/
         }else {
 
             $this->load->view('cart');
         }
 
 
-        //$this->load->view('cart');
+
     }
-    public function order_confirm(){
+    public function order_confirm()
+    {
 
-        //$this->load->view('cart');
-        $name = $this->input->post('name_order');
-        //$userid=$this->session->userdata('userid');
-        $username= $this->session->userdata('username');;
-        $phone = $this->input->post('tel_order');
-        $email = $this->input->post('email_order');
-        $address = $this->input->post('address_order');
-        $city = $this->input->post('city_order');
-        $state = $this->input->post('state_order');
-        $post_code = $this->input->post('pcode_oder');
-        $country = $this->input->post('country_order');
-        $order_day = $this->input->post('delivery_schedule_day');
-        $order_time = $this->input->post('order_time');
-        $date=$this->input->post('date');
-        $id = $this->input->post('res_id');
-        //$att_id = $this->input->post('attr_id');
-       // $price = $this->input->post('price');
-        $quantity=$this->input->post('qty');
-        //$item_name = $this->input->post('item_name');
-        //print_r($id);
+            //$this->load->view('cart');
+            $name = $this->input->post('name_order');
+            //$userid=$this->session->userdata('userid');
+            $username = $this->session->userdata('username');;
+            $phone = $this->input->post('tel_order');
+            $email = $this->input->post('email_order');
+            $address = $this->input->post('address_order');
+            $city = $this->input->post('city_order');
+            $state = $this->input->post('state_order');
+            $post_code = $this->input->post('pcode_oder');
+            $country = $this->input->post('country_order');
+            $order_day = $this->input->post('delivery_schedule_day');
+            $order_time = $this->input->post('order_time');
+            $date = $this->input->post('date');
+            $id = $this->input->post('res_id');
+            //$att_id = $this->input->post('attr_id');
+            // $price = $this->input->post('price');
+            $quantity = $this->input->post('qty');
+            //$item_name = $this->input->post('item_name');
+            //print_r($id);
 
-        //$this->load->model('Orderm');
-        //$this->data['show_resinfo'] = $this->Orderm->show_resinfo($id,$att_id);
-        foreach ($this->cart->contents() as $c) {
+            //$this->load->model('Orderm');
+            //$this->data['show_resinfo'] = $this->Orderm->show_resinfo($id,$att_id);
+            foreach ($this->cart->contents() as $c) {
 
-          //  $res_name=$e->name;
-            //$item_attr=$e->item_attribute;
+                //  $res_name=$e->name;
+                //$item_attr=$e->item_attribute;
 
-            $item_name = $c['name'];
-            $price=$c['price'];
-            $qty = $c['qty'];
-            $type_id = $c['coupon'];
-            $size=  $c['options']['Size'];
+                $item_name = $c['name'];
+                $price = $c['price'];
+                $qty = $c['qty'];
+                $type_id = $c['coupon'];
+                $size = $c['options']['Size'];
 
-            //print_r($item_attr);
-            $this->load->model('Orderm');
-            $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$qty,$size,$price,$type_id,$item_name);
+                //print_r($item_attr);
+                $this->load->model('Orderm');
+                $this->Orderm->order($name, $username, $phone, $email, $address, $city, $state, $post_code, $country, $order_day, $order_time, $date, $qty, $size, $price, $type_id, $item_name);
+            }
+            redirect('Home');
+            //print_r($res_id);
+
+
         }
-        redirect('Home');
-        //print_r($res_id);
 
 
-
-    }
 }
