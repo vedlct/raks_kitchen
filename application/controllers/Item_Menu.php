@@ -168,6 +168,8 @@ class Item_Menu extends CI_Controller
             $order_time = $this->input->post('order_time');
             $date = $this->input->post('date');
             $id = $this->input->post('res_id');
+
+
             //$att_id = $this->input->post('attr_id');
             // $price = $this->input->post('price');
             $quantity = $this->input->post('qty');
@@ -182,15 +184,21 @@ class Item_Menu extends CI_Controller
                 //$item_attr=$e->item_attribute;
 
                 $item_name = $c['name'];
-                $price = $c['price'];
+               $price = $c['price'];
                 $qty = $c['qty'];
                 $type_id = $c['coupon'];
                 $size = $c['options']['Size'];
 
-                //print_r($item_attr);
-                $this->load->model('Orderm');
+               //print_r($item_attr);
+               $this->load->model('Orderm');
                 $this->Orderm->order($name, $username, $phone, $email, $address, $city, $state, $post_code, $country, $order_day, $order_time, $date, $qty, $size, $price, $type_id, $item_name);
+
+
+
+               // print_r($rowid)."<br>";
+
             }
+        $this->cart->destroy();
             redirect('Home');
             //print_r($res_id);
 
