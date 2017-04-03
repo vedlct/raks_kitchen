@@ -2,8 +2,11 @@
 <html lang="en">
 
 <head>
+
+
     <?php $this->load->view('head');?>
     <?php $this->load->view('admin_head');?>
+
 
 </head>
 
