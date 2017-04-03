@@ -9,10 +9,10 @@
 <!-- Bootstrap Core CSS -->
 <link href="<?php echo base_url()?>css/bootstrap.min.css" rel="stylesheet">
 
+
 <!-- Custom CSS -->
 <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
-<link href="<?php echo base_url()?>css/modal.css" rel="stylesheet">
-
+<link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
 
 
