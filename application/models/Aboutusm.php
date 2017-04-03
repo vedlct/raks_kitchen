@@ -83,7 +83,7 @@ class Aboutusm extends CI_Model
         return $query->result();
 
     }
-    function update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails){
+    function update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails,$box_icon){
         /* $query = $this->db->get_where('about_us_feature', array('id' => $id));
          return $query->result();*/
 
@@ -92,6 +92,7 @@ class Aboutusm extends CI_Model
             'small' => $small,
             'box_header' => $boxheader,
             'box_details' => $boxdetails,
+            'box_icon'=>$box_icon
 
         );
 
@@ -108,8 +109,10 @@ class Aboutusm extends CI_Model
         $details = $this->input->post('details');
         //$phone  = $this->input->post('phone');
         //$email = $this->input->post('email');
+        $rimage=  $_FILES["image"]["name"];
         $data = array(
             'details' => $details,
+            'image' => $rimage
             //'image'
             //'phone' => $phone,
             //'email' => $email

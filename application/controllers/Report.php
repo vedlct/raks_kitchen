@@ -12,7 +12,11 @@ class Report extends CI_Controller {
 
             if(!$this->input->post('generate')){
 
-                $this->load->view('report');
+                $this->load->model('Reportm');
+                $this->data['show_Sales_review_date'] = $this->Reportm->show_Sales_review_date();
+                $this->data['gettotal'] = $this->Reportm->gettotal();
+
+                $this->load->view('report',$this->data);
 
             }
             else{

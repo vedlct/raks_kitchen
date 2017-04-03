@@ -67,11 +67,11 @@
     <div id="position">
         <div class="container">
             <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">Category</a></li>
+                <li><a href="<?php echo base_url()?>Home">Home</a></li>
+                <li><a href="<?php echo base_url()?>About">About</a></li>
                 <li>Page active</li>
             </ul>
-            <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
         </div>
     </div><!-- Position -->
 
@@ -81,9 +81,14 @@
 		<div class="col-md-4">
 			<h3 class="nomargin_top">Some words about us</h3>
             <?php
-            foreach ($aboutUs as $aus) {
+            foreach ($aboutUsDetails as $aus) {
             }
             ?>
+           <h3>
+               <?php echo $aus->header; ?>
+           </h3>
+
+
 			<p>
                 <?php echo $aus->details; ?>
             </p>
@@ -132,20 +137,20 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-6 nopadding features-intro-img">
-			<div class="features-bg">
-				<div class="features-img">
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 nopadding">
-			<div class="features-content">
-                <?php
-                foreach ($aboutUsDetails as $ausdtls) {
-                }
-                ?>
-				<h3>"<?php echo $ausdtls->header?>"</h3>
-				<p>
+        <?php
+        foreach ($aboutUs as $ausdtls) {
+        }
+        ?>
+        <div class="col-md-6 nopadding">
+            <div class="features">
+                <img src="<?php echo base_url() ?>img/<?php echo $ausdtls->image?>" style="height: 400px ; width: 800px" class="img-responsive">
+                <!--<div class="features-img">
+                </div>-->
+            </div>
+        </div>
+        <div class="col-md-6 nopadding">
+            <div class="features-content">
+                <p>
                     <?php echo $ausdtls->details?>
 				</p>
 

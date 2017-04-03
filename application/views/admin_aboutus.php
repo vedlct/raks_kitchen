@@ -3,48 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin - Bootstrap Admin Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-
-    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
-
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo  base_url()?>css/elegant_font/elegant_font.min.css" rel="stylesheet" type="text/css">
-
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
-
-    <![endif]-->
+    <?php $this->load->view('admin_head');?>
 
 </head>
 
@@ -140,38 +99,42 @@
                         </div>
 
                         <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_banner_content" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_details_content" enctype="multipart/form-data">
 
-                                <?php if ($show_about_us_banner_content == Null){ ?>
+                                <?php if ($show_about_us_details_content == Null){ ?>
 
                                     <div class="form-group">
-                                        <label>Details</label>
-                                        <input class="form-control" type="text" name="details">
+                                        <label>header</label>
+                                        <input class="form-control" type="text" name="header">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>image</label>
-                                        <input class="form-control" type="text" name="image">
+                                        <label>details</label>
+                                        <!--<input class="form-control" type="text" name="details">-->
+                                        <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
                                     </div>
 
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
-                                    foreach ($show_about_us_banner_content as $s){
+                                    foreach ($show_about_us_details_content as $s){
+                                        ?>
+
+                                        <div class="form-group">
+
+                                            <label>header</label>
+                                            <input class="form-control" type="text" name="header" value="<?php echo $s->header ?>">
+
+                                            <label>Details</label>
+                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
+                                            <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
+
+                                        </div>
+
+                                        <input class="btn btn-success" type="submit">
+                                        <?php
                                     }}
                                 ?>
-
-                                <div class="form-group">
-                                    <label>Details</label>
-                                    <input class="form-control" type="text" name="details" value="<?php echo $s->details?>">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>image</label>
-                                    <input class="form-control" type="file" name="image">
-                                </div>
-
-                                <input class="btn btn-success" type="submit">
 
 
                             </form>
@@ -306,17 +269,9 @@
                                         <?php $count++; } }?>
                                     </table>
                                     <!--<input class="btn btn-success" type="submit">-->
-
-
-
                             <!--</form>-->
                         </div>
-
-
-
                     </div>
-
-
 
                 </div>
 
@@ -447,24 +402,10 @@
                                     <?php $count++; } }?>
                             </table>
                             <input class="btn btn-success" type="submit">
-
-
-
                             </form>
-
-
-
-
 
                     </div>
                 </div>
-
-
-
-
-
-
-
 
                 <div class="col-md-4">
                     <div class="panel panel-success">
@@ -490,43 +431,37 @@
                         </div>
 
                         <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_details_content" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_banner_content" enctype="multipart/form-data">
 
-                                <?php if ($show_about_us_details_content == Null){ ?>
+                                <?php if ($show_about_us_banner_content == Null){ ?>
 
                                     <div class="form-group">
-                                        <label>header</label>
-                                        <input class="form-control" type="text" name="header">
+                                        <label>no Details</label>
+                                        <input class="form-control" type="text" name="details">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>details</label>
-                                        <!--<input class="form-control" type="text" name="details">-->
-                                        <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
+                                        <label>image</label>
+                                        <input class="form-control" type="text" name="image">
                                     </div>
 
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
-                                    foreach ($show_about_us_details_content as $s){
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>header</label>
-                                            <input class="form-control" type="text" name="header" value="<?php echo $s->header ?>">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>details</label>
-                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
-                                            <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
-                                        </div>
-
-
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
+                                    foreach ($show_about_us_banner_content as $s){
                                     }}
                                 ?>
+                                <div class="form-group">
+                                    <label>Details</label>
+                                    <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
+                                    <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>image</label>
+                                    <input class="form-control" type="file" name="image">
+                                </div>
+
+                                <input class="btn btn-success" type="submit">
 
                             </form>
                         </div>
@@ -562,6 +497,7 @@
     $(document).ready(function() {
         $('#summernote').summernote();
         $('#summernote1').summernote();
+        $('#summernote2').summernote();
 
     });
 
@@ -612,8 +548,6 @@
         modal2.style.display = "block";
     }
 
-
-
     span.onclick = function() {
             modal1.style.display = "none";
     }
@@ -643,10 +577,6 @@
 
 
 </script>
-
-
-
-
 </body>
 
 </html>
