@@ -66,11 +66,12 @@
 <div id="position">
     <div class="container">
         <ul>
-            <li><a href="#0">Home</a></li>
-            <li><a href="#0">Category</a></li>
+            <li><a href="<?php echo base_url()?>Home">Home</a></li>
+            <li><a href="<?php echo base_url()?>Restaurants">RAK's Dishes</a></li>
+            <li><a href="<?php echo base_url()?>Item_Menu/show_menu/9">Item Menu</a></li>
             <li>Page active</li>
         </ul>
-        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
     </div>
 </div><!-- Position -->
 
@@ -147,11 +148,11 @@
                                  </p>
 
 <!--                                 <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="30px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="30px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
 
                              </td>
                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -323,6 +324,7 @@
                                     <input type="button"  class="btn btn-default" style="background:#ec008c; text-align: center; width:19px; color: #fff; font-weight: bold; padding:6px 0px;  border-radius:0px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-"/>
                                     <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="text-align: center; border-right:none; border-left:none; border-radius:0px; width: 20px; padding:6px 2px; height:auto; float: left" value="<?php echo $c['qty']?>"/>
                                         <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['id']?>"/>
+                                        <input type="hidden" name="row_id" class="form-control"  value="<?php echo $c['rowid']?>"/>
                                         <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
                                         <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
                                     <input type="button" class="btn btn-default" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="background:#ec008c; font-weight: bold; color: #fff; text-align: center; border-radius:0px; width: 19px; padding: 6px 0px; float: left" value="+">
@@ -379,6 +381,7 @@
                         </tbody>
                     </table>
                     <hr>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                     <!--<a class="btn_full" href="cart.php">Order now</a>-->
                     <a class="btn_full" href="<?php echo base_url("Item_Menu/order_now/")?>">Order now</a>
 
@@ -408,6 +411,7 @@
                 <div class="text-left">
                     <a href="#">Forgot Password?</a>
                 </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
@@ -433,22 +437,14 @@
                         <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                     </div>
                 </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit">Register</button>
             </form>
         </div>
     </div>
 </div><!-- End Register modal -->
 
-<!-- Search Menu -->
-<div class="search-overlay-menu">
-    <span class="search-overlay-close"><i class="icon_close"></i></span>
-    <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
-        <button type="submit"><i class="icon-search-6"></i>
-        </button>
-    </form>
-</div>
-<!-- End Search Menu -->
+
 
 <!-- COMMON SCRIPTS -->
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>

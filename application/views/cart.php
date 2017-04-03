@@ -6,6 +6,10 @@
     <?php include ('head.php') ?>
     <title>RAK - Quality Delivery or Take Away Food</title>
 
+    <!-- This is what you need -->
+    <script src="<?php echo base_url()?>js/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url()?>css/sweetalert.css">
+    <!--.......................-->
 </head>
 
 <body>
@@ -64,7 +68,7 @@
                 <li><a href="#0">Category</a></li>
                 <li>Page active</li>
             </ul>
-            <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
         </div>
     </div><!-- Position -->
 
@@ -101,7 +105,7 @@
 
                     <?php if ($this->session->userdata('type') == "User") {
                     foreach ($this->data['show_userinfo'] as $e){?>
-                    <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
+                    <form method="post" id="cart_form" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" class="form-control"  name="name_order" placeholder="Name" value="<?php echo $e->name?>">
@@ -143,13 +147,14 @@
                             <div class="form-group">
                                 <label>Country</label>
                                 <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county" value="<?php echo $e->country?>">
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             </div>
                         </div>
 					</div>
 					<hr>
                         <?php }} else{?>
 
-                        <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
+                        <form method="post" id="cart_form" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control"  name="name_order" placeholder="name" >
@@ -191,6 +196,7 @@
                                     <div class="form-group">
                                         <label>Country</label>
                                         <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county" >
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     </div>
                                 </div>
                             </div>
@@ -253,6 +259,7 @@
                                         <input type="button"  class="btn btn-default" style="background:#ec008c; text-align: center; width:19px; color: #fff; font-weight: bold; padding:6px 0px;  border-radius:0px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-"/>
                                         <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="text-align: center; border-right:none; border-left:none; border-radius:0px; width: 20px; padding:6px 2px; height:auto; float: left" value="<?php echo $c['qty']?>"/>
                                         <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['id']?>"/>
+                                        <input type="hidden" name="row_id" class="form-control"  value="<?php echo $c['rowid']?>"/>
                                         <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
                                         <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
                                         <input type="button" class="btn btn-default" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="background:#ec008c; font-weight: bold; color: #fff; text-align: center; border-radius:0px; width: 19px; padding: 6px 0px; float: left" value="+">
@@ -308,9 +315,10 @@
                             </tr>
                             </tbody>
                         </table>
+                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                         <hr>
 					<!--<a class="btn_full" href="<?php echo base_url("Item_Menu/order_confirm/")?>">Go to checkout</a>-->
-                        <button type="submit" class="btn btn-submit">Go to checkout</button>
+                        <button type="button" onclick="cartconfirm()" class="btn btn-submit">Go to checkout</button>
 					<a class="btn_full_outline" href="<?php echo base_url("Item_Menu")?>"><i class="icon-right"></i> Add other items</a>
 				</div><!-- End cart_box -->
                 </div><!-- End theiaStickySidebar -->
@@ -339,6 +347,7 @@
 					<div class="text-left">
 						<a href="#">Forgot Password?</a>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
@@ -364,22 +373,14 @@
 							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Register</button>
 				</form>
 			</div>
 		</div>
 	</div><!-- End Register modal -->
     
-     <!-- Search Menu -->
-	<div class="search-overlay-menu">
-		<span class="search-overlay-close"><i class="icon_close"></i></span>
-		<form role="search" id="searchform" method="get">
-			<input value="" name="q" type="search" placeholder="Search..." />
-			<button type="submit"><i class="icon-search-6"></i>
-			</button>
-		</form>
-	</div>
-	<!-- End Search Menu -->
+
     
 <!-- COMMON SCRIPTS -->
 <script src=<?php echo base_url()?>js/jquery-2.2.4.min.js></script>
@@ -510,6 +511,30 @@
             $('#total_table').load(document.URL +  ' #total_table');
         }
 
+    </script>
+
+    <script>
+        function cartconfirm() {
+            swal({
+                    title: "Are you sure to place the Oder?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#DD6B55',
+                    confirmButtonText: 'Yes',
+                    closeOnConfirm: false
+                },
+                function(){
+                    swal("Done!", "Your Oder is Placed", "success");
+                    setTimeout(myFunction, 2000);
+
+                });
+
+
+            function myFunction() {
+                document.getElementById("cart_form").submit();
+            }
+
+        }
     </script>
 
 </body>

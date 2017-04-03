@@ -53,6 +53,7 @@ class Homem extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('home_main_content',$data);
     }
 
@@ -67,6 +68,7 @@ class Homem extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('home_resturant_andmore_content',$data);
     }
 
@@ -96,6 +98,7 @@ class Homem extends CI_Model
             'four_small' => $stepfoursmall
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('home_howitworks_content',$data);
     }
 
@@ -109,6 +112,7 @@ class Homem extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('home_section_4',$data);
     }
 
@@ -126,6 +130,7 @@ class Homem extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('home_section_5',$data);
     }
 
@@ -150,6 +155,7 @@ class Homem extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('home_section_6',$data);
     }
 

@@ -25,6 +25,7 @@ class Login extends CI_Model {
             'type'      => 'User'
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('login',$data);
     }
 
@@ -36,6 +37,7 @@ class Login extends CI_Model {
             'type'      => 'Res'
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('login',$data);
     }
 }

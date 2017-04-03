@@ -30,6 +30,7 @@ class Orderm extends CI_Model
 
 
         );
+        $data = $this->security->xss_clean($data);
         $this->db->insert('order_cart', $data);
 
 
@@ -129,6 +130,7 @@ class Orderm extends CI_Model
 
 
             );
+            $data = $this->security->xss_clean($data);
             $this->db->insert('order', $data);
 
         }

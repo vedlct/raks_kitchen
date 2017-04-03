@@ -54,7 +54,7 @@
                                     </div>
 
 
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -65,7 +65,7 @@
                                             <label>About us small</label>
                                             <input class="form-control" type="text" name="asmall" value="<?php echo $s->small?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -113,7 +113,7 @@
                                         <!--<input class="form-control" type="text" name="details">-->
                                         <textarea  class="form-control" id="summernote" name="details" type="text" ></textarea>
                                     </div>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -121,21 +121,25 @@
                                         ?>
 
                                         <div class="form-group">
+
                                             <label>header</label>
                                             <input class="form-control" type="text" name="header" value="<?php echo $s->header ?>">
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label>details</label>
+                                            <label>Details</label>
                                             <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
-                                            <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
+                                            <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
+
+<<<<<<< HEAD
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+=======
                                         </div>
 
-
+>>>>>>> 955a415a3532a8b97bc387b16af6d7ed406dc32f
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
                                 ?>
+
 
                             </form>
                         </div>
@@ -269,17 +273,9 @@
                                         <?php $count++; } }?>
                                     </table>
                                     <!--<input class="btn btn-success" type="submit">-->
-
-
-
                             <!--</form>-->
                         </div>
-
-
-
                     </div>
-
-
 
                 </div>
 
@@ -409,25 +405,12 @@
 
                                     <?php $count++; } }?>
                             </table>
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <input class="btn btn-success" type="submit">
-
-
-
                             </form>
-
-
-
-
 
                     </div>
                 </div>
-
-
-
-
-
-
-
 
                 <div class="col-md-4">
                     <div class="panel panel-success">
@@ -458,7 +441,7 @@
                                 <?php if ($show_about_us_banner_content == Null){ ?>
 
                                     <div class="form-group">
-                                        <label>Details</label>
+                                        <label>no Details</label>
                                         <input class="form-control" type="text" name="details">
                                     </div>
 
@@ -466,11 +449,12 @@
                                         <label>image</label>
                                         <input class="form-control" type="text" name="image">
                                     </div>
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
                                     foreach ($show_about_us_banner_content as $s){
+<<<<<<< HEAD
                                         ?>
 
                                         <div class="form-group">
@@ -483,11 +467,24 @@
                                             <label>image</label>
                                             <input class="form-control" type="file" name="image">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
+=======
+>>>>>>> 955a415a3532a8b97bc387b16af6d7ed406dc32f
                                     }}
                                 ?>
+                                <div class="form-group">
+                                    <label>Details</label>
+                                    <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
+                                    <textarea  class="form-control" id="summernote" name="details" type="text" ><?php echo $s->details?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>image</label>
+                                    <input class="form-control" type="file" name="image">
+                                </div>
+
+                                <input class="btn btn-success" type="submit">
 
                             </form>
                         </div>
@@ -574,8 +571,6 @@
         modal2.style.display = "block";
     }
 
-
-
     span.onclick = function() {
             modal1.style.display = "none";
     }
@@ -605,10 +600,6 @@
 
 
 </script>
-
-
-
-
 </body>
 
 </html>

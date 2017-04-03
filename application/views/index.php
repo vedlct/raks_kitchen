@@ -45,7 +45,7 @@
             <?php } ?>
         </div><!-- End sub_content -->
     </div>
-    <img src="<?php echo base_url()?>img/video_fix.png" alt="" class="header-video--media" data-video-src="<?php echo  base_url()?>video/intro" data-teaser-source="<?php echo  base_url()?>video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">
+    <img src="<?php echo base_url()?>img/video_fix.png" alt="" class="header-video--media" data-video-src="<?php echo  base_url()?>video/intro" data-teaser-source="<?php echo  base_url()?>video/intro" data-provider="html5" data-video-width="1920" data-video-height="960">
     <div id="count" class="hidden-xs">
         <ul>
             <?php
@@ -59,8 +59,8 @@
         </ul>
 
     </div>
-    <video autoplay loop muted id="teaser-video" class="teaser-video"><source src="<?php echo base_url()?>video/intro.mp4" type="video/mp4"><source src="<?php echo base_url()?>video/intro.ogv" type="video/ogg"></video>
-    <iframe id="video" src="<?php echo base_url()?>video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    <video data-provider="html5" autoplay loop muted id="teaser-video" class="teaser-video"><source src="<?php echo base_url()?>video/intro.mp4" type="video/mp4"><source src="<?php echo base_url()?>video/intro.ogv" type="video/ogg"><source src="<?php echo base_url()?>video/intro.webm" type="video/webm"></video>
+    <iframe data-provider="html5" id="video" src="<?php echo base_url()?>video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
     </section><!-- End Header video -->
     <!-- End SubHeader ============================================ -->
     
@@ -179,6 +179,7 @@
 					<div class="text-left">
 						<a href="#">Forgot Password?</a>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
@@ -228,6 +229,7 @@
 							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
 				</form>
 			</div>
@@ -239,11 +241,11 @@
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
 <script src="<?php echo base_url()?>js/video_header.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
 <!--    <script src="//code.jquery.com/jquery-1.12.4.js"></script>-->
 <!--    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 <script>
@@ -265,7 +267,10 @@ $(document).ready(function() {
 </script>
 <script>
     function myFunc() {
+        //alert("hello0");
        var x = document.getElementById("Username").value;
+
+
 
 
         $.ajax({
@@ -278,8 +283,7 @@ $(document).ready(function() {
               //  $('#txtHint').html(data);
                 if (data == "duplicate"){
 
-
-                    $( "#Username" ).effect( "shake" );
+                    $("#Username" ).effect( "shake" );
                     $('#Username').css('border-color', 'red');
                     document.getElementById("alerttext").style.display= 'block'
                 }

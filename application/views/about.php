@@ -13,7 +13,7 @@
     <!--[if lte IE 8]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
     <![endif]-->
-    <div id="preloader">
+ <div id="preloader">
         <div class="sk-spinner sk-spinner-wave" id="status">
             <div class="sk-rect1"></div>
             <div class="sk-rect2"></div>
@@ -42,6 +42,7 @@
                     <div class="text-left">
                         <a href="#">Forgot Password?</a>
                     </div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                     <button type="submit" class="btn btn-submit">Submit</button>
                 </form>
             </div>
@@ -53,8 +54,12 @@
     <div id="subheader">
     	<div id="sub_content">
     	 <h1>About us</h1>
-         <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
-         <p></p>
+            <?php
+            foreach ($aboutusSmall as $aussmall) {
+            }
+            ?>
+            <p><?php echo $aussmall->small; ?></p>
+
         </div><!-- End sub_content -->
 	</div><!-- End subheader -->
 </section><!-- End section -->
@@ -63,11 +68,11 @@
     <div id="position">
         <div class="container">
             <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">Category</a></li>
+                <li><a href="<?php echo base_url()?>Home">Home</a></li>
+                <li><a href="<?php echo base_url()?>About">About</a></li>
                 <li>Page active</li>
             </ul>
-            <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
         </div>
     </div><!-- Position -->
 
@@ -77,9 +82,14 @@
 		<div class="col-md-4">
 			<h3 class="nomargin_top">Some words about us</h3>
             <?php
-            foreach ($aboutUs as $aus) {
+            foreach ($aboutUsDetails as $aus) {
             }
             ?>
+           <h3>
+               <?php echo $aus->header; ?>
+           </h3>
+
+
 			<p>
                 <?php echo $aus->details; ?>
             </p>
@@ -128,20 +138,20 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-6 nopadding features-intro-img">
-			<div class="features-bg">
-				<div class="features-img">
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 nopadding">
-			<div class="features-content">
-                <?php
-                foreach ($aboutUsDetails as $ausdtls) {
-                }
-                ?>
-				<h3>"<?php echo $ausdtls->header?>"</h3>
-				<p>
+        <?php
+        foreach ($aboutUs as $ausdtls) {
+        }
+        ?>
+        <div class="col-md-6 nopadding">
+            <div class="features img-responsive">
+                <img src="<?php echo base_url() ?>img/<?php echo $ausdtls->image?>" style="height: 400px ; width: 1000px" class="img-responsive">
+                <!--<div class="features-img">
+                </div>-->
+            </div>
+        </div>
+        <div class="col-md-6 nopadding">
+            <div class="features-content embed-responsive" style="text-align: justify">
+                <p>
                     <?php echo $ausdtls->details?>
 				</p>
 
@@ -157,23 +167,7 @@
 
 <div class="layer"></div><!-- Mobile menu overlay mask -->
 
-<!-- Login modal -->   
-<div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content modal-popup">
-				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myLogin">
-                	<div class="login_icon"><i class="icon_lock_alt"></i></div>
-                    <input type="text" name="username" class="form-control form-white" placeholder="Username">
-                    <input type="password" name="password" class="form-control form-white" placeholder="Password">
-					<div class="text-left">
-						<a href="#">Forgot Password?</a>
-					</div>
-					<button type="submit" class="btn btn-submit">Submit</button>
-				</form>
-			</div>
-		</div>
-	</div><!-- End modal -->
+
 
     <!-- Register modal -->
     <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
@@ -218,24 +212,16 @@
                             <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                         </div>
                     </div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                     <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
                 </form>
             </div>
         </div>
     </div><!-- End Register modal -->
     
-     <!-- Search Menu -->
-	<div class="search-overlay-menu">
-		<span class="search-overlay-close"><i class="icon_close"></i></span>
-		<form role="search" id="searchform" method="get">
-			<input value="" name="q" type="search" placeholder="Search..." />
-			<button type="submit"><i class="icon-search-6"></i>
-			</button>
-		</form>
-	</div>
-	<!-- End Search Menu -->
+
     
-<!-- COMMON SCRIPTS -->
+<!-- COMMON SCRIPTS-->
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/common_scripts_min.js"></script>
 <script src="js/functions.js"></script>

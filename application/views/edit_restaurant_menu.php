@@ -2,16 +2,6 @@
 <html lang="en">
 <head>
 
-
-
-
-
-
-
-
-
-
-
 </head>
 <body>
 
@@ -22,8 +12,8 @@
 <form  method="post" action="<?php echo base_url()?>Restaurant_menu/edit_res_menu/<?php echo $e->id?>" >
 
     <div class="form - group">
-    <label>Item Type</label>
-    <input class="form - control" type="text" name="Item_type" value="<?php echo$e->item_type ?> ">
+    <label>Item Type :</label>
+    <?php echo$e->item_type ?>
     </div>
     <div class="form-group">
         <label>Item Name</label>
@@ -39,6 +29,7 @@
         <input class="form-control" type="text" name="Item_price" value=" <?php echo$e->item_price?> ">
     </div>
 
+    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
     <input class="btn btn-success" type="submit">
 </form>
 
