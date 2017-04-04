@@ -129,12 +129,8 @@
                                             <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
                                             <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
 
-<<<<<<< HEAD
-                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-=======
                                         </div>
-
->>>>>>> 955a415a3532a8b97bc387b16af6d7ed406dc32f
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -426,6 +422,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="row">
@@ -454,24 +451,6 @@
                                 <?php }else{
 
                                     foreach ($show_about_us_banner_content as $s){
-<<<<<<< HEAD
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>Details</label>
-                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
-                                            <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>image</label>
-                                            <input class="form-control" type="file" name="image">
-                                        </div>
-                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-=======
->>>>>>> 955a415a3532a8b97bc387b16af6d7ed406dc32f
                                     }}
                                 ?>
                                 <div class="form-group">
@@ -483,13 +462,14 @@
                                     <label>image</label>
                                     <input class="form-control" type="file" name="image">
                                 </div>
-
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                 <input class="btn btn-success" type="submit">
 
                             </form>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>About Banner Visual Instruction</h3></div>
@@ -504,6 +484,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
@@ -546,6 +527,11 @@
     var span = document.getElementsByClassName("close")[0];
     var span1 = document.getElementsByClassName("close")[1];
 
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function selectid(x) {
         modal1.style.display = "block";

@@ -420,7 +420,7 @@
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
 <!--<script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
@@ -444,6 +444,11 @@
     });
 </script>
 <script>
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function addcart(x) {
 
@@ -471,6 +476,11 @@
 
 
 <script>
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function myfunc() {
         var chkArray = [];
@@ -510,6 +520,11 @@
 </script>
 
 <script>
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
     function plus(x) {
 
         var btn = $(x).data('panel-id');
@@ -561,6 +576,11 @@
 </script>
 
 <script type="text/javascript">
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     var count =0;
     // var item_id = document.getElementById("item_id").value;

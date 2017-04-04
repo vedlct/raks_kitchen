@@ -115,7 +115,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
+<!--<script>
 
 
     // Get the modal
@@ -242,14 +242,14 @@
         }
     }
 
-</script>
+</script>-->
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
     });
 </script>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
     $(document).ready(function(){
 
@@ -305,7 +305,7 @@
             alert(msg);
         });
     });
-</script>
+</script>-->
 </body>
 
 </html>

@@ -241,7 +241,7 @@
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
 <!--<script  src="--><?php //echo base_url()?><!--js/cat_nav_mobile.js"></script>-->

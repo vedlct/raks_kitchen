@@ -380,8 +380,9 @@
                         </tr>
                         </tbody>
                     </table>
-                    <hr>
                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
+                    <hr>
                     <!--<a class="btn_full" href="cart.php">Order now</a>-->
                     <a class="btn_full" href="<?php echo base_url("Item_Menu/order_now/")?>">Order now</a>
 
@@ -412,6 +413,7 @@
                     <a href="#">Forgot Password?</a>
                 </div>
                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
@@ -438,6 +440,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
                 <button type="submit" class="btn btn-submit">Register</button>
             </form>
         </div>
@@ -450,9 +453,9 @@
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
-<!-- SPECIFIC SCRIPTS -->
+<!--<!-- SPECIFIC SCRIPTS
 <script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
 <script>$('#cat_nav').mobileMenu();</script>
 <script src="<?php echo base_url()?>js/theia-sticky-sidebar.js"></script>
@@ -460,7 +463,7 @@
     jQuery('#sidebar').theiaStickySidebar({
         additionalMarginTop: 80
     });
-</script>
+</script>-->
 <script>
     $('#cat_nav a[href^="#"]').on('click', function (e) {
         e.preventDefault();
@@ -474,6 +477,12 @@
     });
 </script>
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function addcart(x) {
 
@@ -501,6 +510,12 @@
 
 
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function myfunc() {
         var chkArray = [];
@@ -540,6 +555,13 @@
 </script>
 
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function plus(x) {
 
         var btn = $(x).data('panel-id');
@@ -591,6 +613,12 @@
 </script>
 
 <script type="text/javascript">
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     var count =0;
    // var item_id = document.getElementById("item_id").value;
