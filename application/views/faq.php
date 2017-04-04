@@ -75,17 +75,20 @@
 
                 <?php $query=$this->db->query("select * from `faq` WHERE `header`= '$s->header'");
                  foreach ($query->result() as $r){
-                ?>
+
+                     echo $r->id;
+                     ?>
+
 
                  <div class="panel-group" id="<?php echo $s->id?>">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#<?php echo $s->id?>"
-                                   href="#<?php echo $r->id?>"><?php echo $r->sub_header?><i class="indicator icon_plus_alt2 pull-right"></i></a>
+                                   href="#<?php echo ($r->id)+1?>"><?php echo $r->sub_header?><i class="indicator icon_plus_alt2 pull-right"></i></a>
                             </h4>
                         </div>
-                        <div id="<?php echo $r->id?>" class="panel-collapse collapse">
+                        <div id="<?php echo ($r->id)+1?>" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <?php echo $r->details?>
                             </div>
@@ -96,8 +99,6 @@
                 <?php
             } }
             ?>
-
-
         </div><!-- End col-md-9 -->
     </div><!-- End row -->
 </div><!-- End container -->
