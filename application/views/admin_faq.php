@@ -125,6 +125,7 @@
                                         <textarea class="form-control" id="summernote" name="details"></textarea>
                                         <!--<textarea class="form-control"  id="summernote" name="details" ></textarea>-->
                                     </div>
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                     </form>
 
@@ -182,6 +183,11 @@
 
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function selectid2(x) {
         modal2.style.display = "block";

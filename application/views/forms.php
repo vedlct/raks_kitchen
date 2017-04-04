@@ -327,7 +327,9 @@
                                     <option>5</option>
                                 </select>
                             </div>
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <button type="submit" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
@@ -358,7 +360,9 @@
                                         <input type="checkbox">Disabled Checkbox
                                     </label>
                                 </div>
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                 <button type="submit" class="btn btn-primary">Disabled Button</button>
 
                             </fieldset>
@@ -379,11 +383,12 @@
                                 <input type="text" class="form-control" id="inputWarning">
                             </div>
 
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <div class="form-group has-error">
                                 <label class="control-label" for="inputError">Input with error</label>
                                 <input type="text" class="form-control" id="inputError">
                             </div>
-
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                         </form>
 
                         <h1>Input Groups</h1>
@@ -411,11 +416,12 @@
                                 <span class="input-group-addon">.00</span>
                             </div>
 
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <div class="form-group input-group">
                                 <input type="text" class="form-control">
                                 <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
                             </div>
-
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                         </form>
 
                         <p>For complete documentation, please visit <a href="http://getbootstrap.com/css/#forms">Bootstrap's Form Documentation</a>.</p>

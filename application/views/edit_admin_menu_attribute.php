@@ -19,6 +19,7 @@
         <label>Serial</label>
         <input class="form-control" type="text" name="serial" value=" <?php echo$e->serial?> ">
     </div>
+    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
     <input class="btn btn-success" type="submit">
 </form>
 <?php } ?>

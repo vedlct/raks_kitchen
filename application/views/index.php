@@ -179,6 +179,7 @@
 					<div class="text-left">
 						<a href="#">Forgot Password?</a>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
@@ -228,6 +229,7 @@
 							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
 				</form>
 			</div>
@@ -240,9 +242,8 @@
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
 <script src="<?php echo base_url()?>js/validate.js"></script>
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></scri
 
-<!-- SPECIFIC SCRIPTS -->
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></scri
 <script src="<?php echo base_url()?>js/video_header.js"></script>
 
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -263,18 +264,25 @@ $(document).ready(function() {
        document.getElementById("alerttext").style.display= 'none'
    }
 </script>
-<script>
+<script type="text/javascript">
     function myFunc() {
         //alert("hello0");
        var x = document.getElementById("Username").value;
 
+      // var name = '<?php echo $this->security->get_csrf_token_name();?>'
 
+//        var vaule= '<?php echo $this->security->get_csrf_hash();?>'
 
+        $.ajaxSetup({
+            data: {
+                '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+            }
+        });
 
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Registration/check_user/")?>'+x,
-            data:{'id':x},
+            data:{'id':x },
             cache: false,
             success:function(data)
             {
@@ -291,6 +299,7 @@ $(document).ready(function() {
         });
     }
 </script>
+
 
 </body>
 </html>

@@ -26,6 +26,7 @@
                         <div class="form-group">
                             <input name="email_newsletter_2" id="email_newsletter_2"  type="email" value=""  placeholder="Your mail" class="form-control">
                           </div>
+                            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             <input type="submit" value="Subscribe" class="btn_1" id="submit-newsletter_2">
                     	</form>
                 </div>

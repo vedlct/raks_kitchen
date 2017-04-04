@@ -68,7 +68,7 @@
                 <li><a href="#0">Category</a></li>
                 <li>Page active</li>
             </ul>
-            <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
         </div>
     </div><!-- Position -->
 
@@ -147,6 +147,7 @@
                             <div class="form-group">
                                 <label>Country</label>
                                 <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county" value="<?php echo $e->country?>">
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                             </div>
                         </div>
 					</div>
@@ -195,6 +196,7 @@
                                     <div class="form-group">
                                         <label>Country</label>
                                         <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county" >
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     </div>
                                 </div>
                             </div>
@@ -313,6 +315,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                         <hr>
 					<!--<a class="btn_full" href="<?php echo base_url("Item_Menu/order_confirm/")?>">Go to checkout</a>-->
                         <button type="button" onclick="cartconfirm()" class="btn btn-submit">Go to checkout</button>
@@ -344,6 +347,7 @@
 					<div class="text-left">
 						<a href="#">Forgot Password?</a>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
@@ -369,22 +373,14 @@
 							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 					<button type="submit" class="btn btn-submit">Register</button>
 				</form>
 			</div>
 		</div>
 	</div><!-- End Register modal -->
     
-     <!-- Search Menu -->
-	<div class="search-overlay-menu">
-		<span class="search-overlay-close"><i class="icon_close"></i></span>
-		<form role="search" id="searchform" method="get">
-			<input value="" name="q" type="search" placeholder="Search..." />
-			<button type="submit"><i class="icon-search-6"></i>
-			</button>
-		</form>
-	</div>
-	<!-- End Search Menu -->
+
     
 <!-- COMMON SCRIPTS -->
 <script src=<?php echo base_url()?>js/jquery-2.2.4.min.js></script>

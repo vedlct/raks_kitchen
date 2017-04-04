@@ -73,11 +73,13 @@
 <div id="position">
     <div class="container">
         <ul>
-            <li><a href="#0">Home</a></li>
-            <li><a href="#0">Category</a></li>
+            <li><a href="<?php echo base_url()?>Home">Home</a></li>
+            <li><a href="<?php echo base_url()?>Restaurants">RAK's Dishes</a></li>
+            <li><a href="<?php echo base_url()?>Item_Menu/show_menu/9">Item Menu</a></li>
+            <li><a href="<?php echo $this->uri->segment(3); ?>">Item Review</a></li>
             <li>Page active</li>
         </ul>
-        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
     </div>
 </div><!-- Position -->
 
@@ -245,6 +247,7 @@
                     <div class="form-group">
                         <input name="email_newsletter_2" id="email_newsletter_2"  type="email" value=""  placeholder="Your mail" class="form-control">
                     </div>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                     <input type="submit" value="Subscribe" class="btn_1" id="submit-newsletter_2">
                 </form>
             </div>
@@ -309,6 +312,7 @@
                     <!--<button type="button" class="btn btn-primary"   onclick="login()">Sign Up</button>-->
                 </div>
 
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
@@ -359,13 +363,14 @@
                         <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                     </div>
                 </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
             </form>
         </div>
     </div>
 </div><!-- End Register modal -->
 
-<!-- Register modal -->
+<!-- Review modal -->
 <div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="review" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
@@ -392,6 +397,7 @@
 
                 <textarea name="review_text" id="review_text" class="form-control form-white" style="height:100px" placeholder="write review" ></textarea>
                 <input type="text" name="verify_review" id="verify_review" class="form-control form-white" placeholder="Are you human? 3 + 1 =">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <input type="submit" value="Submit" class="btn btn-submit" id="submit-review">
             </form>
             <div id="message-review"></div>
@@ -399,24 +405,15 @@
     </div>
 </div><!-- End Register modal -->
 
-<!-- Search Menu -->
-<div class="search-overlay-menu">
-    <span class="search-overlay-close"><i class="icon_close"></i></span>
-    <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
-        <button type="submit"><i class="icon-search-6"></i>
-        </button>
-    </form>
-</div>
-<!-- End Search Menu -->
+
 
 <!-- COMMON SCRIPTS -->
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
-
-<!-- SPECIFIC SCRIPTS -->
+<script src="<?php echo base_url()?>js/validate.js"></script>
+<!--
+<!-- SPECIFIC SCRIPTS
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
 
 <script src="<?php echo base_url()?>js/map_single.js"></script>
@@ -440,173 +437,11 @@
             autoplay: false
         });
     });
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>
-
-    var count =0;
-    var res_id = document.getElementById("res_id").value;
-
-    $("document").ready(function () {
-        $("#imgA").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-        }).mouseout(function () {
-            if (count = 1) {
-            } else
-                this.src = "<?php echo base_url()?>img/blank.png"
-        });
-
-        $("#imgB").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-        });
-
-        $("#imgC").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-        });
-
-        $("#imgD").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-
-        });
-
-        $("#imgE").mouseover(function () {
-            this.src = "<?php echo base_url()?>img/yellow.png"
-            document.getElementById("imgD").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
-
-        }).mouseout(function () {
-
-            this.src = "<?php echo base_url()?>img/blank.png"
-            document.getElementById("imgD").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgC").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
-            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
-
-        });
-
-    });
-
-
-
-    function myfuncA() {
-        count =1;
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'rating':count,'r_id':res_id},
-            cache: false,
-            success:function(data)
-            {
-                alert("You have successfully gave rating rating 1");
-            }
-
-        });
-
-
-    }
-    function myfuncB() {
-        count =2;
-
-
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'rating':count,'r_id':res_id},
-            cache: false,
-            success:function(data)
-            {
-                alert("You have successfully gave rating rating 2");
-            }
-
-        });
-
-    }
-    function myfuncC() {
-        count =3;
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'rating':count,'r_id':res_id},
-            cache: false,
-            success:function(data)
-            {
-                //$('#myReview').html(data);
-                alert("You have successfully gave rating rating 3");
-            }
-
-        });
-
-    }
-    function myfuncD() {
-        count =4;
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'rating':count,'r_id':res_id},
-            cache: false,
-            success:function(data)
-            {
-                //alert(data);
-                alert("You have successfully gave rating rating 4");
-            }
-
-        });
-
-    }
-    function myfuncE() {
-        count =5;
-
-
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'rating':count,'r_id':res_id},
-            cache: false,
-            success:function(data)
-            {
-                alert("You have successfully gave rating rating 5");
-            }
-
-        });
-
-
-    }
-</script>
-
+</script>-->
 <script>
     function  login() {
 
-        //$('#login_2').modal('hide');
-        // $('#register').modal('toggle');
+
 
         document.getElementById("login_2").style.display = 'none';
         document.getElementById("register").style.display = 'block';

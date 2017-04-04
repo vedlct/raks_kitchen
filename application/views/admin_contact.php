@@ -53,7 +53,7 @@
                                         <input class="form-control" type="text" name="csmall">
                                     </div>
 
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
@@ -65,7 +65,7 @@
                                             <label>Contact small</label>
                                             <input class="form-control" type="text" name="csmall" value="<?php echo $s->small?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -119,7 +119,7 @@
                                     </div>
 
 
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -141,7 +141,7 @@
                                             <label>Email</label>
                                             <input class="form-control" type="text" name="email"  value="<?php echo $s->email?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -196,7 +196,7 @@
                                     </div>
 
 
-
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{
 
@@ -218,7 +218,7 @@
                                             <label>Email</label>
                                             <input class="form-control" type="text" name="email"  value="<?php echo $s->email?>">
                                         </div>
-
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}

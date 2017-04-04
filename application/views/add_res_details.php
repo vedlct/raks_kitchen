@@ -64,6 +64,7 @@
 
                                 <div class="col-md-12 col-sm-12" >
                                     <div class="form-group">
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                     </div>
                                 </div>
