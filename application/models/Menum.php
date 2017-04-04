@@ -210,7 +210,7 @@ class Menum extends CI_Model
             'image' => $fileName,
 
         );
-
+        $data = $this->security->xss_clean($data);
         $this->db->insert('menu_type',$data);
     }
 
@@ -265,10 +265,11 @@ class Menum extends CI_Model
     }
 
     public function edit_res_menu($id){
+
+        //$itype = $this->input->post('Item_type');
         $iname = $this->input->post('Item_name');
         $idescription = $this->input->post('textbox');
         $price  = $this->input->post('Item_price');
-        //$itype = $this->input->post('Item_type');
 
         $data = array(
             'item_name' => $iname,
@@ -277,6 +278,7 @@ class Menum extends CI_Model
 
 
         );
+        $data = $this->security->xss_clean($data);
         $this->db->where('id', $id);
         $this->db->update('menu', $data);
 
@@ -315,6 +317,24 @@ class Menum extends CI_Model
     }
     public function show_item_type_from_menu(){
         $query=$this->db->query("SELECT * FROM `menu` GROUP by `item_type`");
+        return $query->result();
+
+    }
+    public function check_menu($id){
+
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$id' ");
+        return $query->result();
+
+    }
+    public function check_menu_attribute($id){
+
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$id' ");
+        return $query->result();
+
+    }
+
+    public function show_item_type_from_menu_attribute(){
+        $query=$this->db->query("SELECT * FROM `menu_attribute` GROUP by `item_type`");
         return $query->result();
 
     }
