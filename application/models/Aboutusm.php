@@ -46,6 +46,7 @@ class Aboutusm extends CI_Model
 
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('about_us',$data);
     }
     function insert_about_us_details_content(){
@@ -58,8 +59,8 @@ class Aboutusm extends CI_Model
             'details' => $details,
 
         );
-        $data = $this->security->xss_clean($data);
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('about_us_details',$data);
     }
     function insert_about_us_feature_content($big,$small,$box_header,$box_details,$icon){
@@ -71,6 +72,7 @@ class Aboutusm extends CI_Model
             'box_details' => $box_details,
             'box_icon' => $icon
         );
+
         $data = $this->security->xss_clean($data);
         $this->db->insert('about_us_feature',$data);
     }
@@ -96,7 +98,7 @@ class Aboutusm extends CI_Model
 
         );
 
-
+        $data = $this->security->xss_clean($data);
         $this->db->where('id',$id);
         $this->db->update('about_us_feature',$data);
 
@@ -118,6 +120,7 @@ class Aboutusm extends CI_Model
             //'email' => $email
         );
 
+        $data = $this->security->xss_clean($data);
         $this->db->insert('about_us_banner',$data);
     }
 }

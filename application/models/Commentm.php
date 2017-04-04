@@ -14,6 +14,8 @@ class Commentm extends CI_Model
             'username'=>$username,
             'comment' => $review,
         );
+
+        $data = $this->security->xss_clean($data);
         $this->db->insert('res_comment',$data);
     }
 

@@ -71,7 +71,7 @@
             <li><a href="<?php echo base_url()?>Item_Menu/show_menu/9">Item Menu</a></li>
             <li>Page active</li>
         </ul>
-        <a href="#0" class="search-overlay-menu-btn"><i class="icon-search-6"></i> Search</a>
+
     </div>
 </div><!-- Position -->
 
@@ -380,6 +380,8 @@
                         </tr>
                         </tbody>
                     </table>
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
                     <hr>
                     <!--<a class="btn_full" href="cart.php">Order now</a>-->
                     <a class="btn_full" href="<?php echo base_url("Item_Menu/order_now/")?>">Order now</a>
@@ -410,6 +412,8 @@
                 <div class="text-left">
                     <a href="#">Forgot Password?</a>
                 </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
@@ -435,30 +439,23 @@
                         <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
                     </div>
                 </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
                 <button type="submit" class="btn btn-submit">Register</button>
             </form>
         </div>
     </div>
 </div><!-- End Register modal -->
 
-<!-- Search Menu -->
-<div class="search-overlay-menu">
-    <span class="search-overlay-close"><i class="icon_close"></i></span>
-    <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
-        <button type="submit"><i class="icon-search-6"></i>
-        </button>
-    </form>
-</div>
-<!-- End Search Menu -->
+
 
 <!-- COMMON SCRIPTS -->
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
-<!-- SPECIFIC SCRIPTS -->
+<!--<!-- SPECIFIC SCRIPTS
 <script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
 <script>$('#cat_nav').mobileMenu();</script>
 <script src="<?php echo base_url()?>js/theia-sticky-sidebar.js"></script>
@@ -466,7 +463,7 @@
     jQuery('#sidebar').theiaStickySidebar({
         additionalMarginTop: 80
     });
-</script>
+</script>-->
 <script>
     $('#cat_nav a[href^="#"]').on('click', function (e) {
         e.preventDefault();
@@ -480,6 +477,12 @@
     });
 </script>
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function addcart(x) {
 
@@ -507,6 +510,12 @@
 
 
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function myfunc() {
         var chkArray = [];
@@ -546,6 +555,13 @@
 </script>
 
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function plus(x) {
 
         var btn = $(x).data('panel-id');
@@ -597,6 +613,12 @@
 </script>
 
 <script type="text/javascript">
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     var count =0;
    // var item_id = document.getElementById("item_id").value;

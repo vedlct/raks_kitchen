@@ -10,6 +10,7 @@
 
     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 <!--    <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>-->
+    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
 
     <a href="#" onclick="document.myform.submit();"><?php echo base_url()?></a>
 </form>

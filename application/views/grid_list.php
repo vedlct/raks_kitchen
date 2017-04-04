@@ -55,6 +55,7 @@
 
             <li>Page active</li>
         </ul>
+
     </div>
 </div><!-- Position -->
 
@@ -234,23 +235,13 @@
         </div>
     </div><!-- End Register modal -->
 
-<!-- Search Menu -->
-<div class="search-overlay-menu">
-    <span class="search-overlay-close"><i class="icon_close"></i></span>
-    <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
-        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-        <button type="submit"><i class="icon-search-6"></i>
-        </button>
-    </form>
-</div>
-<!-- End Search Menu -->
+
 
 <!-- COMMON SCRIPTS -->
 <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
 <!--<script  src="--><?php //echo base_url()?><!--js/cat_nav_mobile.js"></script>-->

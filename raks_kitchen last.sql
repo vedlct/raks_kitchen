@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2017 at 10:43 AM
+-- Generation Time: Apr 02, 2017 at 02:32 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -127,8 +127,7 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `small`) VALUES
 (1, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.'),
-(2, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.'),
-(3, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.');
+(2, 'Qui debitis meliore ex, tollit debitis conclusionemque te eos.');
 
 -- --------------------------------------------------------
 
@@ -150,9 +149,7 @@ CREATE TABLE `contact_customer_service` (
 INSERT INTO `contact_customer_service` (`id`, `details`, `phone`, `email`) VALUES
 (1, 'Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te.', '+45 423 445 70', 'customercare@quickfood.com'),
 (2, 'Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI', '+45 423 445 70', 'customercare@quickfood.com'),
-(3, '<p>Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI <img style="width: 134px;" src="data:image/jpeg;base64,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" data-filename="images.jpg"><br></p>', '+45 423 445 70', 'customercare@quickfood.com'),
-(4, '<br><p></p>"&gt;<p>Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI <br></p>', '+45 423 445 70', 'customercare@quickfood.com'),
-(5, 'Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI <br><p></p>"&gt;<br><p></p><p><br></p>', '+45 423 445 70', 'customercare@quickfood.com');
+(3, '<p>Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. Lorem iisque periculis id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te. RUMI <img style="width: 134px;" src="data:image/jpeg;base64,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" data-filename="images.jpg"><br></p>', '+45 423 445 70', 'customercare@quickfood.com');
 
 -- --------------------------------------------------------
 
@@ -173,8 +170,7 @@ CREATE TABLE `contact_restutant_service` (
 
 INSERT INTO `contact_restutant_service` (`id`, `details`, `phone`, `email`) VALUES
 (1, 'Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.', '+45 423 445 99', 'support@quickfood.com'),
-(2, '<p>Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.&nbsp;<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFoAhgMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xAA3EAACAQMDAgQDBgUEAwAAAAABAgMABBEFEiExQQYTUWEUInEHMoGRodEjUsHw8SQzQmI0guH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGxEBAQEAAwEBAAAAAAAAAAAAAAERAiExQRL/2gAMAwEAAhEDEQA/APOvMEa7c9KP0q7SGZGfoOtVDZJrorJk3aanZsRuIbnijL/ULIW2EKnjGMV56GZRwamSQ7eTmq/Sv0Mu1F1JtToDmhzbCM/MM06GUpk9j1o4Wx+SXUd8ELDKLj53HqM9B/2P4ZqfU+gAMDFaHQvFt5pwEWS6KuOOoFNsr8SQyHQ/DiXaxkKZjC1wc9+f8VanxVqFrEq3WkSwD7kh+H8vGMdR2qpxs+nONiPUPG8842qxKgdG45rR/Z9q73TPHK+XaQn8MCg7fxFbagXCWrGXACxkBtxOCPXPbj0P0omxvrSJlntbSCORtv8AEQADLDJ+6Bnt2/arnvqsrfTFRE5f7oU5r5/8XzodbnWIjIOCR3r2Ua/DPA8YX+IQQCOhPYfj6V4h4ntZ7fWrgTxtGzMWAYfeHqPajmXxXCnKOa4nHWnO4UcVkSZMU2bFQLKc9a6GLGgpO3GUMMGlTzxSpmFL809TkVERxmuebt4owhBNSRMM80JvzXVdshVBZicADufSlgabTTFaWxv2jWeYyeVbQkZBcYJbHtkY/H0rT2fhdD/qfETtcSNgiAS4GT139zTbSwi0eH4i9SIpp8fkQfNndKQDI/ud2R7CsXqXiu9e9LRyk7DxmtJMaSZHtGnzwWNultaCGO2RQqxQqAq/v9amv7wtD/qE3Rs2wrjIx7+31ryPQfGaovw12WVCcq2M4NbbTPECXiCyBy5VctkckfvVSjFfqHhx47svZRZZnVFT+ZMdu34en61Evh+9tInnvjqF3cMP4FpYKXCn0Y7SPxHFegTvIJYishGMnGOvuf770r69igh3yIp4zyoPNLDeXJb+IYbuCzksprF5XGwTqVJ6YBYHB79qsZ7y9jmbTNeRZ4SwALDjt9xwOGA+n5ddaPEvnqVaYZU5RJFDBcemaHuJtH19RFqax+cpB82JipY+4Bwe/wBM0YHmWuWTaddhY5DNbSZME4UgOBwfoR0I/oRQ8UTyLmtdqXh+406zvNNuH86DHxVjL1K7cbh+KnGPYGsujND/AMcis6i9UPKjREAjinR81JLIH4IqDzAp4pJGIoxSqATEjrSpF2HONtDsuTUzDbULHDVUUW0gcVbeDbb4rxTp0Ugyvm7ycdNoJB/MCqoOMVqPs2XzPFKYzn4eQ7h1XGCD+YFOG13ipXn0uJV5jLyOw287i5ycjr2rzHUrRLVo3kVmRnwe2QK9VF2t7BPZtt822mddm8fdznOM8DvzWc1fR5L6EI8a+Wx+Vhwc+o45NVVsBPNFKoKQiJ8n7hO3Hbj1960/2exltYBCMy7cvg9Pegb/AML3Fkm95QQegA5ra/Zzpoto5mdTkKOSODmgNZMokuYVDAHaSQMdsfvWY+0y9ey0yIQSFWkfA55qK+1V18cRWUcQw0BR8Ng8nPH4LVd9p0UgtbEYwuSefX/Bp0MUkupTxFlkkMfqXCg/nUVvdXFtICrODnpk9agEblwvlsW9Mc1p9O0NmsUaUDcrbm9s9v3pBsPD11JqGh5vlK+WWCkDJYMuDzWOvITa3M1tKCGicoc+1bmG2ittCgXzlSR7hccF1YD1A5Ye2KyfjFUj1YPEu1ZolfBGCDjHPvxz75pcp0jnFFMBuqFk7ipJMtTCSOKhJRqaVdEm2lQCdc1C8WRRIO4ZpjnAoAYR7etabwBcR23iDZI5QT28kW4dV4zn9DWcY5p2mzSW2pWsw/4Sqck9s81UVK1+oaiND8XrerGhtnUK6LyCCMEj3r0W30xHKXefNiKiRCP5TyMfpWD13T4tSs2iUp59ux+bhQV9SewGK2v2fa7Za3pUVhO+y+gUKyE4L47j9u1XPVVzWLK3MahkHAOAO/8Af7UVpjwJb7kIC5zgDpwKb4itmUkxkggEdPr+9ZfRNRNtcG0u2ykzEBm7e1PwO2ukeZ4wn1W5lDMwKJEg4VQOv14/WpvE1sutywWhBHlg47880VqGq28Pl/DSA4TGcZ5x1P0yaF0SK8mlS4c4wePbnNIw+neGo4EMl0gyuApFOez8mQfD/Jgkt/IB+1b23sUnjMkwGMfMG4A9a8+8Ta3BqU8uj6V/s7iJrgfdK9OvoScU7MIPPdNfTKoAMTbY4Izjkclie+OhP0xVR4w8qS6jlDEuuYmHrjoc59zVvdzx6daNEhB/hCMyg854HHt1qgup4rvTHhRW3xxtJyBgYJIxjnGOue9RRe4pPMXNRuMnNDCTmiY2yKjGeOPjgUqZMcHilTw0gYKKax3VGAxFczg0A4HBpEbmGBzmuAg09FJdQMZJHWgNrB5tlexQyoD5gUMSxwRj7uCMHsMdj+gcqta3T3VgiiVJN6vGcGJs+2eP/nGOlzb38BgX4kFmcCTaxGAfr25GKAnt0OoF2dUZY2LeUxy7ZxtwePy4PWraNX4d8aR6qvw2rPClwG2JISF8z35wPw61B4j0QxbbiMbWL7hj061htR+HmLARbh0BAzn+oovTfE11ZWslq8kl1bY4WU/PH9D3o0LXRtNkvgiDcQWY7vXJP7Vs7CKHTI9l1LGqRgZ+cflj+leeQ+L7m20tLS3tYUYKBv3Zz61TzTm/ffIoGDkhRgZ9f80aG38S+M7zUVfSdEjEELHbJcDlnXp9AP1qm0+2j023MaMzTySdwMlcYIOfqKqbMsoKwOVQDD4OeB6n14oiLPltIX3hFI5PQDAzz9f1FGjE/iiMrZRTBhlpFXJAGOPoMflVVp7OY5hCQrCBxnPbnP59PfIqbVLwXllLE0qxOzBkBzjaowB65OBUdi05tTbwIXkDBUXvyfu/ixUfU0BmlqZHrrxqsrquMAnbjuO1M2HPFTUU98tSroBzzSoIeYlCe9V8qnfxRzfdqAf7hqYmGRwsRnFdEbBuc4FWMIG3pTHA3dKalgl4soyZNgUZVDwGHr7U6S6VYREzKEOBgDIB7YPVeo46Cq2cD4qx4HzQy59+DUw/8hB2K5I/9qpogdkZ/M2ozjgndz9femsN3KMgPqyY/wA02QAq2RnaePbmoJeJFxxlMnHfikBESJG3zZfP/JhhVH0qRGQxnMoCj/ttDH0wevamoiMSWVSR0JHTiobYAtKSASIyR7UwMF0gkXfNiFTnamRu98nr9KXxhCOURxCqsgWTqc+vuSPyoGJm+DlOTnA5zTnJBwDwFbA9OtBi5rllygaKUsjZDrwme657/KOalYw2jssLO8eVGZF2MejHjqOc/pVIWYygFiR5Z71e6ozHW5iSSQWYc9/WgBNSVfPiCR7THAkb/Nuyy5UnP4ChUQk9KJswPhF4H9iiIgMdKlnnatljIPSlR8wG7pSoGP/Z" data-filename="images.jpg" style="width: 134px;"></p>', '+45 423 445 99', 'support@quickfood.com'),
-(3, '<p>Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.&nbsp;</p>', '+45 423 445 99', 'support@quickfood.com');
+(2, '<p>Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad everti timeam conclusionemque. Quis voluptaria id per, an nibh atqui vix.&nbsp;<img src="data:image/jpeg;base64,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" data-filename="images.jpg" style="width: 134px;"></p>', '+45 423 445 99', 'support@quickfood.com');
 
 -- --------------------------------------------------------
 
@@ -273,14 +269,7 @@ INSERT INTO `home_main_content` (`id`, `big`, `small`) VALUES
 (7, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (8, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
 (9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(10, 'this is big content and thanks a lot ', '<b>this is small content and thanks for that . ok </b>'),
-(11, 'this is big content and thanks a lot ', '<p><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsU'),
-(12, 'this is big content and thanks a lot ', 'This is small content thanks a lot.<p></p>'),
-(13, 'this is big content and thanks a lot ', 'This is small content thanks a lot.<font face="Arial Black">ads</font><p></p>'),
-(14, 'this is big content and thanks a lot ', '<p><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsU'),
-(15, 'this is big content and thanks a lot ', '<font face="Arial Black">asdasdasdasdas</font><p></p>'),
-(16, 'this is big content and thanks a lot ', 'dfsdfsd<b>fdsf<font face="Arial Black">dfsdfsd</font></b>'),
-(17, 'this is big content and thanks a lot ', 'this is small content.');
+(10, 'this is big content and thanks a lot ', '<b>this is small content and thanks for that . ok </b>');
 
 -- --------------------------------------------------------
 
@@ -301,9 +290,9 @@ CREATE TABLE `home_resturant_andmore_content` (
 
 INSERT INTO `home_resturant_andmore_content` (`id`, `resturant`, `people_served`, `registered_user`) VALUES
 (1, '2650 Restaurant', '5350 People Served', '12350 Registered Users'),
+(2, 'this is new content ', '12160', ''),
 (3, '2650 Restaurant', '5350 People Served', '12350 Registered Users'),
-(12, '2650 Restaurant', '5350 People Served', '12350'),
-(13, '2650 Restaurant', '5350 People Served', '12350 Registered Users');
+(4, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -556,10 +545,11 @@ INSERT INTO `menu` (`id`, `type_id`, `res_name`, `item_type`, `item_name`, `item
 (62, '6', 'Mexican TacoMex', 'Mexicano', 'burritos', 'options of chicken,steak or lamb', '200'),
 (66, '6', 'Naples Pizza', 'Mexicano', 'Empanda', 'options of chicken,steak or lamb', '300'),
 (67, '6', 'Naples Pizza', 'Mexicano', 'Chip & Salsa', 'options of chicken,steak or lamb', '400'),
-(70, '7', 'Japan Food Sushi ', 'Italiano', ' Pizza ', 'Fuisset mentitum deleniti sit ea', '  200'),
+(70, '7', 'Japan Food Sushi ', 'Italiano', 'Pizza', 'Fuisset mentitum deleniti sit ea', ''),
 (71, '7', 'Japan Food Sushi ', 'Italiano', 'Stromboli', 'Fuisset mentitum deleniti sit ea', '150'),
 (72, '7', 'Japan Food Sushi ', 'Italiano', 'Pasta', 'Fuisset mentitum deleniti sit ea', '250'),
-(75, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides', '  Jalapenos Poppers  ', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '100'),
+(74, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides       ', 'Mozzarella Sticks        ', 'Fuisset   ', '   200   '),
+(75, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides', 'Jalapenos Poppers', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '450'),
 (76, '8', 'Dragon Tower Chinese ', 'Appetizers & Sides ', ' Fries ', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', ' 550 '),
 (78, '8', 'China Food ', 'Appetizers & Sides', 'Wings', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '300'),
 (81, '8', 'China Food ', 'Appetizers & Sides', 'Boneless', 'Fuisset mentitum deleniti sit ea.', '600'),
@@ -597,8 +587,8 @@ CREATE TABLE `menu_attribute` (
 INSERT INTO `menu_attribute` (`id`, `type_id`, `item_name`, `item_attribute`, `price`, `serial`) VALUES
 (8, '7', 'Pizza', ' Extra Large ', ' 40 ', 1),
 (9, '7', 'Pizza', ' Medium ', ' 10 ', 2),
-(14, '8', '   Fajitas     ', '     Medium      ', '     100 ', 2),
-(37, '5', ' Fajitas    ', '    Medium    ', ' 250 ', 5);
+(14, '8', '   Fajitas    ', '    Medium     ', '    100', 1),
+(37, '5', ' Fajitas  ', '  Medium  ', '  300 ', 1);
 
 -- --------------------------------------------------------
 
@@ -691,14 +681,6 @@ CREATE TABLE `order_cart` (
   `order_day` varchar(100) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `order_cart`
---
-
-INSERT INTO `order_cart` (`id`, `name`, `username`, `email`, `address`, `city`, `state`, `postcode`, `country`, `phone`, `type_id`, `item_name`, `item_attr`, `price`, `quantity`, `order_time`, `order_day`, `date`) VALUES
-(11, 'rumi1', 'rumi', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', 8, '  Jalapenos Poppers  ', '', '100', '1', '04:11:30am', '', '2017-04-02 18:00:00'),
-(12, 'rumi1', 'rumi', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', 8, 'Wings', '', '300', '1', '04:11:30am', '', '2017-04-02 18:00:00');
 
 -- --------------------------------------------------------
 
@@ -1052,17 +1034,17 @@ ALTER TABLE `about_us_feature`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `contact_customer_service`
 --
 ALTER TABLE `contact_customer_service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `contact_restutant_service`
 --
 ALTER TABLE `contact_restutant_service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `faq`
 --
@@ -1072,12 +1054,12 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `home_main_content`
 --
 ALTER TABLE `home_main_content`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `home_resturant_andmore_content`
 --
 ALTER TABLE `home_resturant_andmore_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `home_section_4`
 --
@@ -1117,7 +1099,7 @@ ALTER TABLE `menu_attribute`
 -- AUTO_INCREMENT for table `menu_type`
 --
 ALTER TABLE `menu_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `order`
 --
@@ -1127,7 +1109,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `order_cart`
 --
 ALTER TABLE `order_cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `restaurant`
 --

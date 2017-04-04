@@ -44,7 +44,7 @@
 
 
                             <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
-
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                 <div class="form-group" id="dropdown-style">
                                     <!--<label>Restuarant</label>-->
                                     <?php foreach ($this->data['show_res_content'] as $s){?>
@@ -68,6 +68,7 @@
 
                                         ?>
                                     </select>
+
                                     <input type="hidden" id="type_id" name="type_id" >
                                 </div>
                                 <div class="form-group">
@@ -101,49 +102,11 @@
                                     <label>Item Price</label>
                                     <input class="form-control"type="text" name="Item_price" >
                                 </div>
+
                                 <input class="btn btn-success" type="submit">
                             </form>
 
-                            <div id="myModal5" class="modal">
 
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Edit Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>/Admin_menu/insert_menu_type" >
-                                        <div class="form-group" id="dropdown-style">
-                                            <label>Restuarant</label>
-                                                <select class="form-control"  name="name" id="name" onchange="selectid7()" >
-
-                                                <option value="" selected disabled>Res Name</option>
-
-                                                    <?php
-
-                                                    foreach ($show_res_content as $s)
-                                                    {
-                                                        echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
-                                                    }
-
-                                                    ?>
-                                            </select>
-
-                                        </div>
-                                        <input type="hidden" id="res_id2" name="res_id">
-
-                                        <div class="form-group">
-                                            <label>Item type</label>
-                                            <input class="form-control" type="text" id="itype" name="itype">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
-                                    <div id="txtHint"></div>
-
-                                </div>
-
-
-                            </div>
 
                         </div>
 
@@ -192,17 +155,19 @@
 <script>
 
 
-    // Get the modal
-    // var modal = document.getElementById('myModal');
-    var modal2 = document.getElementById('myModal2');
+//    // Get the modal
+//    // var modal = document.getElementById('myModal');
+//    var modal2 = document.getElementById('myModal2');
+//
+//    var modal5 = document.getElementById('myModal5');
+//
+//    // Get the button that opens the modal
+//    //var btn = document.getElementById("myBtn");
+//
+//    var span = document.getElementsByClassName("close")[0];
+//    var span2 = document.getElementsByClassName("close")[1];
 
-    var modal5 = document.getElementById('myModal5');
 
-    // Get the button that opens the modal
-    //var btn = document.getElementById("myBtn");
-
-    var span = document.getElementsByClassName("close")[0];
-    var span2 = document.getElementsByClassName("close")[1];
 
 
     // When the user clicks the button, open the modal
@@ -226,72 +191,22 @@
     }
 
 
-    function selectid(x) {
-        //modal3.style.display = "block";
-         btn = document.getElementById('dst').value;
-        //alert(btn);
-        //btn = $(x).data('panel-id');
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url()?>/Admin_menu/insert_menu_type'+btn,
-            data:{'rname':btn},
-            cache: false,
-            success:function(data)
-            {
-                $('#res_id').val(data)
-
-            }
-
-        });
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_menu/getres_idformenu/")?>'+btn,
-            data:{'rname':btn},
-            cache: false,
-            success:function(data)
-            {
-                //$('#type').val(data)
-                //$('#type').html(data)
-
-                //alert(data);
-                $('#type').html(data);
-            }
-
-        });
 
 
-
-    }
-    function selectid4(x) {
-        //modal3.style.display = "block";
-        btn1 = document.getElementById('name').value;
-        //alert(btn1);
-        //btn = $(x).data('panel-id');
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_menu/getres_id/")?>'+btn1,
-            data:{'rname':btn1},
-            cache: false,
-            success:function(data)
-            {
-                $('#res_id2').val(data)
-                //$('#itemtype').html(data)
-
-                //alert(data);
-                //$('#txtHint').html(data);
-            }
-
-        });
-
-    }
 
     function selectid10(x) {
 
+
         btn = document.getElementById('type').value;
+
        // alert(btn);
+//        $.ajaxSetup({
+//            data: {
+//                '<?php //echo $this->security->get_csrf_token_name(); ?>//' : '<?php //echo $this->security->get_csrf_hash(); ?>//'
+//            }
+//        });
         $.ajax({
-            type:'POST',
+            type:'GET',
             url:'<?php echo base_url("Admin_menu/get_menu_type/")?>'+btn,
             data:{'id':btn},
             cache: false,
