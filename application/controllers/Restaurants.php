@@ -12,6 +12,7 @@ class Restaurants extends CI_Controller {
         $this->data['show_res_type']=$this->Restaurantm->show_resuarant_type();
        // $this->data['rating_avg']= $this->Restaurantm->get_rating_avg_without();
         $this->data['show_item_type']=$this->Menum->show_item_type();
+        //$this->data['show_item_type']=$this->Menum->show_item_type();
         $this->load->view('grid_list', $this->data);
 
     }

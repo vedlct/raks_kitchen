@@ -39,7 +39,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
 
                     <div class="panel panel-success">
                         <div class="panel-heading">
@@ -69,10 +69,10 @@
                                                 <input type="text" class="form-control docs-date" name="date_to" placeholder="Pick a date">
                                             </div >
                                         </div>
-                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
 
                                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-                                     <input style="margin-top: 30px" type="submit" name="generate" class="btn btn-success" value="Generate">
+                                     <input style="margin-top: 35px;margin-left: 50px" type="submit" name="generate" class="btn btn-success" value="Generate">
 
                                     </form>
 

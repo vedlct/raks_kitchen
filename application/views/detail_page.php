@@ -140,6 +140,7 @@
 
                          <tr>
                              <td>
+
                                  <figure class="thumb_menu_list"><img src="<?php echo base_url() ?>img/menu-thumb-1.jpg"
                                                                       alt="thumb"></figure>
                                  <h5><?php echo $q->item_name?></h5>
@@ -147,12 +148,15 @@
                                      <?php echo $q->item_description?>
                                  </p>
 
-<!--                                 <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                 <div style="margin-bottom: 30px" >
+                                     <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                     <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                     <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                     <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                     <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                 </div>
+
+<!--                            <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
 
                              </td>
                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -454,6 +458,7 @@
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
 <script src="<?php echo base_url()?>js/validate.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!--<!-- SPECIFIC SCRIPTS
 <script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
@@ -723,6 +728,46 @@
         });
 
 
+    }
+</script>
+
+<script>
+    function hidediv() {
+        document.getElementById("alerttext").style.display= 'none'
+    }
+</script>
+<script type="text/javascript">
+    function myFunc() {
+        //alert("hello0");
+        var x = document.getElementById("Username").value;
+
+        // var name = '<?php echo $this->security->get_csrf_token_name();?>'
+
+//        var vaule= '<?php echo $this->security->get_csrf_hash();?>'
+
+        $.ajaxSetup({
+            data: {
+                '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+            }
+        });
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Registration/check_user/")?>'+x,
+            data:{'id':x },
+            cache: false,
+            success:function(data)
+            {
+                //  $('#txtHint').html(data);
+                if (data == "duplicate"){
+
+                    $("#Username" ).effect( "shake" );
+                    $('#Username').css('border-color', 'red');
+                    document.getElementById("alerttext").style.display= 'block'
+                }
+            }
+
+        });
     }
 </script>
 
