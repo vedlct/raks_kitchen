@@ -183,6 +183,11 @@
 
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function selectid2(x) {
         modal2.style.display = "block";

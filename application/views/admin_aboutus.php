@@ -129,12 +129,8 @@
                                             <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
                                             <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
 
-<<<<<<< HEAD
-                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-=======
                                         </div>
-
->>>>>>> 955a415a3532a8b97bc387b16af6d7ed406dc32f
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                         <input class="btn btn-success" type="submit">
                                         <?php
                                     }}
@@ -225,14 +221,14 @@
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Sl</th>
-                                                <th style="width: 10%">Big</th>
-                                                <th style="width: 10%">Small</th>
-                                                <th style="width: 10%">Box Header</th>
-                                                <th style="width: 50%">Box details</th>
-                                                <th style="width: 20%">Icon</th>
-                                                <th style="width: 20%">Icon image</th>
-                                                <th style="width: 10%">Action</th>
+                                                <th style="width: 15px">Sl</th>
+                                                <th style="width: 35px">Big</th>
+                                                <th style="width: 35px">Small</th>
+                                                <th style="width: 35px">Box Header</th>
+                                                <th style="width: 35px">Box details</th>
+                                                <th style="width: 35px">Icon</th>
+                                                <th style="width: 35px">Icon image</th>
+                                                <th style="width: 35px">Action</th>
 
                                             </tr>
                                         </thead>
@@ -241,6 +237,7 @@
                                     $count=1;
                                     foreach ($show_about_us_feature_content as $s){
                                         ?>
+                                        <form method="post"  >
 
                                         <tbody>
                                             <tr>
@@ -265,10 +262,15 @@
                                                     </select>
                                                 </td>
                                                 <td ><i id="icon" class="<?php echo $s->box_icon ?>"></i></td>
-                                                <td><button data-panel-id="<?= $s->id ?>" onclick="selectid(this)" class="btn btn-warning">Edit</button></td>
+                                                <td><button class="btn btn-warning btn-sm" style="width: 75px" type="button" data-panel-id="<?= $s->id ?>" onclick="selectid(this)" class="btn btn-warning">Edit</button>
+
+                                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                                   <br><br> <button class="btn btn-danger btn-sm" type="submit" formaction="<?php echo base_url()?>Delete/delete_about_feature/<?php echo $s->id ?>">Delete</button>
+
+                                                </td>
                                             </tr>
                                         </tbody>
-
+                                        </form>
 
                                         <?php $count++; } }?>
                                     </table>
@@ -426,6 +428,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="row">
@@ -454,24 +457,6 @@
                                 <?php }else{
 
                                     foreach ($show_about_us_banner_content as $s){
-<<<<<<< HEAD
-                                        ?>
-
-                                        <div class="form-group">
-                                            <label>Details</label>
-                                            <!--<input class="form-control" type="text" name="details" value="<?php echo $s->details?>">-->
-                                            <textarea class= "form-control "  id="summernote2"type="text" name="details" ><?php echo $s->details?></textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>image</label>
-                                            <input class="form-control" type="file" name="image">
-                                        </div>
-                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-=======
->>>>>>> 955a415a3532a8b97bc387b16af6d7ed406dc32f
                                     }}
                                 ?>
                                 <div class="form-group">
@@ -483,13 +468,14 @@
                                     <label>image</label>
                                     <input class="form-control" type="file" name="image">
                                 </div>
-
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                 <input class="btn btn-success" type="submit">
 
                             </form>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>About Banner Visual Instruction</h3></div>
@@ -504,6 +490,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
@@ -546,6 +533,11 @@
     var span = document.getElementsByClassName("close")[0];
     var span1 = document.getElementsByClassName("close")[1];
 
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function selectid(x) {
         modal1.style.display = "block";

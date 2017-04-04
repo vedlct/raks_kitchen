@@ -82,7 +82,7 @@
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Menu <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
                 <li>
-                    <a href="<?php echo base_url()?>Admin_menu/insert_menu_type">Add Menu Type</a>
+                    <a href="<?php echo base_url()?>Admin_menu/insert_menu_type">Menu Type</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url()?>Admin_menu">Menu</a>

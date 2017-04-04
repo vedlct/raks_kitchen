@@ -39,7 +39,7 @@
                 <div class="col-lg-8">
 
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Main Content</h3></div>
+                        <div class="panel-heading"><h3>ADD Menu Type</h3></div>
                         <div class="panel-body">
 
 
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Main Content Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>ADD Menu Type Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
 
@@ -103,6 +103,76 @@
                     </div>
                 </div>
             </div>
+
+            <!-- menu  type delete -->
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Delete Menu Type</h3></div>
+                        <div class="panel-body">
+
+
+                            <form method="post" action="<?php echo base_url()?>Delete/delete_menu_type" >
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+
+                                <div class="form-group" id="dropdown-style">
+                                    <!--<label>Restuarant</label>-->
+                                    <?php foreach ($this->data['show_res_content'] as $s){?>
+                                        <input class="form-control"type="hidden" id="name" name="name" value="<?php echo $s->name ?>" readonly>
+
+                                    <?php }?>
+                                </div>
+
+
+                                <div class="form-group" id="dropdown-style">
+                                    <label>Menu Type</label>
+
+                                    <select class="form-control" name="type" id="type" onchange="selectid10(this)" >
+                                        <option selected  >Menu Type</option>
+                                        <?php
+
+                                        foreach ($this->data['menutype'] as $e)
+                                        {
+                                            echo "<option value='" . $e->type . "'>" . $e->type . "</option>";
+                                        }
+
+                                        ?>
+                                    </select>
+
+                                    <input type="hidden" id="type_id" name="type_id" >
+                                </div>
+
+
+                                <input class="btn btn-success" type="submit" value="Delete">
+                            </form>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Delete Menu Type Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+
+                            </div>
+                            <div>
+                                <p>
+
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of menu type delete-->
+
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -115,7 +185,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
+<!--<script>
 
 
     // Get the modal
@@ -242,14 +312,14 @@
         }
     }
 
-</script>
+</script>-->
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
     });
 </script>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
     $(document).ready(function(){
 
@@ -305,7 +375,41 @@
             alert(msg);
         });
     });
+</script>-->
+<script>
+    function selectid10(x) {
+
+
+        btn = document.getElementById('type').value;
+
+        // alert(btn);
+        $.ajaxSetup({
+            data: {
+                '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+            }
+        });
+        $.ajax({
+            type:'GET',
+            url:'<?php echo base_url("Admin_menu/get_menu_type/")?>'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+                $('#type_id').val(data)
+                //$('#itemtype').html(data)
+
+                //alert(data);
+                //$('#txtHint').html(data);
+            }
+
+        });
+
+
+
+    }
+
 </script>
+
 </body>
 
 </html>

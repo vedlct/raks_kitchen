@@ -84,6 +84,8 @@ class Admin_aboutus extends CI_Controller {
     public function insert_about_us_feature_content(){
 
         if ($this->session->userdata('type') == "Admin") {
+
+
             $big = $this->input->post('big');
             $small  = $this->input->post('small');
             $box_header = $this->input->post('boxheader');
@@ -91,6 +93,7 @@ class Admin_aboutus extends CI_Controller {
             $icon = $this->input->post('icon');
            // print_r($big);
             $this->load->model('Aboutusm');
+
 
             $this->Aboutusm->insert_about_us_feature_content($big,$small,$box_header,$box_details,$icon);
             redirect('Admin_aboutus');

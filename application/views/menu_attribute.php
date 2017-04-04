@@ -71,7 +71,7 @@
 <!--                        </div>-->
 <!--                    </form>-->
 
-
+                    <form method="post"  >
 
                     <?php
                     foreach ($show_item_type as $e) {
@@ -108,7 +108,9 @@
                                                 <td><?php echo $q->price ?></td>
                                                 <td><?php echo $q->serial ?></td>
                                                 <td>
-                                                    <button class="btn btn-warning" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>
+                                                    <button class="btn btn-warning" type="button" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>
+                                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                                    <button class="btn btn-danger" type="submit" formaction="<?php echo base_url()?>Delete/delete_res_menu_attribute/<?php echo $q->id ?>">Delete</button>
                                                 </td>
 
                                             </tr>
@@ -125,6 +127,7 @@
                         <?php
                     }
                     ?>
+                    </form>
 
                             <div id="myModal3" class="modal">
                                 <br/><br/><br/>
@@ -154,10 +157,10 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<!--<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
+<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>-->
+<script src="<?php echo base_url()?>js/validate.js"></script>
 
 <script>
 
@@ -178,7 +181,11 @@
     // btn = $(x).data('panel-name');
 
 
-
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
 
     function selectid(x) {
         modal3.style.display = "block";

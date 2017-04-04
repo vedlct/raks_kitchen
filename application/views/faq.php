@@ -115,7 +115,7 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myLogin">
+            <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
                 <input type="text" class="form-control form-white" placeholder="Username">
                 <input type="text" class="form-control form-white" placeholder="Password">
@@ -134,13 +134,37 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form action="#" class="popup-form" id="myRegister">
+            <form action="<?php echo base_url()?>Registration" class="popup-form" id="myRegister" method="post">
                 <div class="login_icon"><i class="icon_lock_alt"></i></div>
-                <input type="text" class="form-control form-white" placeholder="Name">
-                <input type="text" class="form-control form-white" placeholder="Last Name">
-                <input type="email" class="form-control form-white" placeholder="Email">
-                <input type="text" class="form-control form-white" placeholder="Password"  id="password1">
-                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2">
+                <input type="text" class="form-control form-white" placeholder="Name" name="Name">
+
+                <input type="email" class="form-control form-white" placeholder="Email" name="Email">
+                <input type="text" class="form-control form-white" id="Username" placeholder="UserName" name="UserName" onclick="hidediv()" onfocusout="myFunc()">
+                <div style="display: none" id="alerttext"><span style="color: red"> UserName Already Taken</span></div>
+
+                <input type="text" class="form-control form-white" placeholder=" Your full address" name="full_address"  >
+                <input type="text" class="form-control form-white" placeholder=" Your phone number" name="phone_number"  >
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="city" class="form-control form-white" placeholder="Your city">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="postal_code" class="form-control form-white" placeholder="Your postal code">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="state" class="form-control form-white" placeholder="State">
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text"  name="country" class="form-control form-white" placeholder="Country">
+
+                    </div>
+                </div>
+
+                <input type="text" class="form-control form-white" placeholder="Password"  id="password1"name="password1">
+                <input type="text" class="form-control form-white" placeholder="Confirm password"  id="password2"name="password2">
                 <div id="pass-info" class="clearfix"></div>
                 <div class="checkbox-holder text-left">
                     <div class="checkbox">
@@ -149,7 +173,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-                <button type="submit" class="btn btn-submit">Register</button>
+                <button type="submit" class="btn btn-submit" name="confirmregistration">Register</button>
             </form>
         </div>
     </div>
@@ -162,7 +186,8 @@
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/common_scripts_min.js"></script>
 <script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+<script src="js/validate.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
  SPECIFIC SCRIPTS
 <script src="js/theia-sticky-sidebar.js"></script>
@@ -182,6 +207,46 @@
             window.location.hash = target;
         });
     });
+</script>
+
+<script>
+    function hidediv() {
+        document.getElementById("alerttext").style.display= 'none'
+    }
+</script>
+<script type="text/javascript">
+    function myFunc() {
+        //alert("hello0");
+        var x = document.getElementById("Username").value;
+
+        // var name = '<?php echo $this->security->get_csrf_token_name();?>'
+
+//        var vaule= '<?php echo $this->security->get_csrf_hash();?>'
+
+        $.ajaxSetup({
+            data: {
+                '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+            }
+        });
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Registration/check_user/")?>'+x,
+            data:{'id':x },
+            cache: false,
+            success:function(data)
+            {
+                //  $('#txtHint').html(data);
+                if (data == "duplicate"){
+
+                    $("#Username" ).effect( "shake" );
+                    $('#Username').css('border-color', 'red');
+                    document.getElementById("alerttext").style.display= 'block'
+                }
+            }
+
+        });
+    }
 </script>
 
 </body>

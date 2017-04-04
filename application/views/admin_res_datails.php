@@ -455,7 +455,7 @@
 <script src="<?php echo base_url()?>assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
+
 
 <script src="<?php echo base_url()?>js/map_single.js"></script>
 <script src="<?php echo base_url()?>js/infobox.js"></script>

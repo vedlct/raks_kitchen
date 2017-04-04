@@ -223,6 +223,12 @@
     var modal3 = document.getElementById('myModal3');
     var span = document.getElementsByClassName("close")[0];
 
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid4(x) {
         modal3.style.display = "block";
         btn = $(x).data('panel-id');
@@ -246,6 +252,12 @@
 </script>
 
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
     function selectid(x) {
 
 
