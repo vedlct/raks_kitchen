@@ -516,7 +516,6 @@
 <script src="assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
 <script src="js/map_single.js"></script>
 <script src="js/infobox.js"></script>
 <script src="js/jquery.sliderPro.min.js"></script>

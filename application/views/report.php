@@ -204,6 +204,6 @@
 </body>
 
 </html>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="<?php echo base_url()?>js/jquery-1.12.4.js"></script>
 <script src="<?php echo base_url()?>js/datepicker.js"></script>
 <script src="<?php echo base_url()?>js/main.js"></script>

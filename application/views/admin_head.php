@@ -35,8 +35,8 @@
 
 
 <!-- include summernote css/js-->
-<link href="<?php echo base_url()?>css/summernote.css" rel="stylesheet">
-<script src="<?php echo base_url()?>js/summernote.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
