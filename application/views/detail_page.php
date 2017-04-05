@@ -147,22 +147,81 @@
                                  <p>
                                      <?php echo $q->item_description?>
                                  </p>
-                                 <span class="rating img-responsive">
+                               <?php
+                                 $type_id=$q->id;
+                                 $query4=$this->db->query("SELECT COUNT(`username`) as review , ROUND(AVG(`rating`)) as rat FROM `res_rating` WHERE res_id = '$type_id'");
 
-
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
-                                 <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
-                                 </span>
+                                 foreach ($query4->result() as $r){ $rating_avg = $r->rat; $review = $r->review;} ?>
 
                                  <div style="margin-bottom: 30px" >
-                                     <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
-                                     <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
-                                     <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
-                                     <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
-                                     <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+
+                                     <?php
+                                     switch ($rating_avg) {
+                                         case 1:
+                                             ?>
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                            (<?php echo $review." reviews"?>)
+                                            <?php
+                                             break;
+                                         case 2:
+                                             ?>
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                             (<?php echo $review." reviews"?>)
+                                             <?php
+                                             break;
+                                         case 3:
+                                             ?>
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                             (<?php echo $review." reviews"?>)
+                                             <?php
+                                             break;
+                                         case 4:
+                                             ?>
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                             (<?php echo $review." reviews"?>)
+                                             <?php
+                                             break;
+                                         case 5:
+                                             ?>
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/yellow.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                             (<?php echo $review." reviews"?>)
+                                             <?php
+                                             break;
+                                         default:
+                                             ?>
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgA<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncA(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgB<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"  onclick="myfuncB(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgC<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>"onclick="myfuncC(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgD<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncD(this)" width="20px" style="float: left">
+                                             <img src="<?php echo base_url()?>img/blank.png" id="imgE<?= $q->id ?>" class="img-responsive" data-panel-id="<?= $q->id ?>" onclick="myfuncE(this)" width="20px" style="float: left">
+                                             (<?php echo $review." reviews"?>)
+                                             <?php
+
+                                     }
+
+                                     ?>
+
+
                                  </div>
 
 <!--                            <input name="item_id" id="item_id" type="text" value="--><?php //echo $q->id ?><!--" style="color: black">-->
