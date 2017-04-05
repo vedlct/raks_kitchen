@@ -242,11 +242,12 @@
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
 <script src="<?php echo base_url()?>js/validate.js"></script>
-
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></scri
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- SPECIFIC SCRIPTS -->
 <script src="<?php echo base_url()?>js/video_header.js"></script>
 
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--    <script src="//code.jquery.com/jquery-1.12.4.js"></script>-->
+<!--    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 <script>
 $(document).ready(function() {
 	'use strict';
@@ -289,7 +290,6 @@ $(document).ready(function() {
               //  $('#txtHint').html(data);
                 if (data == "duplicate"){
 
-                   // alert("match");
                     $("#Username" ).effect( "shake" );
                     $('#Username').css('border-color', 'red');
                     document.getElementById("alerttext").style.display= 'block'
