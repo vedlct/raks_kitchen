@@ -80,6 +80,57 @@ class Home extends CI_Controller {
         }
     }
 
+    public function forgot_pass(){
+
+        $email= $this->input->post("email");
+        $this->load->model('Login');
+        $result = $this->Login->check_email($email);
+        if (!empty($result)){
+            $this->data['password']= $this->Login->get_password($email);
+            foreach ($this->data['password'] as $s){ $password = $s->password;}
+
+            echo $password;
+            //Email information
+//             $admin_email = $email;
+//             $email = "";
+//             $subject = "Forgot Password";
+//             $comment = 'your password is '.$password;
+//
+//
+//
+//
+//            //send email
+//             mail($admin_email, $subject, $comment , $email);
+
+        }else {
+            echo "<input type='hidden'>";
+            ?>
+            <script src="<?php echo base_url()?>js/sweetalert-dev.js"></script>
+            <link rel="stylesheet" href="<?php echo base_url()?>css/sweetalert.css">
+            <script>
+                //sweetAlert("Oops...", "You Enter Wrong Email!", "error");
+
+                    swal({
+                            title: "Oops...!",
+                            text: "You Enter Wrong Email!!",
+                            type: "error",
+                            confirmButtonText: "OK"
+                        },
+                        function(isConfirm){
+                            if (isConfirm) {
+                                window.location.href = "<?php echo base_url()?>Home";
+                            }
+                        });
+
+            </script>
+            <?php
+       // redirect('Home');
+        }
+
+    }
+
+
+
     public function Logout(){
 
 

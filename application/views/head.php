@@ -26,3 +26,8 @@
       <script src="<?php echo base_url()?>js/html5shiv.min.js"></script>
       <script src="<?php echo base_url()?>js/respond.min.js"></script>
     <![endif]-->
+
+<!-- This is what you need -->
+<script src="<?php echo base_url()?>js/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="<?php echo base_url()?>css/sweetalert.css">
+<!--.......................-->

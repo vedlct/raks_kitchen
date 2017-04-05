@@ -74,7 +74,7 @@
                 <input type="text" class="form-control form-white" placeholder="Username" name="username" >
                 <input type="password" class="form-control form-white" placeholder="Password" name="password">
                 <div class="text-left">
-                    <a href="#">Forgot Password?</a>
+                    <a href="#" data-toggle="modal" data-target="#forgot_pass" onclick="forgot_pass()">Forgot Password?</a>
                 </div>
                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                 <button type="submit" class="btn btn-submit">Submit</button>
@@ -82,6 +82,28 @@
         </div>
     </div>
 </div><!-- End modal -->
+<!-- forgot pass modal -->
+<div class="modal fade" id="forgot_pass" tabindex="-1" role="dialog" aria-labelledby="forgot_password" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+            <form action="<?php echo base_url()?>Home/forgot_pass" class="popup-form" id="forgot_pass" method="post">
+                <div class="login_icon"><i class="icon_lock_alt"></i></div>
+                <label ><h3 style="color: white">Please Enter Your Email Address<h3></label>
+                <input type="email" class="form-control form-white" placeholder="Email" name="email">
+                <div class="text-left">
+                </div>
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function forgot_pass() {
+        document.getElementById("login_2").style.display = 'none';
+    }
+</script>
 
 <!-- Content ================================================== -->
 <div class="container margin_60_35">
@@ -242,7 +264,7 @@
 <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
 <script src="<?php echo base_url()?>js/functions.js"></script>
 <script src="<?php echo base_url()?>js/validate.js"></script>
-
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- SPECIFIC SCRIPTS -->
 <!--<script  src="--><?php //echo base_url()?><!--js/cat_nav_mobile.js"></script>-->
 <!--<script>$('#cat_nav').mobileMenu();</script>-->
@@ -287,5 +309,45 @@
         });
     }
 </script>
+<script>
+    function hidediv() {
+        document.getElementById("alerttext").style.display= 'none'
+    }
+</script>
+<script type="text/javascript">
+    function myFunc() {
+        //alert("hello0");
+        var x = document.getElementById("Username").value;
+
+        // var name = '<?php echo $this->security->get_csrf_token_name();?>'
+
+//        var vaule= '<?php echo $this->security->get_csrf_hash();?>'
+
+        $.ajaxSetup({
+            data: {
+                '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+            }
+        });
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Registration/check_user/")?>'+x,
+            data:{'id':x },
+            cache: false,
+            success:function(data)
+            {
+                //  $('#txtHint').html(data);
+                if (data == "duplicate"){
+
+                    $("#Username" ).effect( "shake" );
+                    $('#Username').css('border-color', 'red');
+                    document.getElementById("alerttext").style.display= 'block'
+                }
+            }
+
+        });
+    }
+</script>
+
 </body>
 </html>

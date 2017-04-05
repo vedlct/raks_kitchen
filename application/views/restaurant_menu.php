@@ -44,8 +44,8 @@
                     <div class="theiaStickySidebar">
                         <div class="box_style_1" id="faq_box">
                             <ul id="cat_nav">
-                                <?php foreach ($show_item_type_from_menu as $r ) { ?>
-                                    <li><a href="#<?php echo $r->type_id ?>" class="active"><?php echo $r->item_type ?></a>
+                                <?php foreach ($this->data['show_item_type'] as $r ) { ?>
+                                    <li><a href="#<?php echo $r->id ?>" class="active" ><?php echo $r->type ?></a>
                                     </li>
                                     <?php
                                 }
@@ -72,14 +72,14 @@
                     <!--                    </form>-->
 
 
-
+                    <form method="post"  >
                     <?php
-                    foreach ($show_item_type_from_menu as $e) {
-                        $type_id = $e->type_id;
+                    foreach ($this->data['show_item_type'] as $e) {
+                        $type_id = $e->id;
                         $query = $this->db->query("SELECT * FROM `menu` WHERE `type_id`= '$type_id'") ?>
 
                         <div class="panel panel-success" >
-                            <div class="panel-heading"><h3><?php echo $e->item_type ?></h3></div>
+                            <div class="panel-heading"><h3><?php echo $e->type ?></h3></div>
                             <div class="panel-body" id="<?php echo $type_id ?>">
                                 <div class="table-responsive">
                                     <table class=" table table-bordered">
@@ -91,13 +91,14 @@
                                             <th>Price</th>
 
 
-                                            <th colspan="2">Action</th>
+                                            <th >Action</th>
                                         </tr>
                                         </thead>
 
                                         <?php foreach ($query->result() as $q) { ?>
                                             <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
                                     -->
+                                            <!--<input  type="text" name="res_menu_id" value="<?php echo $q->id ?>">-->
                                             <tbody>
                                             <tr>
                                                 <!--<td><?php echo $q->item_type ?></td>-->
@@ -106,8 +107,13 @@
                                                 <td><?php echo $q->item_price ?></td>
 
                                                 <td>
-                                                    <button class="btn btn-warning" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>
+                                                    <button class="btn btn-warning" type="button" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>
+                                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                                    <button class="btn btn-danger" type="submit" formaction="<?php echo base_url()?>Delete/delete_res_menu/<?php echo $q->id ?>">Delete</button>
+
+
                                                 </td>
+
 
                                             </tr>
                                             </tbody>
@@ -123,8 +129,7 @@
                     }
                     ?>
 
-
-
+                    </form>
 
 
 
@@ -213,7 +218,7 @@
     function selectid4(x) {
         modal3.style.display = "block";
         btn = $(x).data('panel-id');
-       //alert(btn);
+        //alert(btn);
 
         $.ajax({
             type:'POST',
@@ -227,6 +232,7 @@
 
         });
     }
+
 
     function ajaxSearch()
     {

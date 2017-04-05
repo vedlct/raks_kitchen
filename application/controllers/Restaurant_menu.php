@@ -47,7 +47,9 @@ class Restaurant_menu extends CI_Controller
             //$this->data['mattribute'] = $this->Menum->show_menu_attribute();
             $this->data['te'] = '';
             //$this->data['resname']= $this->Menum->getres();
+
             $this->data['show_item_type_from_menu']=$this->Menum->show_item_type_from_menu();
+            $this->data['show_item_type']=$this->Menum->show_item_type();
             $this->load->view('restaurant_menu', $this->data);
 
         }
@@ -93,6 +95,8 @@ class Restaurant_menu extends CI_Controller
 
         }
     }
+
+
 
     public function delete($id)
     {

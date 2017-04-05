@@ -40,6 +40,18 @@ class Login extends CI_Model {
         $data = $this->security->xss_clean($data);
         $this->db->insert('login',$data);
     }
+
+    public function check_email($email){
+        $this->db->where('email', $email);
+        return $this->db->get('user')->row();
+
+    }
+
+    public function get_password($email){
+        $query= $this->db->query("select password from user WHERE `email`= '$email'");
+        return $query->result();
+
+    }
 }
 
 

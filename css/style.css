@@ -2112,7 +2112,7 @@ select.form-control.form-white {
 
 .form-control {
     color: #333;
-    height: 70px;
+    height: auto;
     border-radius: 3px;
     border: 1px solid #ddd;
     box-shadow: 0
@@ -3088,3 +3088,4 @@ ul.plan-features {
 thead {
     background: #F2F2F2;
 }
+
