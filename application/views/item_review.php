@@ -56,7 +56,9 @@
 <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
     <div id="subheader">
         <div id="sub_content">
-            <div id="thumb"><img src="<?php echo base_url() ?>img/thumb_restaurant.jpg" alt=""></div>
+            <?php foreach ($this->data['details_head'] as $s){?>
+                <div id="thumb"><img src="<?php echo base_url()?>img/<?php echo $s->Image ?>" alt="Resturant Image" ></div>
+            <?php } ?>
 
             <h1><?php foreach ($this->data['details_head'] as $s){?>
                     <?php echo $s->name ?>

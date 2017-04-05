@@ -9,7 +9,7 @@
 
 
 <?php foreach ($this->data['edit'] as $e) {?>
-<form  method="post" action="<?php echo base_url()?>Restaurant_menu/edit_res_menu/<?php echo $e->id?>" >
+<form  method="post" action="<?php echo base_url()?>Restaurant_menu/edit_res_menu/<?php echo $e->id?>" enctype="multipart/form-data">
 
     <div class="form - group">
     <label>Item Type :</label>
@@ -27,6 +27,11 @@
     <div class="form-group">
         <label>Price</label>
         <input class="form-control" type="text" name="Item_price" value=" <?php echo$e->item_price?> ">
+    </div>
+
+    <div class="form-group">
+        <label>File input</label>
+        <input  type="file" name="file" onchange="readURL(this);">
     </div>
 
     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">

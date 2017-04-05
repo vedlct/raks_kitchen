@@ -32,30 +32,22 @@
 <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
     <div id="subheader">
         <div id="sub_content">
-            <div id="thumb"><img src="<?php echo base_url()?>img/thumb_restaurant.jpg" alt=""></div>
+            <?php foreach ($this->data['details_head'] as $s){?>
+            <div id="thumb"><img src="<?php echo base_url()?>img/<?php echo $s->Image ?>" alt="Resturant Image" ></div>
+            <?php } ?>
             <div class="rating">
-                <?php
-                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
-                for ($i=1 ; $i<=$rating_avg; $i++ ) {
-                    ?>
-                    <i class="icon_star voted"></i>
-                    <?php
-                }
-                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
-                    ?>
-                    <i class="icon_star"></i></i>
-                    <?php
-                }
-
-                ?>
 
 
-                (<small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)
+
+                <small><a href="<?php echo base_url()?>Restaurants/showdetails/<?php echo $id ?>">Resturant reviews</a></small>
             </div>
-            <h1>Rak's Kitchen</h1>
-
-            <div><em>Mexican / American</em></div>
-            <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB - <strong>Delivery charge:</strong> $10, free over $15.</div>
+            <h1><?php foreach ($this->data['details_head'] as $s){?>
+                <?php echo $s->name ?>
+            </h1>
+            <div><input type="hidden" name="<?php echo $s->id ?>" id="res_id" value="<?php echo $s->id ?>" style="color: black"></div>
+            <div><em><?php echo $s->type ?></em></div>
+            <div><i class="icon_pin"></i> <?php echo $s->address ?> ,<?php echo $s->city ?>-<?php echo $s->postal_code ?> ,<?php echo $s->country ?>- <strong>Delivery charge:</strong> $10, free over $15.</div>
+            <?php }?>
         </div><!-- End sub_content -->
     </div><!-- End subheader -->
 </section><!-- End section -->
@@ -138,7 +130,7 @@
 
                             <tr>
                             <td>
-                                <figure class="thumb_menu_list"><img src="<?php echo base_url() ?>img/menu-thumb-1.jpg"
+                                <figure class="thumb_menu_list"><img src="<?php echo base_url() ?>img/<?php echo $q->image ?>"
                                                                      alt="thumb"></figure>
                                 <h5><?php echo $q->item_name?></h5>
                                 <p>

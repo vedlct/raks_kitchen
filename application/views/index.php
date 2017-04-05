@@ -89,11 +89,11 @@
                     foreach ($query->result() as $s){}
                     ?>
             <div class="col-md-6">
-                <a href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $res_id?>" class="strip_list">
+                <a href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $res_id?>#<?php echo $s->type_id ?>" class="strip_list">
                 <div class="ribbon_1">Popular</div>
                     <div class="desc">
                         <div class="thumb_strip">
-                            <img src="img/thumb_restaurant.jpg" alt="">
+                            <img src="<?php echo base_url()?>img/<?php echo $s->image?>" alt="item_image">
                         </div>
                         <div class="rating">
                             <?php

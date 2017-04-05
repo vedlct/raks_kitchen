@@ -37,7 +37,9 @@
 
     <div id="subheader">
         <div id="sub_content">
-            <div id="thumb"><img src="<?php echo base_url()?>img/thumb_restaurant.jpg" alt=""></div>
+            <?php foreach ($this->data['details_head'] as $s){?>
+                <div id="thumb"><img src="<?php echo base_url()?>img/<?php echo $s->Image ?>" alt="Resturant Image" ></div>
+            <?php } ?>
             <h1>Choose Your Desired Food Type</h1>
             <div><i class="icon_zoom-in_alt"></i> &nbsp;We have over 125 food items of different categories for you</div>
         </div><!-- End sub_content -->

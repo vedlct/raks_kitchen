@@ -58,20 +58,8 @@
         <div id="sub_content">
             <div id="thumb"><img src="<?php echo base_url() ?>img/thumb_restaurant.jpg" alt=""></div>
             <div class="rating">
-                <?php
-                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
-                for ($i=1 ; $i<=$rating_avg; $i++ ) {
-                    ?>
-                    <i class="icon_star voted"></i>
-                    <?php
-                }
-                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
-                ?>
-                    <i class="icon_star"></i></i>
-                <?php
-                }
-                ?>
-                 ( <small><a href="#0">98 reviews</a></small> )</div>
+
+                  <small><a href="#0">Resturant reviews</a></small> </div>
             <h1><?php foreach ($details_head as $s){?>
                     <?php echo $s->name ?>
                 </h1>

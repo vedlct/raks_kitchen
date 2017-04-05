@@ -176,7 +176,7 @@ class Admin_Restaurant extends CI_Controller
             $email = $this->input->post('email');
             //print_r($rimage);
 
-            move_uploaded_file($_FILES["Photo"]["tmp_name"], "img" . $rimage);
+            move_uploaded_file($_FILES["file"]["tmp_name"], "img/" . $rimage);
 
             $this->load->model('Restaurantm');
             $this->Restaurantm->edit_res($id,$rname,$rtype,$raddress,$rcity,$rstate,$rpostal_code,$rcountry,$rtime,$rusername,$rpassword,$rvat,$rstatus,$rimage,$website,$email);

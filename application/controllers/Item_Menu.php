@@ -19,6 +19,7 @@ class Item_Menu extends CI_Controller
             $this->data['rating_avg'] = $this->Restaurantm->get_rating_avg($type_id);
             $this->data['id'] = $type_id;
             $this->data['show_item_type'] = $this->Menum->show_item_type();
+            $this->data['details_head']= $this->Restaurantm->restaurant_details_head();
             $this->load->view('detail_page_npeople', $this->data);
         } else {
             $this->load->model('Menum');
@@ -29,6 +30,7 @@ class Item_Menu extends CI_Controller
             $this->data['rating_avg'] = $this->Restaurantm->get_rating_avg($type_id);
             $this->data['id'] = $type_id;
             $this->data['show_item_type'] = $this->Menum->show_item_type();
+            $this->data['details_head']= $this->Restaurantm->restaurant_details_head();
             $this->load->view('detail_page', $this->data);
 
         }

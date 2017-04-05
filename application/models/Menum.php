@@ -55,6 +55,10 @@ class Menum extends CI_Model
 
         $textserial= $this->input->post('textserial[]');
 
+        $fileName = $_FILES["file"]["name"];
+
+        move_uploaded_file($_FILES["file"]["tmp_name"], "img/" . $fileName);
+
         if(array_filter($textbox)==null && array_filter($textimage) ==null) {
             $menudata = array(
                 'type_id' => $type_id,
@@ -63,6 +67,7 @@ class Menum extends CI_Model
                 'item_name' => $iname,
                 'item_description' => $idescription,
                 'item_price' => $price,
+                'image' => $fileName,
             );
             $data = $this->security->xss_clean($menudata);
             $this->db->insert('menu', $menudata);
@@ -93,6 +98,7 @@ class Menum extends CI_Model
                 'item_type' => $itype,
                 'item_name' => $iname,
                 'item_description' => $idescription,
+                'image' => $fileName,
             );
 
             $data = $this->security->xss_clean($menudata);
@@ -271,16 +277,37 @@ class Menum extends CI_Model
         $idescription = $this->input->post('textbox');
         $price  = $this->input->post('Item_price');
 
-        $data = array(
-            'item_name' => $iname,
-            'item_description' => $idescription,
-            'item_price' => $price,
+
+        $fileName = $_FILES["file"]["name"];
+
+        if ($fileName!=null) {
+
+            move_uploaded_file($_FILES["file"]["tmp_name"], "img/" . $fileName);
+            $data = array(
+                'item_name' => $iname,
+                'item_description' => $idescription,
+                'item_price' => $price,
+                'image'=>$fileName,
 
 
-        );
-        $data = $this->security->xss_clean($data);
-        $this->db->where('id', $id);
-        $this->db->update('menu', $data);
+            );
+            $data = $this->security->xss_clean($data);
+            $this->db->where('id', $id);
+            $this->db->update('menu', $data);
+        }else{
+            $data = array(
+                'item_name' => $iname,
+                'item_description' => $idescription,
+                'item_price' => $price,
+
+            );
+            $data = $this->security->xss_clean($data);
+            $this->db->where('id', $id);
+            $this->db->update('menu', $data);
+
+        }
+
+
 
     }
 
@@ -295,8 +322,7 @@ class Menum extends CI_Model
 
         $this->db->like('item_name', $q,'after');
         $query = $this->db->get('menu_attribute');
-        // $query=$this->db->query("SELECT * FROM `products` WHERE `product_name` LIKE "%$q%" ");
-        // return $query->result();
+
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
                 $row_set[] = htmlentities(stripslashes($row['item_name'])); //build an array

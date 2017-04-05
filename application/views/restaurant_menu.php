@@ -89,6 +89,8 @@
                                             <th>Item Name</th>
                                             <th>Item Description</th>
                                             <th>Price</th>
+                                            <th>Image</th>
+
 
 
                                             <th >Action</th>
@@ -105,6 +107,7 @@
                                                 <td><?php echo $q->item_name ?></td>
                                                 <td><?php echo $q->item_description ?></td>
                                                 <td><?php echo $q->item_price ?></td>
+                                                <td><img src="<?php base_url()?>img/<?php echo $q->image ?>" alt="item image" height="80" width="80"></td>
 
                                                 <td>
                                                     <button class="btn btn-warning" type="button" data-panel-id="<?= $q->id ?>" onclick="selectid4(this)">Edit</button>

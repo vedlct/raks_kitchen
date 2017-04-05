@@ -114,6 +114,8 @@ class Admin_menu extends CI_Controller
             //$this->load->view('admin_faq');
 
             redirect('Admin_menu');
+           // $rimage=  $_FILES["file"]["name"];
+            //print_r($rimage);
         }
         else{
             $this->load->model('viewall');

@@ -123,6 +123,7 @@ class Homem extends CI_Model
 
         $fileName = $_FILES["sfiveimage"]["name"];
         move_uploaded_file($_FILES["sfiveimage"]["tmp_name"], "img/" . $fileName);
+
         $data = array(
             'big' => $big,
             'small' => $small,

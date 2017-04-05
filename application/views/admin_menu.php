@@ -43,7 +43,7 @@
                         <div class="panel-body">
 
 
-                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
+                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" enctype="multipart/form-data">
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                 <div class="form-group" id="dropdown-style">
                                     <!--<label>Restuarant</label>-->
@@ -101,6 +101,11 @@
                                 <div id = "Item_price" class="form-group">
                                     <label>Item Price</label>
                                     <input class="form-control"type="text" name="Item_price" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>File input</label>
+                                    <input  type="file" name="file" onchange="readURL(this);">
                                 </div>
 
                                 <input class="btn btn-success" type="submit">
