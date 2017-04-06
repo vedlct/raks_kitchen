@@ -132,7 +132,7 @@
             <div class="row">
                 <?php foreach ($show_item_type as $s) { ?>
                     <div class="col-md-4 col-sm-4 wow zoomIn dish_type" data-wow-delay="0.1s" style="height: 360px">
-                        <a class="strip_list grid" href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $s->id?>#<?php echo $s->id?>">
+                        <a class="strip_list grid" href="<?php echo base_url()?>Menu/<?php echo $s->id?>#<?php echo $s->id?>">
                             <!--                        <div class="ribbon_1">Popular</div>-->
                             <div class="desc">
                                 <div class="thumb_strip">

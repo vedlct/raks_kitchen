@@ -454,7 +454,7 @@
 
                     <hr>
                     <!--<a class="btn_full" href="cart.php">Order now</a>-->
-                    <a class="btn_full" href="<?php echo base_url("Item_Menu/order_now/")?>">Order now</a>
+                    <a class="btn_full" href="<?php echo base_url("Order/")?>">Order now</a>
 
                 </div><!-- End cart_box -->
             </div><!-- End theiaStickySidebar -->
