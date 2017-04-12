@@ -39,7 +39,7 @@ class Admin_Home extends CI_Controller {
 
             $this->load->model('Homem');
             $this->Homem->insert_main_content();
-            $this->Homem->insert_resturant_andmore_content();
+//            $this->Homem->insert_resturant_andmore_content();
             redirect('Admin_Home');
         }
         else{

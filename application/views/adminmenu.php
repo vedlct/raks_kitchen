@@ -104,6 +104,9 @@
             <li>
                 <a href="<?php echo base_url()?>Report"><i class="fa fa-fw fa-wrench"></i>Sales Report</a>
             </li>
+            <li>
+                <a href="<?php echo base_url()?>User"><i class="fa fa-fw fa-edit"></i> User</a>
+            </li>
 
 
 

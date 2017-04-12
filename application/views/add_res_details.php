@@ -61,6 +61,12 @@
                                 <input class="form-control"type="text" name="time" value="<?php echo $s->time ?>">
                             </div>
                         </div>
+                                <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input class="form-control"type="text" name="phone" value="">
+                                    </div>
+                                </div>
 
                                 <div class="col-md-12 col-sm-12" >
                                     <div class="form-group">

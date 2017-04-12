@@ -288,7 +288,7 @@
                         <hr>
 					<!--<a class="btn_full" href="<?php echo base_url("Item_Menu/order_confirm/")?>">Go to checkout</a>-->
                         <button type="button" onclick="cartconfirm()" class="btn btn-submit">Go to checkout</button>
-					<a class="btn_full_outline" href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $this->session->flashdata('type_id');?>"><i class="icon-right"></i> Add other items</a>
+					<a class="btn_full_outline" href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo  $this->session->userdata('page_id'); ?>"><i class="icon-right"></i> Add other items</a>
 				</div><!-- End cart_box -->
                 </div><!-- End theiaStickySidebar -->
             </form>
